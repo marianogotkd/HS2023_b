@@ -1,0 +1,3503 @@
+USE [FitfaWeb_23]
+GO
+/****** Object:  StoredProcedure [dbo].[UsuarioEvento_obtener_evento]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----OK---------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[UsuarioEvento_obtener_evento]
+@evento_id int
+as
+--choco: lo uso para recuperar los usuarios vinculados al evento en la tabla usuarioevento
+
+select UsuarioEvento.usuario_id as id, usuario.usuario_usuario as Usuario, 
+usuario.usuario_password as contraseña  from UsuarioEvento 
+inner join usuario on UsuarioEvento.usuario_id = usuario.usuario_id  
+ where evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[UsuarioEvento_Obtener]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----OK--------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[UsuarioEvento_Obtener]
+@usuario_id int
+as
+select * from UsuarioEvento where usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[UsuarioEvento_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[UsuarioEvento_alta]
+@evento_id int,
+@usuario_usuario varchar(50),
+@usuario_password varchar(50)
+as
+insert usuario ( usuario_usuario , usuario_password, usuario_tipo, usuario_estado  ) values (@usuario_usuario, @usuario_password, 'Torneo', 'activo')
+declare @id_usuario int
+select @id_usuario = @@IDENTITY 
+insert UsuarioEvento (evento_id , usuario_id ) values (@evento_id , @id_usuario )
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenCertificacion_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[ExamenCertificacion_alta]
+
+@usuario_id int,
+@graduacion_id int,
+@evento_id int
+
+as
+insert ExamenCertificacion (usuario_id , graduacion_id, evento_id)values(@usuario_id, @graduacion_id,@evento_id  )
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_validar_registro]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_validar_registro]
+@usuario_usuario varchar(50),
+@usuario_doc int
+
+
+as
+select usuario_id  from usuario where usuario.usuario_usuario = @usuario_usuario  
+select usuario_id from usuario where usuario.usuario_doc = @usuario_doc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_validar_DNI]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_validar_DNI]
+
+@Usuario_doc int
+as
+select * from usuario where usuario.usuario_doc = @Usuario_doc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_validar_contraseña]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_validar_contraseña]
+@usuario_id int,
+@usuario_password varchar(50)
+
+as
+
+
+select usuario_id from dbo.usuario where usuario_id=@usuario_id and usuario_password=@usuario_password
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_sesion]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------------------
+ALTER Procedure [dbo].[Usuario_sesion]
+@USU_usuario varchar(max),
+@USU_contr varchar(max)
+as
+
+select usuario.usuario_id,
+usuario.usuario_nombre,
+usuario.usuario_apellido,
+usuario.usuario_password,
+usuario.usuario_estado,
+usuario.usuario_tipo from usuario where usuario.usuario_usuario=@USU_usuario and usuario.usuario_password=@USU_contr
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_ObtenerProvincias]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_ObtenerProvincias]
+
+as
+
+select provincia.provincia_id, provincia.provincia_desc   from provincia order by provincia.provincia_desc asc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_ObtenerInstructor]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Usuario_ObtenerInstructor]
+@institucion_id int
+
+as
+
+--SELECT     (dbo.usuario.usuario_apellido + ','+dbo.usuario.usuario_nombre) as Nombre, dbo.instructor.instructor_id
+--FROM         dbo.instructor INNER JOIN
+--                      dbo.usuario ON dbo.instructor.usuario_id = dbo.usuario.usuario_id
+                      
+--                      where instructor.institucion_id= @institucion_id order by usuario.usuario_apellido asc
+      
+      SELECT (usuario_apellido + ',' + usuario_nombre) as Nombre, dbo.instructor.instructor_id 
+FROM  dbo.instructor INNER JOIN
+               dbo.institucion_x_instructor ON dbo.instructor.instructor_id = dbo.institucion_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.instructor.usuario_id = dbo.usuario.usuario_id
+               
+               where institucion_id=@institucion_id order by usuario.usuario_apellido
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_ObtenerInstituciones_x_provincia]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_ObtenerInstituciones_x_provincia]
+
+@provincia_id int
+
+as
+
+select  institucion_id, institucion_abreviacion from institucion where institucion.provincia_id = @provincia_id order by institucion.institucion_descripcion asc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_ObtenerGraduaciones]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_ObtenerGraduaciones]
+
+
+
+as
+
+select graduacion.graduacion_id, graduacion.graduacion_desc  from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_modificar_graduacion]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_modificar_graduacion]
+
+@usuario_id int,
+@graduacion_id int
+as
+
+update usuario set graduacion_id = @graduacion_id where usuario.usuario_id = @usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_imagen_actualizar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Usuario_imagen_actualizar]
+@usuario_id int,
+@usuario_imagen image
+
+as
+
+update usuario set usuario_foto=@usuario_imagen where usuario.usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_filtrarciudades_x_Provincias]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_filtrarciudades_x_Provincias]
+
+@provincia_id int
+
+as
+
+select ciudad_id, ciudad_desc from ciudad where ciudad.provincia_id=@provincia_id order by ciudad.ciudad_desc asc
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_alta_invitado]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_alta_invitado]
+@usuario_foto image,
+@usuario_apellido varchar(50),
+@usuario_nombre varchar(50),
+@tipodoc_id int,
+@usuario_doc int,
+@usuario_sexo varchar(50),
+@usuario_nacionalidad varchar(50),
+@estadocivil_id int,
+@usuario_profesion varchar(50),
+@usuario_fechanac date,
+@usuario_domicilio varchar(50),
+@usuario_codigopostal int,
+@provincia_id int,
+@ciudad_id int,
+@usuario_telefono varchar(50),
+@usuario_mail varchar(50),
+@graduacion_id int,
+@usuario_password varchar(50),
+@usuario_fecha_registro datetime,
+@instructor_id int,
+@usuario_tipo varchar(50),
+@usuario_usuario varchar(50),
+@institucion_id int,
+@usuario_nrolibreta varchar(50),
+@usuario_obs varchar(max)
+
+
+as
+
+declare @usuario_id int
+
+--insertar usuario, el estado va a estar en inactivo hasta que se apruebe la peticion.
+insert dbo.usuario (usuario_foto,
+usuario_apellido,
+usuario_nombre,
+tipodoc_id,
+usuario_doc,
+usuario_sexo,
+usuario_nacionalidad,
+estadocivil_id,
+usuario_profesion,
+usuario_fechanac,
+usuario_domicilio,
+usuario_codigopostal,
+provincia_id,
+ciudad_id,
+usuario_telefono,
+usuario_mail,
+graduacion_id,
+usuario_password,
+usuario_estado,
+usuario_fecha_registro, usuario_tipo, usuario_usuario, usuario_nrolibreta, usuario_obs 
+
+)
+
+values (@usuario_foto,
+@usuario_apellido,
+@usuario_nombre,
+@tipodoc_id,
+@usuario_doc,
+@usuario_sexo,
+@usuario_nacionalidad,
+@estadocivil_id,
+@usuario_profesion,
+@usuario_fechanac,
+@usuario_domicilio,
+@usuario_codigopostal,
+@provincia_id,
+@ciudad_id,
+@usuario_telefono,
+@usuario_mail,
+@graduacion_id,
+@usuario_password,
+'activo',
+@usuario_fecha_registro, @usuario_tipo, @usuario_usuario, @usuario_nrolibreta, @usuario_obs)
+
+select @usuario_id = @@IDENTITY
+--insertar alumno x instructor
+
+insert dbo.alumnos_x_instructor (usuario_id, instructor_id, alumno_x_instructor_estado, institucion_id) values (@usuario_id, @instructor_id, 'activo', @institucion_id)
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_alta]
+@usuario_foto image,
+@usuario_apellido varchar(50),
+@usuario_nombre varchar(50),
+@tipodoc_id int,
+@usuario_doc int,
+@usuario_sexo varchar(50),
+@usuario_nacionalidad varchar(50),
+@estadocivil_id int,
+@usuario_profesion varchar(50),
+@usuario_fechanac date,
+@usuario_domicilio varchar(50),
+@usuario_codigopostal int,
+@provincia_id int,
+@ciudad_id int,
+@usuario_telefono varchar(50),
+@usuario_mail varchar(50),
+@graduacion_id int,
+@usuario_password varchar(50),
+@usuario_fecha_registro datetime,
+@instructor_id int,
+@usuario_tipo varchar(50),
+@usuario_usuario varchar(50),
+@institucion_id int,
+@usuario_nrolibreta varchar(50)
+
+
+as
+
+declare @usuario_id int
+
+--insertar usuario, el estado va a estar en inactivo hasta que se apruebe la peticion.
+insert dbo.usuario (usuario_foto,
+usuario_apellido,
+usuario_nombre,
+tipodoc_id,
+usuario_doc,
+usuario_sexo,
+usuario_nacionalidad,
+estadocivil_id,
+usuario_profesion,
+usuario_fechanac,
+usuario_domicilio,
+usuario_codigopostal,
+provincia_id,
+ciudad_id,
+usuario_telefono,
+usuario_mail,
+graduacion_id,
+usuario_password,
+usuario_estado,
+usuario_fecha_registro, usuario_tipo, usuario_usuario, usuario_nrolibreta 
+
+)
+
+values (@usuario_foto,
+@usuario_apellido,
+@usuario_nombre,
+@tipodoc_id,
+@usuario_doc,
+@usuario_sexo,
+@usuario_nacionalidad,
+@estadocivil_id,
+@usuario_profesion,
+@usuario_fechanac,
+@usuario_domicilio,
+@usuario_codigopostal,
+@provincia_id,
+@ciudad_id,
+@usuario_telefono,
+@usuario_mail,
+@graduacion_id,
+@usuario_password,
+'pendiente',
+@usuario_fecha_registro, @usuario_tipo, @usuario_usuario, @usuario_nrolibreta)
+
+select @usuario_id = @@IDENTITY
+--insertar alumno x instructor
+
+insert dbo.alumnos_x_instructor (usuario_id, instructor_id, alumno_x_instructor_estado, institucion_id) values (@usuario_id, @instructor_id, 'pendiente', @institucion_id)
+GO
+/****** Object:  StoredProcedure [dbo].[Usuario_actualizar_contraseña]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Usuario_actualizar_contraseña]
+
+@usuario_password varchar(50),
+@usuario_id int
+as
+
+update usuario set usuario_password=@usuario_password  where usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[llave_eliminar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[llave_eliminar]
+@llave_id int
+as
+delete from Llave_item where Llave_item.Llave_id = @llave_id 
+delete from Llave where Llave.Llave_id=@llave_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_deshacer_llave]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Llave_deshacer_llave]
+@usuario_id int,
+@evento_id int,
+@categoria_id int
+as
+---aqui vamos a poner el campo en_llano en no...esto borra la inscripcion, solo cambia de estado ya q no estará asignada aun a una llave en particular
+
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion.inscripcion_id  from inscripcion where inscripcion.evento_id=@evento_id and inscripcion.usuario_id=@usuario_id 
+
+--ahora lo busco en la tabla inscripcions x torneo
+update inscripciones_x_torneo set en_llave='no' where inscripciones_x_torneo.inscripcion_id=@inscripcion_id and inscripciones_x_torneo.categoria_id=@categoria_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Llave_alta]
+@evento_id int,
+@categoria_id int,
+@Llave_cantidad int,
+@area_id int
+as
+
+insert Llave (evento_id, categoria_id, Llave_cantidad, Area_id ) values (@evento_id, @categoria_id, @Llave_cantidad, @area_id )
+SELECT @@IDENTITY AS 'Llave_id'
+GO
+/****** Object:  StoredProcedure [dbo].[Torneo_recuperar_inscriptos_categoria]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Torneo_recuperar_inscriptos_categoria]
+@evento_id int,
+@categoria_id int
+
+as
+select * from(SELECT dbo.evento.evento_id, dbo.inscripcion.inscripcion_id, dbo.inscripcion.usuario_id, dbo.usuario.graduacion_id, dbo.evento.evento_descripcion, dbo.evento.evento_fecha, dbo.evento.evento_costo, dbo.evento.evento_direccion, 
+                     usuario.usuario_apellido+', '+usuario.usuario_nombre as 'Alumno', dbo.graduacion.graduacion_desc, usuario.usuario_doc
+
+FROM         dbo.evento INNER JOIN
+                      dbo.inscripcion ON dbo.evento.evento_id = dbo.inscripcion.evento_id INNER JOIN
+                      dbo.usuario ON dbo.inscripcion.usuario_id = dbo.usuario.usuario_id INNER JOIN
+                      dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id INNER JOIN		
+                      dbo.inscripciones_x_torneo on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_torneo.inscripcion_id 
+                      
+                      
+                      where evento.evento_id=@evento_id and inscripciones_x_torneo.categoria_id = @categoria_id) T1 
+full outer join 
+(select inscripcion.inscripcion_id, instructor.instructor_id, usuario.usuario_apellido+', '+usuario.usuario_nombre as 'instructor' 
+	from inscripcion inner join instructor on inscripcion.inscripcion_instructor_id = instructor.instructor_id inner join usuario 
+		on instructor.usuario_id = usuario.usuario_id
+		inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id 
+		 where inscripcion.evento_id = @evento_id and inscripciones_x_torneo.categoria_id = @categoria_id ) T2 ON T1.inscripcion_id = T2.inscripcion_id
+ORDER BY 1,2
+GO
+/****** Object:  StoredProcedure [dbo].[Torneo_recuperar_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Torneo_recuperar_inscriptos]
+@evento_id int
+
+as
+select evento_id, evento_descripcion, CONVERT(varchar, evento_fecha, 103) as 'evento_fecha',
+evento_direccion from evento where evento_id = @evento_id 
+
+select * from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id = categoria.categoria_id 
+ where evento_id = @evento_id order by categoria.categoria_tipo asc , categoria_gradinicial asc 
+ 
+ select * from graduacion order by graduacion.graduacion_id asc 
+ 
+ select * from inscripcion where inscripcion.evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Solicitudes_Pendientes]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Solicitudes_Pendientes] 
+@usuario_id int
+as
+--Select 
+--usuario_id,
+--(usuario_apellido+ ' '+ usuario_nombre) AS Nombre,
+--usuario_domicilio as Mensaje,
+--usuario_codigopostal as Fecha
+
+
+
+--From usuario 
+--where usuario_estado='Pendiente'
+
+
+
+
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id=@usuario_id 
+
+
+SELECT     dbo.usuario.usuario_id ,
+		(dbo.usuario.usuario_apellido+ ' '+ dbo.usuario.usuario_nombre) AS Nombre,
+		dbo.usuario.usuario_estado as Mensaje, Convert(varchar(10),dbo.usuario.usuario_fecha_registro,103) as Fecha, usuario_tipo, alumnos_x_instructor.institucion_id  
+                       
+FROM         dbo.alumnos_x_instructor INNER JOIN
+                      dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id
+                      where usuario_estado='Pendiente' and instructor_id=@id_instructor order by usuario.usuario_fecha_registro asc
+                      
+                      
+---Choco, existe el campo institucion_id x si queremos hacer un select discriminado por institucion, ya que el instructor puede pertenecer a varias
+GO
+/****** Object:  StoredProcedure [dbo].[Reporte_obtener_instructores_y_eventos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Reporte_obtener_instructores_y_eventos]
+
+as
+select
+instructor.instructor_id,
+usuario.usuario_apellido+', '+usuario.usuario_nombre  as 'apenom' 
+from instructor inner join usuario on instructor.usuario_id=usuario.usuario_id 
+
+select
+evento.evento_id , evento.evento_descripcion 
+from evento  order by evento.evento_descripcion asc
+GO
+/****** Object:  StoredProcedure [dbo].[Reporte_obtener_Inscriptos_Toreno_Instructor]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Reporte_obtener_Inscriptos_Toreno_Instructor]
+@evento_id int,
+@instructor_id int
+
+as
+
+select 
+evento.evento_id,
+evento.evento_descripcion,
+evento.evento_foto,
+evento.evento_fecha,
+usuario.usuario_id ,
+usuario.usuario_doc,
+usuario.usuario_apellido,
+usuario.usuario_nombre,
+graduacion.graduacion_desc as 'graduacion',
+usuario.usuario_telefono,
+'INSTRUCTOR' as 'instructor',
+usuario.usuario_foto,
+instructor.instructor_id  
+from evento inner join inscripcion on evento.evento_id= inscripcion.evento_id 
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id 
+inner join instructor on inscripcion.inscripcion_instructor_id= instructor.instructor_id
+inner join graduacion on usuario.graduacion_id=graduacion.graduacion_id 
+where evento.evento_id=@evento_id and instructor.instructor_id=@instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Reporte_listado_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Reporte_listado_inscriptos]
+
+@instructor_id int,
+@evento_id int
+as
+select 
+usuario.usuario_id,
+usuario.usuario_apellido +', '+ usuario.usuario_nombre as 'ApellidoyNombre', 
+instructor.instructor_id,
+evento.evento_descripcion as 'Evento',
+evento.evento_fecha,
+inscripciones_x_torneo.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+categoria.categoria_sexo  
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id=inscripciones_x_torneo.inscripcion_id 
+inner join usuario on inscripcion.usuario_id=usuario.usuario_id
+inner join instructor on inscripcion.inscripcion_instructor_id = instructor.instructor_id
+inner join evento on inscripcion.evento_id = evento.evento_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+where evento.evento_id = @evento_id 
+
+select * from graduacion order by graduacion.graduacion_id asc
+
+select 
+usuario.usuario_apellido+usuario.usuario_nombre as 'Instructor_apenom',
+usuario.usuario_doc,
+graduacion.graduacion_desc 
+from instructor inner join usuario on instructor.usuario_id=usuario.usuario_id 
+inner join graduacion on usuario.graduacion_id=graduacion.graduacion_id 
+where instructor.instructor_id = instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Reporte_Inscripcion_Persona]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Reporte_Inscripcion_Persona]
+@usarioid as int,
+@eventoid as int
+as
+                      
+select 
+dbo.inscripcion.usuario_id, 
+dbo.usuario.usuario_apellido + ', '+ dbo.usuario.usuario_nombre as 'apellido y nombre', 
+dbo.usuario.usuario_doc, 
+dbo.inscripcion.evento_id, 
+dbo.evento.evento_descripcion, 
+dbo.inscripcion.inscripcion_id, 
+dbo.inscripciones_x_torneo.categoria_id, 
+dbo.categoria.categoria_tipo, 
+dbo.inscripcion_qr.inscripcion_qr_imagen, 
+dbo.usuario.graduacion_id, 
+dbo.graduacion.graduacion_desc,
+inscripcion.inscripcion_peso
+from inscripcion inner join inscripcion_qr on inscripcion.inscripcion_id=inscripcion_qr.inscripcion_id
+inner join usuario on inscripcion.usuario_id=usuario.usuario_id 
+inner join evento on inscripcion.evento_id= evento.evento_id
+inner join inscripciones_x_torneo on inscripcion.inscripcion_id=inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join graduacion on usuario.graduacion_id=graduacion.graduacion_id  
+where inscripcion.usuario_id=@usarioid and inscripcion.evento_id=@eventoid order by usuario.usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Provincias_generar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Provincias_generar]
+--se genera la tabla desde cero con las provincias
+
+as
+INSERT INTO provincia VALUES ('1', 'Buenos Aires');
+INSERT INTO provincia VALUES ('2', 'Capital Federal');
+INSERT INTO provincia VALUES ('3', 'Catamarca');
+INSERT INTO provincia VALUES ('4', 'Chaco');
+INSERT INTO provincia VALUES ('5', 'Chubut');
+INSERT INTO provincia VALUES ('6', 'Cordoba');
+INSERT INTO provincia VALUES ('7', 'Corrientes');
+INSERT INTO provincia VALUES ('8', 'Entre Rios');
+INSERT INTO provincia VALUES ('9', 'Formosa');
+INSERT INTO provincia VALUES ('10', 'Jujuy');
+INSERT INTO provincia VALUES ('11', 'La Pampa');
+INSERT INTO provincia VALUES ('12', 'La Rioja');
+INSERT INTO provincia VALUES ('13', 'Mendoza');
+INSERT INTO provincia VALUES ('14', 'Misiones');
+INSERT INTO provincia VALUES ('15', 'Neuquen');
+INSERT INTO provincia VALUES ('16', 'Rio Negro');
+INSERT INTO provincia VALUES ('17', 'Salta');
+INSERT INTO provincia VALUES ('18', 'San Juan');
+INSERT INTO provincia VALUES ('19', 'San Luis');
+INSERT INTO provincia VALUES ('20', 'Santa Cruz');
+INSERT INTO provincia VALUES ('21', 'Santa Fe');
+INSERT INTO provincia VALUES ('22', 'Santiago del Estero');
+INSERT INTO provincia VALUES ('23', 'Tierra del Fuego');
+INSERT INTO provincia VALUES ('24', 'Tucuman');
+GO
+/****** Object:  StoredProcedure [dbo].[Miembros_obtener_datos_personales]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Miembros_obtener_datos_personales]
+
+@usuario_id int
+as
+
+select usuario_apellido +', '+usuario_nombre as 'apellido y nombre',
+
+usuario_doc as 'dni', usuario_fechanac as 'fecha de nacimiento',
+usuario_telefono as 'telefono', usuario_mail as 'correo', 
+usuario_domicilio as 'direccion', provincia.provincia_desc as 'provincia',
+ciudad_desc as 'ciudad', usuario_nacionalidad as 'nacionalidad',
+estadocivil_desc as 'estado civil', usuario_profesion as 'profesion',
+usuario_foto as 'foto', usuario_tipo, graduacion_desc as 'graduacion',
+usuario.usuario_estado as 'estado'  
+
+from dbo.usuario INNER JOIN
+               dbo.provincia ON dbo.usuario.provincia_id = dbo.provincia.provincia_id INNER JOIN
+               dbo.ciudad ON dbo.usuario.ciudad_id = dbo.ciudad.ciudad_id INNER JOIN
+               dbo.estado_civil ON dbo.usuario.estadocivil_id = dbo.estado_civil.estadocivil_id 
+               INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               
+               where usuario.usuario_id=@usuario_id 
+               
+declare @id_instructor int
+select @id_instructor=instructor_id  from alumnos_x_instructor where alumnos_x_instructor.usuario_id=@usuario_id and alumnos_x_instructor.alumno_x_instructor_estado='activo'
+--aqui recupero el id_instructor necesario para buscar la institucion en la tabla institucion x instructor
+
+SELECT provincia.provincia_desc as 'provincia', institucion.institucion_abreviacion as 'abreviacion',
+institucion.institucion_descripcion as 'institucion', 
+usuario.usuario_apellido+', '+usuario.usuario_nombre as 'instructor' 
+FROM  dbo.instructor INNER JOIN
+               dbo.usuario ON dbo.instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.provincia ON dbo.institucion.provincia_id = dbo.provincia.provincia_id
+where alumnos_x_instructor.alumno_x_instructor_estado='activo' and 
+alumnos_x_instructor.instructor_id=@id_instructor and alumnos_x_instructor.usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Miembros_obtener]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Miembros_obtener]
+@usuario_id int
+
+as
+
+
+declare @id_instructor int
+select @id_instructor = instructor.instructor_id  from instructor where instructor.usuario_id= @usuario_id 
+
+
+SELECT dbo.usuario.usuario_doc, dbo.usuario.usuario_apellido, dbo.usuario.usuario_nombre, dbo.usuario.graduacion_id, dbo.graduacion.graduacion_desc, 
+               dbo.usuario.usuario_fechanac, dbo.usuario.usuario_estado, dbo.usuario.usuario_tipo
+FROM  dbo.alumnos_x_instructor INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               
+               where alumnos_x_instructor.instructor_id=@id_instructor
+GO
+/****** Object:  StoredProcedure [dbo].[Mensaje_Nuevo_Registro]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Mensaje_Nuevo_Registro] 
+@usuario_id as int
+as
+
+SELECT 
+(usuario_apellido+ ' '+ usuario_nombre) AS Nombre,
+usuario_domicilio,
+provincia.provincia_desc, usuario_sexo,usuario_doc, institucion.institucion_descripcion, usuario.usuario_tipo, alumnos_x_instructor.institucion_id, usuario.usuario_foto, usuario.usuario_fecha_registro
+FROM  dbo.alumnos_x_instructor INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.provincia ON dbo.usuario.provincia_id = dbo.provincia.provincia_id
+where usuario_estado='pendiente' and usuario.usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_ObtenerInscriptos_todo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[Mantenimiento_ObtenerInscriptos_todo]
+@evento_id int ---trae inscriptos solo de 1 evento puntual
+
+AS
+select 
+inscripcion.evento_id, 
+inscripcion.inscripcion_id, 
+		inscripciones_x_torneo.categoria_id,
+		categoria_sexo,
+		categoria_gradinicial,
+		categoria_gradfinal,
+		categoria_edadinicial,
+		categoria_edadfinal,
+		categoria_peso_inical,
+		categoria_peso_Final,
+		categoria_tipo,
+		inscripcion.inscripcion_peso,
+		inscripciones_x_torneo.torneo_id from inscripciones_x_torneo INNER JOIN inscripcion ON inscripciones_x_torneo.inscripcion_id = inscripcion.inscripcion_id
+INNER JOIN categoria on inscripciones_x_torneo.categoria_id = categoria.categoria_id 
+
+ where inscripcion.evento_id = @evento_id and categoria.categoria_tipo = 'Lucha'
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_ObtenerInscriptos_AmbosSexosLucha]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[Mantenimiento_ObtenerInscriptos_AmbosSexosLucha]
+@evento_id int ---trae inscriptos solo de 1 evento puntual
+
+AS
+select 
+inscripcion.evento_id, 
+inscripcion.inscripcion_id, 
+		inscripciones_x_torneo.categoria_id,
+		categoria_sexo,
+		categoria_gradinicial,
+		categoria_gradfinal,
+		categoria_edadinicial,
+		categoria_edadfinal,
+		categoria_peso_inical,
+		categoria_peso_Final,
+		categoria_tipo,
+		inscripcion.inscripcion_peso,
+		inscripciones_x_torneo.torneo_id from inscripciones_x_torneo INNER JOIN inscripcion ON inscripciones_x_torneo.inscripcion_id = inscripcion.inscripcion_id
+INNER JOIN categoria on inscripciones_x_torneo.categoria_id = categoria.categoria_id 
+
+ where inscripcion.evento_id = @evento_id and categoria.categoria_sexo = 'AMBOS SEXOS' and categoria.categoria_tipo = 'Lucha'
+GO
+/****** Object:  StoredProcedure [dbo].[Mantenimiento_actualizar_inscripcion]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[Mantenimiento_actualizar_inscripcion]
+
+---se actualiza categoria_id en la tabla inscripcion_torneo
+@torneo_id int,
+@categoria_id INT
+
+as
+
+UPDATE inscripciones_x_torneo set categoria_id = @categoria_id where torneo_id = @torneo_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llaves_Finalizadas_filtro]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------
+CREATE procedure [dbo].[Llaves_Finalizadas_filtro]
+---Busco el nivel 0 de cada categoria si
+@Llave_id int  
+as  
+select Llave_item_usuario_id from Llave_item where Llave_id=@Llave_id and Llave_item_nivel=0
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_Verificar_existencia]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------
+ALTER Procedure [dbo].[Llave_Verificar_existencia]
+@cat_id int,
+@evento_id int
+as
+select * from Llave where Llave.categoria_id=@cat_id and Llave.evento_id=@evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_para_reordenar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[Llave_para_reordenar]
+
+@Llave_id int
+as
+select  LLave_item_id, Llave_item_usuario_id, Llave_item_PIzq, Llave_item_PDerecho, Llave_item_nivel, Llave_item_Numero, Llave_item_enlazado, Llave_id, 
+usuario_apellido +','+usuario_nombre as 'USUARIO', alumnos_x_instructor.instructor_id
+from Llave_item inner join usuario on usuario.usuario_id = Llave_item_usuario_id
+inner join alumnos_x_instructor on alumnos_x_instructor.usuario_id = usuario.usuario_id   where Llave_id = @Llave_id order by LLave_item_id asc 
+
+select * from Llave_item where Llave_id = @Llave_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_obtener_llaves_generadas_infoArea]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Llave_obtener_llaves_generadas_infoArea]
+
+---esta rutina trae un listado con las llaves que se han generado con su informacion particular como el nombre y la cantidad de inscriptos
+@evento_id int,
+@area_id int
+as
+
+select Llave.Llave_id as 'ID',
+Llave.Llave_cantidad as 'inscriptos',
+Llave.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+categoria.categoria_sexo,
+Area.Area_descripcion as 'Area'   
+from Llave inner join categoria on Llave.categoria_id=categoria.categoria_id 
+inner join evento on Llave.evento_id=evento.evento_id
+inner join Area on Llave.Area_id = Area.Area_id  
+where Llave.evento_id = @evento_id and Area.Area_id = @area_id  order by categoria.categoria_id asc 
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_obtener_llaves_generadas_info]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Llave_obtener_llaves_generadas_info]
+
+---esta rutina trae un listado con las llaves que se han generado con su informacion particular como el nombre y la cantidad de inscriptos
+@evento_id int
+as
+
+select Llave.Llave_id as 'ID',
+Llave.Llave_cantidad as 'inscriptos',
+Llave.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+categoria.categoria_sexo,
+Area.Area_descripcion as 'Area'   
+from Llave inner join categoria on Llave.categoria_id=categoria.categoria_id 
+inner join evento on Llave.evento_id=evento.evento_id
+inner join Area on Llave.Area_id = Area.Area_id  
+where Llave.evento_id = @evento_id order by categoria.categoria_id asc 
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_llavegenerada_etc_2]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[LLave_obtener_llavegenerada_etc_2]
+
+@Llave_id int
+as
+---esta version trae toda la info de la llave generada solo que ahora la busca por llave_id, ya que no me sirve buscar por evento_id y categoria_id (OJO puede haber mas de 1 llave por categoria, x eso la correccion)
+select 
+evento.evento_id, 
+evento.evento_descripcion,
+Llave.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_sexo,
+evento.evento_fecha,
+evento.evento_fechacierre,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+Llave.Llave_cantidad as 'inscriptos' 
+from Llave inner join evento on Llave.evento_id= evento.evento_id
+inner join categoria on Llave.categoria_id=categoria.categoria_id
+where Llave.Llave_id  =  @Llave_id
+
+select * from graduacion order by graduacion.graduacion_id asc
+
+
+select  * from Llave_item where Llave_item.Llave_id = @llave_id order by Llave_item.Llave_item_Numero  asc
+
+--aun no la uso
+select  
+Llave_item.Llave_item_usuario_id,usuario.usuario_id,
+usuario.usuario_apellido +', '+usuario.usuario_nombre  as 'apenom',
+Llave_item_Numero,
+alumnos_x_instructor.instructor_id  as 'instructor_id' 
+from Llave_item inner join usuario on Llave_item.Llave_item_usuario_id=usuario.usuario_id 
+inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+where Llave_item.Llave_id = @llave_id order by Llave_item.Llave_item_Numero  asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_llavegenerada_etc]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[LLave_obtener_llavegenerada_etc]
+@evento_id int,
+@categoria_id int
+
+as
+
+select evento.evento_id, 
+evento.evento_descripcion,
+inscripcion.inscripcion_id,
+inscripciones_x_torneo.torneo_id ,
+inscripciones_x_torneo.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_sexo,
+evento.evento_fecha,
+evento.evento_fechacierre,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final    
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join evento on inscripcion.evento_id=evento.evento_id 
+where inscripcion.evento_id=@evento_id and inscripciones_x_torneo.categoria_id=@categoria_id 
+order by inscripciones_x_torneo.categoria_id asc
+
+select * from graduacion order by graduacion.graduacion_id asc
+
+
+declare @llave_id int
+select @llave_id = llave_id from Llave where Llave.evento_id=@evento_id and Llave.categoria_id=@categoria_id 
+select  
+*
+from Llave_item where Llave_item.Llave_id = @llave_id order by Llave_item.Llave_item_Numero  asc
+
+--aun no la uso
+select  
+Llave_item.Llave_item_usuario_id,usuario.usuario_id,
+usuario.usuario_apellido +', '+usuario.usuario_nombre  as 'apenom',
+Llave_item_Numero 
+from Llave_item inner join usuario on Llave_item.Llave_item_usuario_id=usuario.usuario_id where Llave_item.Llave_id = @llave_id order by Llave_item.Llave_item_Numero  asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_inscriptos_sin_llave]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------
+ALTER procedure [dbo].[LLave_obtener_inscriptos_sin_llave]
+@evento_id int,
+@categoria_id int
+as
+select inscripcion.usuario_id as 'ID',
+usuario.usuario_doc as 'dni',
+usuario.usuario_apellido+' '+usuario_nombre as 'ApellidoyNombre',
+institucion.institucion_abreviacion as 'Institucion_abreviatura',
+institucion.institucion_descripcion as 'Institucion',
+provincia.provincia_desc as 'Provincia',
+inscripcion.inscripcion_instructor_id as 'instructor_id',
+inscripcion.inscripcion_peso as 'Peso', inscripcion.inscripcion_id 
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join evento on inscripcion.evento_id=evento.evento_id
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id
+inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+inner join institucion on alumnos_x_instructor.institucion_id= institucion.institucion_id
+inner join provincia on institucion.provincia_id = provincia.provincia_id
+where inscripcion.evento_id=@evento_id and inscripciones_x_torneo.categoria_id=@categoria_id and inscripciones_x_torneo.en_llave='no'
+order by inscripcion.inscripcion_peso asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_inscriptos_filtrados]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[LLave_obtener_inscriptos_filtrados]
+@evento_id int,
+@categoria_tipo varchar(50)
+
+as
+--recupera todos los inscriptos filtrados por evento y modalidad lucha o formas
+select evento.evento_id, 
+evento.evento_descripcion,
+inscripcion.inscripcion_id,
+inscripciones_x_torneo.torneo_id ,
+inscripciones_x_torneo.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+categoria.categoria_sexo  
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join evento on inscripcion.evento_id=evento.evento_id 
+where inscripcion.evento_id=@evento_id and categoria.categoria_tipo=@categoria_tipo and inscripciones_x_torneo.en_llave = 'no'
+order by inscripciones_x_torneo.categoria_id asc
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_inscriptos_categoria]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[LLave_obtener_inscriptos_categoria]
+@evento_id int,
+@categoria_id int
+
+as
+---esta rutina la uso para cargar inicialmente los inscriptos en los nodos de la llave segun su categoria.
+select inscripcion.usuario_id, 'no' as 'agregado'
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join evento on inscripcion.evento_id=evento.evento_id 
+where inscripcion.evento_id=@evento_id and inscripciones_x_torneo.categoria_id=@categoria_id 
+order by inscripciones_x_torneo.categoria_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[LLave_obtener_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[LLave_obtener_inscriptos]
+@evento_id int
+
+as
+
+select evento.evento_id, 
+evento.evento_descripcion,
+inscripcion.inscripcion_id,
+inscripciones_x_torneo.torneo_id ,
+inscripciones_x_torneo.categoria_id,
+categoria.categoria_tipo,
+categoria.categoria_gradinicial,
+categoria.categoria_gradfinal,
+categoria.categoria_edadinicial,
+categoria.categoria_edadfinal,
+categoria.categoria_peso_inical,
+categoria.categoria_peso_Final,
+categoria.categoria_sexo  
+from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+inner join evento on inscripcion.evento_id=evento.evento_id 
+where inscripcion.evento_id=@evento_id 
+order by inscripciones_x_torneo.categoria_id asc
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_quitar_enlace]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------------
+ALTER Procedure [dbo].[Llave_item_quitar_enlace]
+@LLave_item_id int
+as
+
+update Llave_item set Llave_item_PIzq='0', Llave_item_PDerecho='0' where Llave_item.LLave_item_id  = @LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_consulta_nivel]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Llave_item_consulta_nivel]
+@Llave_item_nivel int,
+@Llave_id int
+
+as
+
+select
+LLave_item_id, 
+Llave_item_usuario_id, 
+Llave_item_PIzq, 
+Llave_item_PDerecho, 
+Llave_item_nivel, 
+Llave_item_Numero, Llave_item_enlazado
+from Llave_item where Llave_item_nivel=@Llave_item_nivel and llave_id = @Llave_id order by Llave_item.Llave_item_Numero asc
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_consulta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Llave_item_consulta]
+@Llave_id int
+
+as
+
+select
+LLave_item_id, 
+Llave_item_usuario_id, 
+Llave_item_PIzq, 
+Llave_item_PDerecho, 
+Llave_item_nivel, 
+Llave_item_Numero, Llave_item_enlazado
+from Llave_item where Llave_id =@Llave_id order by Llave_item.Llave_item_Numero asc
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_borrar_hoja]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Llave_item_borrar_hoja]
+@LLave_item_id int
+
+as
+
+delete from Llave_item where Llave_item.LLave_item_id=@LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Llave_item_alta]
+@Llave_item_usuario_id int,
+@Llave_item_PIzq int,
+@Llave_item_PDerecho int,
+@Llave_item_nivel int,
+@Llave_item_Numero int,
+@estado varchar(30),
+@Llave_id int
+as
+
+insert Llave_item (Llave_item_usuario_id, Llave_item_PIzq,
+Llave_item_PDerecho,
+Llave_item_nivel,
+Llave_item_Numero, Llave_item_enlazado, Llave_id) values (
+@Llave_item_usuario_id,
+@Llave_item_PIzq,
+@Llave_item_PDerecho,
+@Llave_item_nivel,
+@Llave_item_Numero, @estado, @Llave_id
+)
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_actualizar_usuario]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Llave_item_actualizar_usuario]
+@LLave_item_id int,
+@Llave_item_usuario_id int
+as
+
+update Llave_item set Llave_item_enlazado = 'enlazado', Llave_item_usuario_id=@Llave_item_usuario_id  where Llave_item.LLave_item_id  = @LLave_item_id 
+
+
+-----------toda esta seccion es para poner en estado "si" el campo "en_llave" que es necesario para filtras las inscripciones q ya estan en una llave
+------------------
+--select * from Llave_item where Llave_item.LLave_item_id =@LLave_item_id 
+
+declare @llave_id int
+select @llave_id = Llave_item.Llave_id  from Llave_item where Llave_item.LLave_item_id=@LLave_item_id 
+--obtengo el evento
+
+--select * from Llave where Llave.Llave_id=@llave_id 
+declare @evento_id int
+select @evento_id = Llave.evento_id  from Llave where Llave.Llave_id=@llave_id 
+
+declare @categoria_id int
+select @categoria_id = Llave.categoria_id   from Llave where Llave.Llave_id  = @llave_id 
+
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion.inscripcion_id   from inscripcion where inscripcion.evento_id=@evento_id and inscripcion.usuario_id=@Llave_item_usuario_id 
+
+--SELECT * FROM inscripciones_x_torneo where
+--inscripciones_x_torneo.inscripcion_id= @inscripcion_id and inscripciones_x_torneo.categoria_id=@categoria_id
+
+update inscripciones_x_torneo set en_llave='si' where
+inscripciones_x_torneo.inscripcion_id= @inscripcion_id and inscripciones_x_torneo.categoria_id=@categoria_id 
+
+--------------------------------------------------------------
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_actualizar_raiz]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------
+ALTER Procedure [dbo].[Llave_item_actualizar_raiz]
+@LLave_item_id int
+as
+
+update Llave_item set Llave_item_enlazado = 'enlazado listo' where Llave_item.LLave_item_id  = @LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_actualizar_progreso]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Llave_item_actualizar_progreso]
+@LLave_item_id int,
+@Llave_item_usuario_id int
+
+as
+update Llave_item set Llave_item_usuario_id=@Llave_item_usuario_id  where Llave_item.LLave_item_id  = @LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_actualizar_orden]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[Llave_item_actualizar_orden]
+--nota: modificacion fecha 2022-09-01
+
+@LLave_item_id int,
+@Llave_item_usuario_id int
+
+as
+update Llave_item set Llave_item_usuario_id = @Llave_item_usuario_id where LLave_item_id = @LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Llave_item_actualizar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------------
+ALTER Procedure [dbo].[Llave_item_actualizar]
+@LLave_item_id int
+as
+
+update Llave_item set Llave_item_enlazado = 'enlazado' where Llave_item.LLave_item_id  = @LLave_item_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_solo_alumnos_INSTRUCTORES]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_obtener_solo_alumnos_INSTRUCTORES]
+---lo uso para traer alumnos instructores.
+
+@usuario_id int
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+
+
+select instructor.instructor_id as 'ID',
+usuario.usuario_doc as 'Documento',
+usuario.usuario_apellido +', '+usuario.usuario_nombre as 'ApeNomb',
+usuario.usuario_nrolibreta as 'Libreta',
+graduacion.graduacion_desc as 'Graduacion',
+instructor.instructor_porcentaje as 'Porcentaje',
+usuario.usuario_id,
+usuario.graduacion_id  
+from alumnos_x_instructor inner join instructor on alumnos_x_instructor.usuario_id = instructor.usuario_id 
+inner join usuario on alumnos_x_instructor.usuario_id = usuario.usuario_id
+inner join graduacion on usuario.graduacion_id = graduacion.graduacion_id 
+ where alumnos_x_instructor.instructor_id = @id_instructor order by graduacion.graduacion_id, usuario.usuario_apellido+', '+usuario.usuario_nombre asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_Obtener_Mi_ID_de_Instructor]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_Obtener_Mi_ID_de_Instructor]
+@usuario_id int
+as
+--recupera la informacion del instructor
+select 
+usuario.usuario_apellido+', '+usuario.usuario_nombre as 'ApellidoyNombre',
+usuario.usuario_doc,
+instructor.instructor_id
+from instructor inner join usuario on instructor.usuario_id = usuario.usuario_id 
+where instructor.usuario_id= @usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_invitado]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_obtener_invitado]
+
+
+as
+
+select
+instructor.instructor_id, 
+usuario.usuario_id, 
+usuario.tipodoc_id, 
+usuario.usuario_doc, 
+usuario_apellido+','+usuario.usuario_nombre+'.(dni:'+convert(varchar,usuario_doc)+')' as 'Nombre',
+institucion_x_instructor.institucion_id 
+
+from instructor inner join usuario on instructor.usuario_id = usuario.usuario_id
+		inner join institucion_x_instructor on institucion_x_instructor.instructor_id = instructor.instructor_id 
+		where usuario.usuario_estado = 'activo' and usuario.usuario_obs = 'invitado' order by usuario.usuario_apellido asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_instructores]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_obtener_instructores]
+
+@usuario_id int
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+
+select
+alumnos_x_instructor.alumno_x_instructor_id, usuario.usuario_id, usuario.usuario_apellido+', '+usuario.usuario_nombre as 'Apenom',
+alumnos_x_instructor.alumno_x_instructor_estado 
+from alumnos_x_instructor inner join usuario on alumnos_x_instructor.usuario_id=usuario.usuario_id 
+where alumnos_x_instructor.instructor_id = @id_instructor and
+usuario.usuario_estado='activo' and
+usuario.usuario_tipo='instructor' order by usuario.usuario_apellido asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_institucion_id]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_obtener_institucion_id]
+@instructor_id int
+
+as
+select * from institucion_x_instructor where instructor_id = @instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_INFO]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_obtener_INFO]
+@instructor_id int
+as
+--recupera la informacion del instructor
+select 
+usuario.usuario_apellido+', '+usuario.usuario_nombre as 'ApellidoyNombre',
+usuario.usuario_doc, instructor.instructor_porcentaje 
+from instructor inner join usuario on instructor.usuario_id = usuario.usuario_id 
+where instructor.instructor_id= @instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_id]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_obtener_id]
+--obtengo instructor_id a partir del id del alumno
+@usuario_id int
+as
+
+
+--select instructor_id  from alumnos_x_instructor where alumnos_x_instructor.usuario_id= @usuario_id and alumnos_x_instructor.alumno_x_instructor_estado='activo'
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', 
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación',
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_sexo as 'Sexo',
+dbo.usuario.usuario_foto as 'foto',
+graduacion.graduacion_id AS 'graduacion_id',
+instructor.instructor_id 
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where usuario.usuario_id=@usuario_id  and usuario.usuario_estado='activo' order by usuario.usuario_doc  asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_obtener_alumnos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_obtener_alumnos]
+@usuario_id int
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+declare @instructor_nombre as varchar(max)
+select @instructor_nombre = usuario.usuario_apellido+' '+usuario.usuario_nombre from usuario where usuario.usuario_id = @usuario_id  
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación', 
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_sexo as 'Sexo',
+dbo.usuario.usuario_foto as 'foto',
+graduacion.graduacion_id as 'graduacion_id',
+@instructor_nombre as 'Instructor',
+dbo.usuario.usuario_nrolibreta as 'NroLibreta'
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado='activo' order by usuario.usuario_doc  asc 
+               
+
+select usuario.usuario_apellido+', '+usuario_nombre as 'ApellidoyNombre' from usuario where usuario.usuario_id=@usuario_id 
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación', 
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_estado as 'Estado',
+@instructor_nombre as 'Instructor',
+dbo.usuario.usuario_nrolibreta as 'NroLibreta'
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado<>'pendiente' order by usuario.usuario_doc  asc
+GO
+/****** Object:  StoredProcedure [dbo].[instructor_modificar_porcentaje]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[instructor_modificar_porcentaje]
+@instructor_id int,
+@instructor_porcentaje decimal(38,2)
+
+as
+
+update instructor set instructor_porcentaje = @instructor_porcentaje where instructor_id = @instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_Buscar_Inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Instructor_Buscar_Inscriptos]
+@evento_id as int,
+@usuario_id_Instructor int--Id_Instrucor
+as
+declare @instructor_id int 
+select @instructor_id= instructor_id from instructor where instructor.usuario_id=@usuario_id_Instructor
+
+select inscripcion.usuario_id as 'Inscr_Usu_ID' from inscripcion 
+where inscripcion.evento_id=@evento_id and inscripcion_instructor_id=@instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_buscar_alumno_recursivo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_buscar_alumno_recursivo]
+@usuario_id int
+
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+declare @instructor_nombre as varchar(max)
+select @instructor_nombre = usuario.usuario_apellido+' '+usuario.usuario_nombre from usuario where usuario.usuario_id = @usuario_id  
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', 
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación',
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_sexo as 'Sexo',
+dbo.usuario.usuario_foto as 'foto',
+@instructor_nombre as 'Instructor',
+graduacion.graduacion_id AS 'graduacion_id',
+dbo.usuario.usuario_nrolibreta as 'NroLibreta'
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado='activo' order by usuario.usuario_doc  asc 
+ 
+select usuario.usuario_apellido+', '+usuario_nombre as 'ApellidoyNombre' from usuario where usuario.usuario_id=@usuario_id               
+
+--esto si quiero traer todo sin importar el estado
+--SELECT dbo.usuario.usuario_id as 'ID', 
+--dbo.usuario.usuario_doc as 'Documento', 
+--dbo.usuario.usuario_apellido +', '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+--dbo.usuario.usuario_telefono as 'Teléfono', 
+--dbo.graduacion.graduacion_desc as 'Graduación', 
+--dbo.usuario.usuario_tipo as 'Tipo'
+--FROM  dbo.instructor INNER JOIN
+--               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+--               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+--               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+--               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+--               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado<>'pendiente' and usuario.usuario_doc = @alumno_dni order by usuario.usuario_doc  asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_buscar_alumno]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Instructor_buscar_alumno]
+@usuario_id int,
+@alumno_dni int
+
+as
+declare @id_instructor int
+select @id_instructor= instructor_id  from instructor where instructor.usuario_id = @usuario_id
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +', '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación', 
+dbo.usuario.usuario_tipo as 'Tipo',
+dbo.usuario.usuario_sexo as 'Sexo',
+dbo.usuario.usuario_foto as 'foto'
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado='activo' and usuario.usuario_doc = @alumno_dni order by usuario.usuario_doc  asc 
+ 
+ select usuario.usuario_apellido+', '+usuario_nombre as 'ApellidoyNombre' from usuario where usuario.usuario_id=@usuario_id               
+
+SELECT dbo.usuario.usuario_id as 'ID', 
+dbo.usuario.usuario_doc as 'Documento', 
+dbo.usuario.usuario_apellido +', '+dbo.usuario.usuario_nombre as 'Apellido y Nombre', (cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.usuario.usuario_telefono as 'Teléfono', 
+dbo.graduacion.graduacion_desc as 'Graduación', 
+dbo.usuario.usuario_tipo as 'Tipo'
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+               where alumnos_x_instructor.instructor_id= @id_instructor and usuario.usuario_estado<>'pendiente' and usuario.usuario_doc = @alumno_dni order by usuario.usuario_doc  asc
+GO
+/****** Object:  StoredProcedure [dbo].[Instructor_borrar_todos_alumnos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Instructor_borrar_todos_alumnos]
+@instructor_id int
+as
+--hace un select primero de los alumnos del instructor
+SELECT * FROM alumnos_x_instructor where alumnos_x_instructor.instructor_id='3'
+delete from alumnos_x_instructor where instructor_id= '3'
+---despues viendo el select pone en los delete los id_usuarios
+delete from usuario where usuario.usuario_id='13'
+delete from usuario where usuario.usuario_id='14'
+delete from usuario where usuario.usuario_id='15'
+delete from usuario where usuario.usuario_id='16'
+delete from usuario where usuario.usuario_id='17'
+delete from usuario where usuario.usuario_id='41'
+-- pone en los delete de los instructores el id_usuario
+select * from instructor order by instructor.usuario_id asc  
+delete from instructor where instructor.usuario_id= '14'
+delete from instructor where instructor.usuario_id= '15'
+delete from instructor where instructor.usuario_id= '15'
+delete from instructor where instructor.usuario_id= '16'
+delete from instructor where instructor.usuario_id= '17'
+delete from instructor where instructor.usuario_id= '41'
+--ahora hago un select de institucion x instructor
+select * from institucion_x_instructor
+delete from institucion_x_instructor where instructor_id='4'
+delete from institucion_x_instructor where instructor_id='24'
+delete from institucion_x_instructor where instructor_id='28'
+delete from institucion_x_instructor where instructor_id='29'
+delete from institucion_x_instructor where instructor_id='27'
+delete from institucion_x_instructor where instructor_id='30'
+delete from institucion_x_instructor where instructor_id='26'
+delete from institucion_x_instructor where instructor_id='25'
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_CURSO_eliminar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure [dbo].[inscripciones_CURSO_eliminar]
+@inscripcion_id int
+
+as
+
+
+delete from inscripcion where inscripcion.inscripcion_id = @inscripcion_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripciones_credenciales_obtener]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripciones_credenciales_obtener]
+@evento_id int
+as
+
+select 
+evento.evento_id,
+evento.evento_descripcion,
+evento.evento_foto,
+evento.evento_fecha,
+usuario.usuario_id ,
+usuario.usuario_doc,
+usuario.usuario_apellido,
+usuario.usuario_nombre,
+graduacion.graduacion_desc as 'graduacion',
+usuario.usuario_telefono,
+'INSTRUCTOR' as 'instructor',
+usuario.usuario_foto,
+instructor.instructor_id,
+inscripcion.inscripcion_id  
+from evento inner join inscripcion on evento.evento_id= inscripcion.evento_id 
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id 
+inner join instructor on inscripcion.inscripcion_instructor_id= instructor.instructor_id
+inner join graduacion on usuario.graduacion_id=graduacion.graduacion_id where evento.evento_id=@evento_id
+
+select inscripcion.usuario_id as 'ID',
+usuario.usuario_doc as 'dni',
+usuario.usuario_apellido+' '+usuario_nombre as 'ApellidoyNombre',
+institucion.institucion_abreviacion as 'Institucion_abreviatura',
+institucion.institucion_descripcion as 'Institucion',
+provincia.provincia_desc as 'Provincia'
+
+---esta la uso en el modulo de generacion de credenciales
+from inscripcion inner join evento on inscripcion.evento_id=evento.evento_id
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id
+inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+inner join institucion on alumnos_x_instructor.institucion_id= institucion.institucion_id
+inner join provincia on institucion.provincia_id = provincia.provincia_id
+where inscripcion.evento_id=@evento_id
+--este era el from anterior con un inner join que me repetia las inscripciones, si un usuario se anotaba en lucha y forma
+--from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+--inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+--inner join evento on inscripcion.evento_id=evento.evento_id
+--inner join usuario on inscripcion.usuario_id= usuario.usuario_id
+--inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+--inner join institucion on alumnos_x_instructor.institucion_id= institucion.institucion_id
+--inner join provincia on institucion.provincia_id = provincia.provincia_id
+--where inscripcion.evento_id=@evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripciones_categoria_consultar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripciones_categoria_consultar]
+---consulto la cant de inscriptos en una categoria determinada, de un evento puntual
+@evento_id int,
+@categoria_id int
+as
+select * from inscripciones_x_torneo inner join inscripcion on inscripciones_x_torneo.inscripcion_id = inscripcion.inscripcion_id 
+where evento_id = @evento_id and categoria_id = @categoria_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_validar_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_validar_alta]
+@inscripcion_id int
+
+as
+
+select * from inscripcion where inscripcion.inscripcion_id = @inscripcion_id
+GO
+/****** Object:  StoredProcedure [dbo].[inscripcion_recuperar_ID]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------
+ALTER procedure [dbo].[inscripcion_recuperar_ID]
+
+@usuario_id int 
+
+as
+--recupero id de inscripcion de un usuario determinado.
+select inscripcion.inscripcion_id  from inscripcion inner join usuario on inscripcion.usuario_id = usuario.usuario_id 
+where inscripcion.usuario_id = @usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenCostos_recuperar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[ExamenCostos_recuperar]
+
+@evento_id int
+
+as
+
+select * from ExamenCostos where ExamenCostos.evento_id = @evento_id order by ExamenCostos.ExamenCostos_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[alumuno_x_instructor_Actulizar]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[alumuno_x_instructor_Actulizar]
+@instructor_id int,
+@usuario_id INT
+as
+update alumnos_x_instructor set instructor_id=@instructor_id where usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Institucion_obtenertodo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Institucion_obtenertodo]
+
+as
+SELECT dbo.institucion.institucion_id, 
+dbo.institucion.provincia_id, 
+dbo.provincia.provincia_desc, 
+dbo.institucion.institucion_descripcion, 
+               dbo.institucion.institucion_abreviacion
+FROM  dbo.institucion INNER JOIN
+               dbo.provincia ON dbo.institucion.provincia_id = dbo.provincia.provincia_id order by provincia.provincia_desc asc
+GO
+/****** Object:  StoredProcedure [dbo].[Institucion_obtener_instructor_alumnos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Institucion_obtener_instructor_alumnos]
+@institucion_id int,
+@instructor_id int
+
+as
+select alumno_x_instructor_id, usuario_id, instructor_id from alumnos_x_instructor where institucion_id = @institucion_id and instructor_id = @instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[institucion_obtener_de_instructor]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[institucion_obtener_de_instructor]
+
+@instructor_id int
+as
+SELECT dbo.institucion.institucion_id, dbo.institucion.institucion_descripcion, dbo.institucion.institucion_abreviacion, dbo.provincia.provincia_desc
+FROM  dbo.institucion_x_instructor INNER JOIN
+               dbo.institucion ON dbo.institucion_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.provincia ON dbo.institucion.provincia_id = dbo.provincia.provincia_id
+               where institucion_x_instructor.instructor_id=@instructor_id 
+               
+select
+usuario.usuario_doc , usuario.usuario_apellido+', '+usuario.usuario_nombre 
+from instructor inner join usuario on instructor.usuario_id=usuario.usuario_id where instructor.instructor_id=@instructor_id
+GO
+/****** Object:  StoredProcedure [dbo].[institucion_instructores_obtenertodos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[institucion_instructores_obtenertodos]
+
+as
+
+
+SELECT dbo.instructor.instructor_id, 
+dbo.usuario.usuario_doc, 
+dbo.usuario.usuario_apellido + ', '+dbo.usuario.usuario_nombre as 'Apellido_y_Nombre', 
+dbo.provincia.provincia_desc
+FROM  dbo.provincia INNER JOIN
+               dbo.usuario ON dbo.provincia.provincia_id = dbo.usuario.provincia_id INNER JOIN
+               dbo.instructor ON dbo.usuario.usuario_id = dbo.instructor.usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Institucion_desvincular]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Institucion_desvincular]
+@instructor_id int,
+@institucion_id int
+
+as
+delete from institucion_x_instructor where instructor_id=@instructor_id and institucion_id = @institucion_id
+GO
+/****** Object:  StoredProcedure [dbo].[institucion_buscar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------------
+ALTER procedure [dbo].[institucion_buscar]
+
+@institucion_id int
+as
+
+select  institucion_id, provincia_id, 
+institucion_descripcion, institucion_abreviacion, 
+institucion_estado, institucion_logo from institucion where institucion.institucion_id=@institucion_id
+GO
+/****** Object:  StoredProcedure [dbo].[Institucion_asignar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Institucion_asignar]
+@instructor_id int,
+@institucion_id int
+
+as
+insert dbo.institucion_x_instructor (instructor_id, institucion_id )values (@instructor_id, @institucion_id)
+GO
+/****** Object:  StoredProcedure [dbo].[Institucion_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------------------
+ALTER procedure [dbo].[Institucion_alta]
+@provincia_id int,
+@institucion_descripcion as varchar(50),
+@institucion_abreviacion varchar(50),
+@institucion_logo image,
+@instructor_id int
+
+as
+
+insert dbo.institucion (provincia_id, institucion_descripcion, institucion_abreviacion, institucion_logo)
+values
+(@provincia_id, @institucion_descripcion, @institucion_abreviacion, @institucion_logo )
+
+--aqui valido, si @instructor_id = 0, significa que solo estoy agregando una institucion, pero no vinculo a un instructor.
+if @instructor_id <> 0
+begin
+insert dbo.institucion_x_instructor (instructor_id, institucion_id )values (@instructor_id, @@IDENTITY) 
+end
+GO
+/****** Object:  StoredProcedure [dbo].[institucion_actualizar_sin_foto]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[institucion_actualizar_sin_foto]
+@institucion_id int,
+@provincia_id int,
+@institucion_descripcion varchar(50),
+@institucion_abreviacion varchar(50)
+as
+update institucion set provincia_id=@provincia_id , 
+institucion_descripcion=@institucion_descripcion, 
+institucion_abreviacion=@institucion_abreviacion
+where institucion.institucion_id=@institucion_id
+GO
+/****** Object:  StoredProcedure [dbo].[institucion_actualizar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------
+ALTER procedure [dbo].[institucion_actualizar]
+@institucion_id int,
+@provincia_id int,
+@institucion_descripcion varchar(50),
+@institucion_abreviacion varchar(50),
+@institucion_logo image
+as
+update institucion set provincia_id=@provincia_id , 
+institucion_descripcion=@institucion_descripcion, 
+institucion_abreviacion=@institucion_abreviacion,
+institucion_logo=@institucion_logo  
+where institucion.institucion_id=@institucion_id
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_validar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------------------
+ALTER procedure [dbo].[inscripciones_x_examen_validar]
+@evento_id int,
+@ExamenTurno_id int
+as
+--recupero para consultar cant max x turno
+select * from evento where evento.evento_id = @evento_id 
+--recupero para obtener la cantidad de inscriptos a q un turno en particular
+select * from inscripciones_x_examen where ExamenTurno_id = @ExamenTurno_id
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_modificar_resultado]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[inscripciones_x_examen_modificar_resultado]
+@Inscexamen_id int, 
+@ExamenTurno_id int,
+@resultado varchar(50),
+@graduacion_obtenida_id int
+as
+
+update inscripciones_x_examen set inscexamen_resultado = @resultado, graduacion_obtenida_id = @graduacion_obtenida_id   where Inscexamen_id= @Inscexamen_id 
+--faltaria cambiarlo de graduacion al inscripto.
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_modificar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------------
+ALTER procedure [dbo].[inscripciones_x_examen_modificar]
+@Inscexamen_id int, 
+@ExamenTurno_id int
+as
+update inscripciones_x_examen set ExamenTurno_id = @ExamenTurno_id where Inscexamen_id= @Inscexamen_id
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_eliminar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------------
+ALTER procedure [dbo].[inscripciones_x_examen_eliminar]
+@Inscexamen_id int
+
+as
+--se elimina en "inscripciones x examen" y en "inscripciones"
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion_id from inscripciones_x_examen where inscripciones_x_examen.Inscexamen_id = @Inscexamen_id 
+
+delete from inscripcion where inscripcion.inscripcion_id = @inscripcion_id 
+delete from inscripciones_x_examen where inscripciones_x_examen.Inscexamen_id = @Inscexamen_id
+GO
+/****** Object:  StoredProcedure [dbo].[inscripciones_x_examen_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[inscripciones_x_examen_alta]
+@inscripcion_id int, 
+@ExamenTurno_id int,
+@graduacion_actual_id int
+as
+insert inscripciones_x_examen (inscripcion_id, ExamenTurno_id, inscexamen_resultado, graduacion_actual_id , graduacion_obtenida_id  ) 
+values
+(@inscripcion_id, @ExamenTurno_id, 'Sin Evaluar', @graduacion_actual_id , @graduacion_actual_id )
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_obtener_categoria_roturapoder]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_obtener_categoria_roturapoder]
+as
+select 
+categoria_id, categoria_sexo, categoria_gradinicial, categoria_gradfinal, categoria_edadinicial, categoria_edadfinal, categoria_peso_inical, categoria_peso_Final, categoria_tipo
+from categoria where categoria.categoria_tipo='Rotura de Poder'
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_obtener_categoria_roturaespecial]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_obtener_categoria_roturaespecial]
+as
+select 
+categoria_id, categoria_sexo, categoria_gradinicial, categoria_gradfinal, categoria_edadinicial, categoria_edadfinal, categoria_peso_inical, categoria_peso_Final, categoria_tipo
+from categoria where categoria.categoria_tipo='Rotura Especial'
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_obtener_categoria]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_obtener_categoria]
+as
+select 
+categoria_id, categoria_sexo, categoria_gradinicial, categoria_gradfinal, categoria_edadinicial, categoria_edadfinal, categoria_peso_inical, categoria_peso_Final, categoria_tipo
+from categoria where categoria.categoria_tipo='Lucha'
+
+select 
+categoria_id, categoria_sexo, categoria_gradinicial, categoria_gradfinal, categoria_edadinicial, categoria_edadfinal, categoria_peso_inical, categoria_peso_Final, categoria_tipo
+from categoria where categoria.categoria_tipo='Forma'
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_modificar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_modificar]
+@inscripcion_id int,
+@inscripcion_peso decimal(5,2),
+@categoria_id_vieja int,
+@categoria_id_nueva int
+as
+--update inscripcion set inscripcion_peso = @inscripcion_peso where inscripcion.inscripcion_id = @inscripcion_id 
+--choco: 13-05-2022 no quiero alterar el peso, pero si moverlo a la categoria q indique.
+update inscripciones_x_torneo set categoria_id = @categoria_id_nueva  where inscripcion_id = @inscripcion_id and categoria_id = @categoria_id_vieja
+GO
+/****** Object:  StoredProcedure [dbo].[inscripcion_imagenQR_Alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[inscripcion_imagenQR_Alta]
+@inscripcion_id int,
+@imagenQR image
+as
+insert inscripcion_qr (inscripcion_id,inscripcion_qr_imagen) values (@inscripcion_id,@imagenQR)
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_eliminar_masivo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_eliminar_masivo]
+@inscripcion_id int
+
+as
+delete from inscripciones_x_torneo where inscripcion_id = @inscripcion_id 
+delete from inscripciones_x_examen where inscripcion_id = @inscripcion_id 
+delete from inscripcion where inscripcion.inscripcion_id = @inscripcion_id 
+delete from inscripcion_qr where inscripcion_id = @inscripcion_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_eliminar_alumno_torneo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_eliminar_alumno_torneo]
+@inscripcion_id int,
+@categoria_id int
+
+as
+delete from inscripciones_x_torneo where inscripcion_id = @inscripcion_id and categoria_id = @categoria_id  
+
+---y ademas voy a listar 
+select * from inscripciones_x_torneo where inscripcion_id = @inscripcion_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_consultar_evento]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_consultar_evento]
+--consulto que tipo de evento es
+@evento_id int
+as
+select evento.evento_tipoevento as 'tipo_evento' from evento where evento.evento_id=@evento_id
+select evento_id, 
+evento_descripcion, 
+evento_foto, 
+evento_fecha, 
+evento_fechacierre, 
+evento_tipoevento, 
+evento_costo, 
+evento_estado, 
+evento_direccion, 
+evento_cap_max_insc
+from evento where evento.evento_id = @evento_id 
+
+select * from ExamenTurno where ExamenTurno.evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_consultar_alumno_inscripto]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_consultar_alumno_inscripto]
+--consulto que tipo de evento es y si el usuario esta inscripto
+@evento_id int,
+@usuario_id int
+as
+select inscripcion.usuario_id, inscripcion.evento_id from inscripcion  where inscripcion.evento_id = @evento_id and inscripcion.usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_borrar_alumno]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_borrar_alumno]
+--Chocolonea Pablo:
+--esta rutina borra la inscripcion realizada por el alumno
+@usuario_id int,
+@evento_id int
+as
+declare @inscripcion_id int
+select @inscripcion_id = inscripcion_id from inscripcion where inscripcion.usuario_id=@usuario_id and inscripcion.evento_id=@evento_id 
+delete from inscripcion where inscripcion.usuario_id=@usuario_id and inscripcion.evento_id=@evento_id 
+delete from inscripciones_x_torneo where inscripcion_id = @inscripcion_id 
+delete from inscripciones_x_examen where inscripcion_id = @inscripcion_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_alta_usuario]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_alta_usuario]
+--CHOCOLONEA PABLO:
+--esta rutina es para inscripciones hechas por el alumno.
+--por ello solo trae la id del usuario q se obtiene de la variable de session del login.
+@USU_id int,
+@evento_id int,
+@inscripcion_fechahora datetime,
+@inscripcion_peso decimal(5,2)
+as
+--debo recuperar el id del instructor del cual dependo, para ello hago lo siguiente
+declare @instructor_id int
+--se valida que el usuario este en la tabla alumnos x instructor y q ademas este en estado activo
+--estado activo: puede estar activo para un instructor e inactivo para otro.
+select @instructor_id = alumnos_x_instructor.instructor_id from alumnos_x_instructor where alumnos_x_instructor.usuario_id= @USU_id and alumnos_x_instructor.alumno_x_instructor_estado='activo'
+
+
+--alta inscripcion
+insert inscripcion (usuario_id, evento_id, inscripcion_fechahora, inscripcion_peso, inscripcion_instructor_id ) values(@USU_id, @evento_id, @inscripcion_fechahora, @inscripcion_peso , @instructor_id)
+---recupero el tipoevento, me sirve para validar si es necesario hacer un alta en "inscripciones_x_torneo"
+SELECT @@IDENTITY AS 'inscripcion_id'
+select evento.evento_tipoevento as 'tipo_evento' from evento where evento.evento_id=@evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_alta_masiva]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Inscripcion_alta_masiva]
+--CHOCOLONEA PABLO:
+--esta rutina es para inscripciones masivas de alumnos realizadas por el usuario instructor.
+--por ello trae 2 id q se aclaran a continuacion.
+@USU_id_alumno int, --este es el del alumno
+@evento_id int,
+@inscripcion_fechahora datetime,
+@inscripcion_peso decimal(5,2),
+@instructor_id int 
+as
+--alta inscripcion
+insert inscripcion (usuario_id, evento_id, inscripcion_fechahora, inscripcion_peso, inscripcion_instructor_id ) values(@USU_id_alumno, @evento_id, @inscripcion_fechahora, @inscripcion_peso , @instructor_id)
+---recupero el tipoevento, me sirve para validar si es necesario hacer un alta en "inscripciones_x_torneo"
+SELECT @@IDENTITY AS 'inscripcion_id'
+select evento.evento_tipoevento as 'tipo_evento' from evento where evento.evento_id=@evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Inscripcion_alta_categorias]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------------
+ALTER procedure [dbo].[Inscripcion_alta_categorias]
+@inscripcion_id int,
+@categoria_id int
+as
+insert inscripciones_x_torneo (inscripcion_id, categoria_id, en_llave) values (@inscripcion_id, @categoria_id, 'no' )
+GO
+/****** Object:  StoredProcedure [dbo].[Generar_ciudad_pruebas_lote]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Generar_ciudad_pruebas_lote]
+
+AS
+BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\buenos aires_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+ 
+ 
+ BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\catamarca_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\cba_localidades.txt.'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+   
+  
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\Chaco_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\chubut_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\corrientes_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\entre rios_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\formosa_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\jujuy_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+   BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\la pampa_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\la rioja_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\mendoza_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\misiones_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\neuquen_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\rio negro_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\salta_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\san juan_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\san luis_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\santa cruz_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\santa fe_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\sgo del estero_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+  
+  
+  BULK
+
+INSERT dbo.ciudad
+FROM 'C:\downloads\localidades\tierra del fuego_localidades.txt'--Ruta archivo
+WITH
+
+( FIELDTERMINATOR = ',', --separa campos
+  ROWTERMINATOR = '.')  --separa filas
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenTurno_eliminar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[ExamenTurno_eliminar]
+
+@evento_id int
+
+as
+delete from ExamenTurno where ExamenTurno.evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[ExamenTurno_alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[ExamenTurno_alta]
+
+@evento_id int,
+@ExamenTurno_desc varchar(max)
+as
+insert ExamenTurno ( evento_id, ExamenTurno_desc ) values (@evento_id, @ExamenTurno_desc)
+GO
+/****** Object:  StoredProcedure [dbo].[imagen_subir]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------
+ALTER procedure [dbo].[imagen_subir]
+@imagen image
+as
+insert Imagenes (imagen ) values (@imagen)
+GO
+/****** Object:  StoredProcedure [dbo].[imagen_obtener]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[imagen_obtener]
+as
+select * from Imagenes
+GO
+/****** Object:  StoredProcedure [dbo].[HAMERSOFT_consulta_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------------
+ALTER procedure [dbo].[HAMERSOFT_consulta_inscriptos]
+as
+
+select * from usuario where usuario.usuario_apellido='coria'
+select * from usuario where usuario.usuario_apellido='carabajal'
+
+select* from inscripcion 
+select inscripciones_x_torneo.torneo_id, inscripciones_x_torneo.inscripcion_id, inscripciones_x_torneo.categoria_id , categoria_tipo, categoria_edadinicial, categoria_edadfinal, 
+categoria_gradinicial, categoria_gradfinal, categoria_sexo, categoria_peso_inical, categoria_peso_Final   from inscripciones_x_torneo inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+GO
+/****** Object:  StoredProcedure [dbo].[Graduacion_obtener_todo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Graduacion_obtener_todo]
+
+
+as
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Examen_recuperar_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------
+ALTER procedure [dbo].[Examen_recuperar_inscriptos]
+@evento_id int
+
+as
+
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+' ' as 'Graduacion',
+inscripciones_x_examen.graduacion_actual_id as 'graduacion_id', ---esta es la graduacion es la que va a obtener o tiene en primera instancia, ya que (rinde y obtenida) son iguales
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  
+               
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc 
+
+---1) recupero las graduaciones
+select * from graduacion order by graduacion.graduacion_id asc
+
+--2) recupero turnos de un evento puntual
+select * from dbo.ExamenTurno where ExamenTurno.evento_id = @evento_id order by ExamenTurno.ExamenTurno_desc asc
+
+--3) recupero info de examen
+select
+evento_id,
+evento_descripcion,
+evento_fecha,
+evento_fechacierre,
+evento_direccion, 
+evento_cap_max_insc  
+from evento where evento.evento_id = @evento_id 
+
+
+--4) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+inscripciones_x_examen.graduacion_actual_id as 'graduacion_id', ---esta es la graduacion actual del alumno
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  
+               
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Sin Evaluar' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc
+
+--5) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id', ---esta es la graduacion actual del alumno
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Desaprobado' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc
+
+--6) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+--dbo.usuario.graduacion_id, ---esta es la graduacion actual del alumno
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id',
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Aprobado' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc               
+
+--7) traer solo los inscriptos sin evaluar
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+dbo.graduacion.graduacion_desc as 'Graduacion',
+--dbo.usuario.graduacion_id, ---esta es la graduacion actual del alumno
+inscripciones_x_examen.graduacion_obtenida_id as 'graduacion_id',
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               --dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id  inner join
+               dbo.graduacion ON dbo.inscripciones_x_examen.graduacion_obtenida_id   = dbo.graduacion.graduacion_id
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' and inscripciones_x_examen.inscexamen_resultado = 'Doble Promoción' order by ExamenTurno.ExamenTurno_desc, usuario.usuario_apellido asc
+GO
+/****** Object:  StoredProcedure [dbo].[Examen_recuperar_fecha]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------
+ALTER procedure [dbo].[Examen_recuperar_fecha]
+@usuario_id int
+
+as
+select
+usuario.usuario_id,
+usuario.usuario_doc,
+evento.evento_fecha, 
+evento.evento_tipoevento,
+evento.evento_id  
+from usuario inner join inscripcion on usuario.usuario_id = inscripcion.usuario_id 
+inner join evento on inscripcion.evento_id = evento.evento_id
+where evento.evento_tipoevento = 'Examen' and inscripcion.usuario_id = @usuario_id order by evento.evento_fecha desc
+GO
+/****** Object:  StoredProcedure [dbo].[Examen_liquidacion_obtener_inscriptos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------
+ALTER procedure [dbo].[Examen_liquidacion_obtener_inscriptos]
+@evento_id int
+
+as
+SELECT ' ' as 'Nro',
+dbo.usuario.usuario_apellido +' '+dbo.usuario.usuario_nombre as 'ApeyNom', 
+dbo.usuario.usuario_doc as 'Dni', 
+dbo.usuario.usuario_nrolibreta as 'Libreta',
+' ' as 'Grad.Rendir',---esta la tengo q obtener en base al id de la graduacion actual del alumno.
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad, 
+' ' as 'Graduacion',
+inscripciones_x_examen.graduacion_actual_id as 'graduacion_id', ---esta es la graduacion es la que va a obtener o tiene en primera instancia, ya que (rinde y obtenida) son iguales
+' ' as 'Exam.Anterior', ---esto debo consultar cual es la anterior a la fecha de este examen.
+dbo.alumnos_x_instructor.instructor_id, ---este el id del instructor para recuperar nombre
+' ' AS 'Instructor',
+dbo.usuario.usuario_id, ---este es el id del usuario inscripto
+dbo.evento.evento_id ,
+dbo.evento.evento_descripcion, 
+dbo.ExamenTurno.ExamenTurno_desc as 'Turno',
+dbo.inscripciones_x_examen.Inscexamen_id --me sirve para mover de turno si es q el op del sistema lo desea.
+
+FROM  dbo.instructor INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.usuario ON dbo.alumnos_x_instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id inner join
+               dbo.inscripcion on dbo.usuario.usuario_id = inscripcion.usuario_id inner join
+               dbo.evento on dbo.inscripcion.evento_id = dbo.evento.evento_id inner join
+               dbo.inscripciones_x_examen on dbo.inscripcion.inscripcion_id = dbo.inscripciones_x_examen.inscripcion_id inner join
+               dbo.ExamenTurno on dbo.inscripciones_x_examen.ExamenTurno_id = ExamenTurno.ExamenTurno_id              
+               
+               
+               where evento.evento_id = @evento_id and usuario.usuario_estado='activo' order by alumnos_x_instructor.instructor_id asc
+
+
+---1) recupero las graduaciones
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Eventos_validar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------
+ALTER procedure [dbo].[Eventos_validar]
+
+@evento_id int
+as
+select * from evento where evento.evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Eventos_Alta]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Eventos_Alta]
+@evento_descripcion varchar(50),
+@evento_foto image,
+@evento_fecha date,
+@evento_fechacierre datetime,
+@evento_tipoevento varchar(50),
+@evento_costo decimal,
+@evento_direccion varchar(max),
+@evento_cap_max_insc int
+as
+insert dbo.evento(
+evento_descripcion,
+evento_foto,
+evento_fecha,
+evento_fechacierre,
+evento_tipoevento,
+evento_costo,
+evento_direccion,
+evento_cap_max_insc)
+values
+(@evento_descripcion,
+@evento_foto,
+@evento_fecha,
+@evento_fechacierre,
+@evento_tipoevento,
+@evento_costo,
+@evento_direccion,
+@evento_cap_max_insc )
+
+---recupero el ID del evento nuevo que acabo de insertar
+select @@IDENTITY as 'evento_id'
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_Seleccionar_torneo]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_Seleccionar_torneo]	
+as
+Select evento_id, evento_descripcion, CONVERT(varchar, evento_fecha, 103) as 'evento_fecha' from evento where evento.evento_tipoevento='Torneo'
+order by evento_fecha asc
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_Seleccionar_Examen]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_Seleccionar_Examen]	
+as
+Select * from evento where evento.evento_tipoevento='Examen'
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_Seleccionar_Curso]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_Seleccionar_Curso]	
+as
+Select * from evento
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_obtenerEventos_inscripto]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------
+ALTER procedure [dbo].[Evento_obtenerEventos_inscripto]
+--consulto que tipo de evento es y si el usuario esta inscripto
+@usuario_id int
+as
+select inscripcion.usuario_id, 
+inscripcion.evento_id as 'id',
+evento.evento_descripcion as 'desc'
+from inscripcion inner join evento on inscripcion.evento_id = evento.evento_id  
+where  inscripcion.usuario_id=@usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_obtener_torneos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--------------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_obtener_torneos]
+as
+--solo trae los torneos para generar las llaves
+
+--aqui pongo otra consulta pero q uso en inscripciones, para ello voy a validar la fecha limite asi como la hora.
+declare @hoy as datetime
+set @hoy=getdate()
+
+select evento.evento_id as 'id', 
+evento.evento_descripcion as 'Descripción', 
+evento.evento_tipoevento as 'Tipo', 
+ CONVERT(VARCHAR(10), evento.evento_fecha, 103) as 'Fecha'   ,
+evento.evento_fechacierre as 'Cierre de inscripción'
+from evento 
+where evento.evento_tipoevento='Torneo' 
+order by evento.evento_descripcion asc
+
+
+--aqui esta la misma rutina pero validando q solo muestre aquellos torneos q aun se puedan inscribir
+--select evento.evento_id as 'id', 
+--evento.evento_descripcion as 'Descripción', 
+--evento.evento_tipoevento as 'Tipo', 
+-- CONVERT(VARCHAR(10), evento.evento_fecha, 103) as 'Fecha'   ,
+--evento.evento_fechacierre as 'Cierre de inscripción'
+--from evento 
+--where (evento.evento_fechacierre > @hoy) and evento.evento_tipoevento='Torneo'  
+
+--order by evento.evento_descripcion asc
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_ObetenerEventos]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_ObetenerEventos]
+as
+
+select evento_descripcion, evento_id from evento
+
+
+
+--aqui pongo otra consulta pero q uso en inscripciones, para ello voy a validar la fecha limite asi como la hora.
+declare @hoy as datetime
+set @hoy=getdate()
+--select @hoy as fechahoy 'esto es para probar q si trae la fecha y hora
+select evento.evento_id as 'id', evento.evento_descripcion as 'desc', evento.evento_fechacierre as 'fech_y_horalimite'     from evento 
+where evento.evento_fechacierre > @hoy   
+
+order by evento.evento_descripcion asc
+
+
+select evento.evento_id as 'id', 
+evento.evento_descripcion as 'Descripción', 
+evento.evento_tipoevento as 'Tipo', 
+ CONVERT(VARCHAR(10), evento.evento_fecha, 103) as 'Fecha'   ,
+evento.evento_fechacierre as 'Cierre de inscripción'
+from evento 
+where evento.evento_fechacierre > @hoy   
+
+order by evento.evento_descripcion asc
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_ObetenerEvento_ID]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_ObetenerEvento_ID]
+@ID int
+as
+set dateformat dmy
+
+select evento_id,
+evento_descripcion,
+evento_foto,
+evento_fecha,
+CONVERT(VARCHAR(10),evento.evento_fechacierre,103) AS fechacierre,
+RIGHT(evento.evento_fechacierre, 7) AS horacierre, 
+evento.evento_tipoevento,
+evento.evento_costo,
+evento.evento_direccion,
+evento.evento_cap_max_insc  
+  from evento where evento.evento_id=@ID
+  
+  
+select * from ExamenTurno where ExamenTurno.evento_id = @ID 
+
+--tambien recupero los inscriptos, si hay inscriptos. no puedo modificar
+select * from inscripcion where inscripcion.evento_id = @ID
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_inscripcion_cargar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------
+ALTER procedure [dbo].[Evento_inscripcion_cargar]
+--este procedimiento trae la informacion del usuario para que sea cargada en el form "Evento_datos"
+
+@usuario_id int
+
+as
+--esta variable la voy a usar para obtener la graduacion actual, anterior y siguiente si es posible
+declare @id_graduacion int
+select @id_graduacion = graduacion_id  from usuario where usuario.usuario_id=@usuario_id 
+
+select usuario.usuario_id, usuario_doc as 'dni',
+usuario_apellido +', '+usuario_nombre as 'apenom',
+usuario.usuario_sexo as 'sexo',
+(cast(datediff(dd, usuario.usuario_fechanac ,GETDATE()) / 365.25 as int)) as Edad,
+graduacion.graduacion_desc as 'graduacion'
+FROM  dbo.usuario INNER JOIN
+               dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id
+
+where usuario.usuario_estado='activo' and usuario.usuario_id = @usuario_id 
+
+
+declare @id_instructor int
+select @id_instructor=instructor_id  from alumnos_x_instructor where alumnos_x_instructor.usuario_id=@usuario_id and alumno_x_instructor_estado = 'activo' 
+--aqui recupero el id_instructor necesario para buscar la institucion en la tabla institucion x instructor
+
+SELECT provincia.provincia_desc as 'provincia', institucion.institucion_abreviacion as 'abreviacion',
+institucion.institucion_descripcion as 'institucion', 
+usuario.usuario_apellido+', '+usuario.usuario_nombre as 'instructor' 
+FROM  dbo.instructor INNER JOIN
+               dbo.usuario ON dbo.instructor.usuario_id = dbo.usuario.usuario_id INNER JOIN
+               dbo.alumnos_x_instructor ON dbo.instructor.instructor_id = dbo.alumnos_x_instructor.instructor_id INNER JOIN
+               dbo.institucion ON dbo.alumnos_x_instructor.institucion_id = dbo.institucion.institucion_id INNER JOIN
+               dbo.provincia ON dbo.institucion.provincia_id = dbo.provincia.provincia_id
+where alumnos_x_instructor.alumno_x_instructor_estado='activo' and 
+alumnos_x_instructor.instructor_id=@id_instructor and alumnos_x_instructor.usuario_id=@usuario_id 
+
+
+select top 1 graduacion_id, graduacion_desc  from graduacion where graduacion.graduacion_id < @id_graduacion  order by graduacion_id desc 
+select graduacion_id, graduacion_desc  from graduacion where graduacion.graduacion_id=@id_graduacion
+select top 1 graduacion_id, graduacion_desc  from graduacion where graduacion.graduacion_id > @id_graduacion order by graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_eliminar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------
+ALTER procedure [dbo].[Evento_eliminar]
+@evento_id int
+as
+delete from evento where evento.evento_id = @evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Evento_Actualizar]    Script Date: 03/15/2023 12:34:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------
+ALTER Procedure [dbo].[Evento_Actualizar]
+@evento_id int,
+@evento_descripcion varchar(50),
+@evento_foto image,
+@evento_fecha date,
+@evento_fechacierre datetime,
+@evento_tipoevento varchar(50),
+@evento_costo decimal,
+@evento_cap_max_insc int,
+@evento_direccion varchar(max)
+as
+
+update evento set
+evento_descripcion=@evento_descripcion,
+evento_foto =@evento_foto,
+evento_fecha =@evento_fecha,
+evento_fechacierre =@evento_fechacierre,
+evento_tipoevento =@evento_tipoevento,
+evento_costo =@evento_costo,
+evento_cap_max_insc = @evento_cap_max_insc,
+evento_direccion = @evento_direccion 
+where evento_id=@evento_id
+GO
+/****** Object:  StoredProcedure [dbo].[Desactivar_Usuario]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Desactivar_Usuario]
+@Usuario_id int
+as
+update Usuario set
+usuario_estado='Inactivo'
+where usuario_id=@Usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Datos_Personales_Validar_libreta]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------
+ALTER procedure [dbo].[Datos_Personales_Validar_libreta]
+@usuario_nrolibreta varchar(max)
+
+as
+select
+usuario.usuario_id
+from usuario where usuario.usuario_nrolibreta = @usuario_nrolibreta
+GO
+/****** Object:  StoredProcedure [dbo].[Datos_Personales_Obtener_Datos_Usuarios]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------------
+ALTER Procedure [dbo].[Datos_Personales_Obtener_Datos_Usuarios]  
+@Us_id as int  
+as  
+set dateformat dmy  
+  
+SELECT     dbo.usuario.usuario_nombre, dbo.usuario.usuario_apellido, Convert(varchar(10),dbo.usuario.usuario_fechanac,103) as fechaNac, dbo.usuario.usuario_nacionalidad, dbo.usuario.usuario_sexo, dbo.estado_civil.estadocivil_id,   
+                      dbo.ciudad.ciudad_desc, dbo.provincia.provincia_desc, dbo.usuario.usuario_domicilio, dbo.usuario.usuario_profesion, dbo.usuario.usuario_codigopostal, dbo.usuario.usuario_telefono,   
+                      dbo.usuario.usuario_mail, dbo.usuario.usuario_tipo, dbo.usuario.usuario_id, dbo.usuario.provincia_id, dbo.usuario.ciudad_id, usuario.usuario_foto,  
+                      dbo.usuario.graduacion_id , usuario.usuario_doc,   
+                      dbo.usuario.usuario_nrolibreta, usuario.usuario_usuario,usuario.usuario_password 
+FROM         dbo.usuario  INNER JOIN  
+                      dbo.estado_civil ON dbo.usuario.estadocivil_id = dbo.estado_civil.estadocivil_id INNER JOIN  
+                      dbo.provincia ON dbo.usuario.provincia_id = dbo.provincia.provincia_id INNER JOIN  
+                      dbo.ciudad ON dbo.usuario.ciudad_id = dbo.ciudad.ciudad_id  
+                        
+where  
+   usuario_id=@Us_id  
+     
+select usuario_usuario from usuario where usuario_id=@Us_id  
+  
+select instructor_id, usuario_id  from instructor where usuario_id = @Us_id ---esto lo uso para validar el master -choco:18-07-2019   
+  
+select instructor_id  from alumnos_x_instructor where usuario_id = @Us_id
+GO
+/****** Object:  StoredProcedure [dbo].[Datos_Personales_Actualizar_Datos]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------------
+ALTER Procedure [dbo].[Datos_Personales_Actualizar_Datos]  
+  
+@usuario_id int,  
+@usuario_nombre varchar(50),  
+@usuario_apellido varchar(50),  
+@usuario_fechanac date,  
+@usuario_nacionalidad varchar(50),  
+@usuario_sexo varchar(50),  
+@estadocivil_id int,  
+@usuario_profesion varchar(50),  
+@usuario_domicilio varchar(50),  
+@usuario_codigopostal int,  
+@provincia_id int,  
+@ciudad_id int,  
+@usuario_telefono varchar(50),  
+@usuario_mail varchar(50),  
+@usuario_nrolibreta varchar(50),  
+@graduacion_id int,
+@usuario_usuario  varchar(50),
+@usuario_password varchar(50)
+as  
+  
+update Usuario set  
+usuario_nombre = @usuario_nombre,  
+usuario_apellido = @usuario_apellido,  
+usuario_fechanac = @usuario_fechanac,  
+usuario_nacionalidad = @usuario_nacionalidad,  
+usuario_sexo = @usuario_sexo,  
+estadocivil_id = @estadocivil_id,  
+usuario_profesion = @usuario_profesion,  
+usuario_domicilio = @usuario_domicilio,  
+usuario_codigopostal = @usuario_codigopostal,  
+provincia_id = @provincia_id,  
+ciudad_id = @ciudad_id,  
+usuario_telefono = @usuario_telefono,  
+usuario_mail = @usuario_mail,  
+usuario_nrolibreta = @usuario_nrolibreta,  
+graduacion_id = @graduacion_id,
+usuario_usuario = @usuario_usuario,
+usuario_password=@usuario_password
+where usuario_id=@Usuario_id
+GO
+/****** Object:  StoredProcedure [dbo].[Curso_recuperar_inscriptos]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---------------------------------------------------------------------
+ALTER procedure [dbo].[Curso_recuperar_inscriptos]
+@evento_id int
+
+as
+select * from(SELECT dbo.evento.evento_id, dbo.inscripcion.inscripcion_id, dbo.inscripcion.usuario_id, dbo.usuario.graduacion_id, dbo.evento.evento_descripcion, dbo.evento.evento_fecha, dbo.evento.evento_costo, dbo.evento.evento_direccion, 
+                     usuario.usuario_apellido+', '+usuario.usuario_nombre as 'Alumno', dbo.graduacion.graduacion_desc, usuario.usuario_doc
+
+FROM         dbo.evento INNER JOIN
+                      dbo.inscripcion ON dbo.evento.evento_id = dbo.inscripcion.evento_id INNER JOIN
+                      dbo.usuario ON dbo.inscripcion.usuario_id = dbo.usuario.usuario_id INNER JOIN
+                      dbo.graduacion ON dbo.usuario.graduacion_id = dbo.graduacion.graduacion_id 
+                      
+                      where evento.evento_id=@evento_id) T1 
+full outer join 
+(select inscripcion_id, instructor.instructor_id, usuario.usuario_apellido+', '+usuario.usuario_nombre as 'instructor' 
+	from inscripcion inner join instructor on inscripcion.inscripcion_instructor_id = instructor.instructor_id inner join usuario 
+		on instructor.usuario_id = usuario.usuario_id where inscripcion.evento_id = @evento_id) T2 ON T1.inscripcion_id = T2.inscripcion_id
+ORDER BY T2.instructor_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Costos_obtener]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------
+ALTER procedure [dbo].[Costos_obtener]
+
+
+as
+--0) recupero los costos solo de examenes.
+select Costos_id, Costos_descripcion, Costos_tipo, Costos_monto, graduacion_id
+from Costos where Costos.Costos_tipo = 'Examen' order by Costos.Costos_id asc
+
+--1) recupero los otros costos
+select Costos_id, Costos_descripcion, Costos_tipo, Costos_monto, graduacion_id
+from Costos where Costos.Costos_tipo = 'Otro' order by Costos.Costos_descripcion  asc
+GO
+/****** Object:  StoredProcedure [dbo].[Costos_modificar]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+----------------------------------------------------------------------
+ALTER procedure [dbo].[Costos_modificar]
+@Costos_id int,
+@Costos_monto decimal(38,2)
+as
+
+update Costos set Costos_monto = @Costos_monto where Costos.Costos_id = @Costos_id
+GO
+/****** Object:  StoredProcedure [dbo].[Categoria_obtener_info]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------
+ALTER procedure [dbo].[Categoria_obtener_info]
+
+@categoria_id int
+as
+select
+		categoria_id, 
+		categoria_sexo, 
+		categoria_gradinicial, 
+		categoria_gradfinal, 
+		categoria_edadinicial, 
+		categoria_edadfinal, 
+		categoria_peso_inical, 
+		categoria_peso_Final, 
+		categoria_tipo
+from categoria where categoria.categoria_id = @categoria_id
+GO
+/****** Object:  StoredProcedure [dbo].[Categoria_buscar]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Categoria_buscar]
+@categoria_sexo varchar(50),
+@categoria_tipo varchar(50),
+@categoria_gradinicial varchar(50),
+@categoria_gradfinal varchar(50),
+@categoria_edadinicial varchar(50),
+@categoria_edadfinal varchar(50),
+@categoria_peso_inicial varchar(50),
+@categoria_peso_Final varchar(50)
+as
+select * from categoria where categoria_sexo = @categoria_sexo and categoria_tipo = @categoria_tipo 
+		and categoria_gradinicial = @categoria_gradinicial and categoria_gradfinal = @categoria_gradfinal 
+		and categoria_edadinicial = @categoria_edadinicial and categoria_edadfinal = @categoria_edadfinal
+		and categoria_peso_inical = @categoria_peso_inicial and categoria_peso_Final = @categoria_peso_Final
+GO
+/****** Object:  StoredProcedure [dbo].[Estado_civil_obtener]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-----------------------------------------------------------------------
+ALTER procedure [dbo].[Estado_civil_obtener]
+as
+select 
+estadocivil_id, estadocivil_desc
+from estado_civil
+GO
+/****** Object:  StoredProcedure [dbo].[Carga_Competidor_Obtener_Categorias]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-------------------------------------------------------------------------
+ALTER Procedure [dbo].[Carga_Competidor_Obtener_Categorias]
+@sexo as varchar(50),
+@tipo as varchar(50)
+as
+select * from categoria where categoria_sexo=@sexo and categoria_tipo=@tipo
+
+select * from graduacion order by graduacion.graduacion_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[Carga_Competidor_Guardar]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[Carga_Competidor_Guardar]
+@usuario_apellido varchar(50),
+@usuario_nombre varchar(50),
+@instructor_id int,
+@institucion_id int,
+@evento_id int,
+@inscripcion_fechahora datetime,
+@inscripcion_peso decimal(5,2),
+@categoria_id int
+as
+
+declare @usuario_id int
+
+insert dbo.usuario (
+usuario_apellido,
+usuario_nombre,
+usuario_estado,
+Prueba
+
+)
+
+values (
+@usuario_apellido,
+@usuario_nombre,
+'activo',
+'Borrar')
+
+select @usuario_id = @@IDENTITY
+--insertar alumno x instructor
+
+insert dbo.alumnos_x_instructor (usuario_id, instructor_id, alumno_x_instructor_estado, institucion_id, Prueba) values (@usuario_id, @instructor_id, 'activo', @institucion_id,'Borrar')
+
+------------------------------------------------------------------------------------------------------------
+
+--alta inscripcion
+insert inscripcion (usuario_id, evento_id, inscripcion_fechahora, inscripcion_peso, inscripcion_instructor_id ) values(@usuario_id, @evento_id, @inscripcion_fechahora, @inscripcion_peso , @instructor_id)
+---recupero el tipoevento, me sirve para validar si es necesario hacer un alta en "inscripciones_x_torneo"
+
+declare @inscripcion_id int
+
+SELECT @inscripcion_id =@@IDENTITY 
+
+-----------------------------------------------------------------------------------------------
+
+
+insert inscripciones_x_torneo (inscripcion_id, categoria_id, en_llave) values (@inscripcion_id, @categoria_id, 'no')
+GO
+/****** Object:  StoredProcedure [dbo].[area_obtener_asignadas]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+------------------------------------------------------------------
+ALTER procedure [dbo].[area_obtener_asignadas]
+@evento_id int,
+@area_id int
+as
+
+select Area.Area_id as 'id', Area.Area_descripcion as 'Area' from Area where Area.evento_id=@evento_id order by Area.Area_id asc
+---esta uso cuando accedo desde el usuario torneo, solo me muestra 1 area en particular para ese evento
+select Area.Area_id as 'id', Area.Area_descripcion as 'Area' from Area where Area.evento_id=@evento_id and Area.Area_id = @area_id  order by Area.Area_id asc
+GO
+/****** Object:  StoredProcedure [dbo].[area_alta]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[area_alta]
+@area_descripcion varchar(max),
+@evento_id int
+
+as
+
+insert Area (Area_descripcion , evento_id ) values (@area_descripcion, @evento_id )
+GO
+/****** Object:  StoredProcedure [dbo].[Activar_Usuario]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Activar_Usuario]
+@Usuario_id int, ---es el id del alumno q sera activado
+@Instructor_id int, ---ojo este es id de usuario no instructor
+@usuario_tipo varchar(50),
+@institucion_id int
+as
+
+
+if @usuario_tipo ='instructor'
+begin
+
+
+--declare @Institucion_id int
+--select @Institucion_id =  institucion_id from instructor where instructor_id=@Instructor_id
+declare @nuevo_instructor int
+
+insert
+instructor (usuario_id, centro_id)
+values
+(@Usuario_id, '')
+
+
+select @nuevo_instructor = @@IDENTITY
+
+insert
+institucion_x_instructor (instructor_id,institucion_id)
+values
+(@nuevo_instructor,@institucion_id)
+
+end
+
+
+update Usuario set
+usuario_estado='activo'
+where usuario_id=@Usuario_id
+
+
+declare @id_instructor int ---este es el q se loguea, el instructor que va a habilitar al alumno 
+select @id_instructor = instructor.instructor_id  from instructor where instructor.usuario_id=@instructor_id ---instructor_id es usuario_id q traigo del login de la app   
+update alumnos_x_instructor set alumno_x_instructor_estado='activo' where usuario_id=@Usuario_id and alumnos_x_instructor.instructor_id=@id_instructor
+GO
+/****** Object:  StoredProcedure [dbo].[Activar_InstructorInvitado]    Script Date: 03/15/2023 12:34:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Activar_InstructorInvitado]
+@usuario_doc int, ---es el documento del instructor nuevo
+@Instructor_id int, ---es el id de maestro del instructor nuevo---o sea galarraga
+@institucion_id int
+as
+
+declare @usuario_id int
+select @usuario_id = usuario_id from usuario where usuario.usuario_doc = @usuario_doc 
+
+--select @Institucion_id =  institucion_id from instructor where instructor_id=@Instructor_id
+declare @nuevo_instructor int
+
+insert
+instructor (usuario_id, centro_id)
+values
+(@usuario_id, '')
+
+
+select @nuevo_instructor = @@IDENTITY
+
+insert institucion_x_instructor (instructor_id,institucion_id)values
+(@nuevo_instructor,@institucion_id)
+GO

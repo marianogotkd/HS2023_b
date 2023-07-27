@@ -1,0 +1,34 @@
+LLAVE_SELECC_EVENTO.ASPX
+	AGREGAR EN EL GRIDVIEW UNA COLUMNA "LISTADO POR CATEGORIA".
+	clonar el formulario "llave_generar.aspx", pero en el combobox recuperar todos los inscriptos a una categoria, no los que estan libres.
+
+
+
+
+
+en el menu TORNEO...CAMBIAR LABEL "ADMINISTRAR LLAVES" X "ADMINISTRAR TORNEO".
+en el menu TORNEO...CAMBIAR LABEL "TORNEOS DISPONIBLES" X "CAMBIO DE CATEGORIA"...
+
+HACER UN FORMULARIO QUE ME RECUPERE TODOS LOS INSCRIPTOS ORDENADOS POR DOCUMENTO Y QUE TENGA UNA COLUMNA DONDE SEPA A QUE AREA ESTA ASIGNADO Y A QUE CATEGORIA.
+
+
+
+---no mover inscriptos de una categoria a otra hasta no tener definido Areas y Categorias.
+esto es importante, ya que si se mueve a una categoria de un area diferente, el sistema debe hacerle saber a la persona que 
+generará la llave "poner una observacion en el gridview del modulo de generacion de llave".
+para solucionar esto se podria agregar un campo a la tabla dbo.inscripciones_x_torneo.recategorizacion = 'AREA 2'.
+
+
+
+----EN CADA AREA SE TIENE QUE MOSTRAR LAS LLAVES GENERADAS EN ESTE ORDEN, ESTO PARA EL GRIDVIEW:
+SELECT TOP 1000 [categoria_id]
+      ,[categoria_sexo]
+      ,[categoria_gradinicial]
+      ,[categoria_gradfinal]
+      ,[categoria_edadinicial]
+      ,[categoria_edadfinal]
+      ,[categoria_peso_inical]
+      ,[categoria_peso_Final]
+      ,[categoria_tipo]
+  FROM [FitfaWeb_23].[dbo].[categoria] order by categoria.categoria_tipo, 
+  convert(int,categoria.categoria_edadinicial), CONVERT(int,categoria.categoria_gradinicial) asc

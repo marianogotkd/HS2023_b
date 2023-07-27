@@ -1,0 +1,460 @@
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\itextsharp.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\itextsharp.pdfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\itextsharp.xtra.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\RdlCompile.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\RdlCompile.compiled
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\itextsharp.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\itextsharp.pdfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\itextsharp.xtra.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+C:\bkp choco\fitfaMGO\fitfa\bin\fitfa.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\fitfa.pdb
+C:\bkp choco\fitfaMGO\fitfa\bin\fitfa.xml
+C:\bkp choco\fitfaMGO\fitfa\bin\Capa_de_datos.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\itextsharp.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\itextsharp.pdfa.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\itextsharp.xtra.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\bkp choco\fitfaMGO\fitfa\bin\Capa_de_datos.pdb
+C:\bkp choco\fitfaMGO\fitfa\bin\Capa_de_datos.xml
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.Resources.resources
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\RdlCompile.cache
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\RdlCompile.compiled
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.dll
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.xml
+C:\bkp choco\fitfaMGO\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\itextsharp.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\itextsharp.pdfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\itextsharp.xtra.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\MessagingToolkit.QRCode.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v2\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v3\fitfa\obj\Debug\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+C:\Users\HamerNoteI7\Documents\Visual Studio 2010\Projects\HamerSoft\Repo_GitHub\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2021\HS2021\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.dll
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.xml
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+\\Desktop-ipj62b9\leo compartir\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\fitfa.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_09hrs\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbprojResolveAssemblyReference.cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.Cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+C:\LEO COMPARTIR\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.dll.config
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.pdb
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\fitfa.xml
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Microsoft.Build.Utilities.v3.5.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.pdb
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Capa_de_datos.xml
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\Microsoft.Build.Utilities.v3.5.xml
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\es\Microsoft.Build.Utilities.v3.5.resources.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.AssemblyReference.cache
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.Resources.resources
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.cache
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.cache
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\RdlCompile.compiled
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.CoreCompileInputs.cache
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.vbproj.CopyComplete
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.xml
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\obj\Debug\fitfa.pdb
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportSource.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.Shared.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\stdole.dll
+F:\fitfaMGO_v4_2022-05-06_11hrs(registro inv cambiado)\fitfaMGO_v4\fitfa\bin\CrystalDecisions.Web.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\fitfa.dll.config
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\fitfa.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\fitfa.pdb
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\fitfa.xml
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\Capa_de_datos.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.CrystalReports.Engine.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportSource.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.Shared.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.Web.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.WebForms.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.Common.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\stdole.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\Capa_de_datos.pdb
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\bin\Capa_de_datos.xml
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.AssemblyReference.cache
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.Resources.resources
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.cache
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\RdlCompile.cache
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\RdlCompile.compiled
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CoreCompileInputs.cache
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CopyComplete
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.dll
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.xml
+\\Desktop-ipj62b9\leo compartir\Solucion Leotest\fitfa\obj\Debug\fitfa.pdb
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\fitfa.dll.config
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\fitfa.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\fitfa.pdb
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\fitfa.xml
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Capa_de_datos.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportSource.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.Shared.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.Web.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.WebForms.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.Common.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\stdole.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Capa_de_datos.pdb
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Capa_de_datos.xml
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.AssemblyReference.cache
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.Resources.resources
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.cache
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\RdlCompile.cache
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\RdlCompile.compiled
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CoreCompileInputs.cache
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CopyComplete
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.xml
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\obj\Debug\fitfa.pdb
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Components.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Utilities.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Build.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Build.Framework.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Collections.Immutable.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Text.Json.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.NET.StringTools.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Memory.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Threading.Tasks.Dataflow.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Text.Encodings.Web.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Numerics.Vectors.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Threading.Tasks.Extensions.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\System.Buffers.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Components.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Utilities.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\cs\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\de\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\en\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\es\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\fr\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\it\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\ja\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\ko\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\pl\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\pt-BR\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\ru\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\tr\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\LEO COMPARTIR\Solucion Leotest\fitfa\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\fitfa.dll.config
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\fitfa.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\fitfa.xml
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportSource.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.Shared.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.Web.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Components.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.Common.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Data.Tools.Utilities.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Build.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Build.Framework.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Collections.Immutable.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Text.Json.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.NET.StringTools.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Memory.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Threading.Tasks.Dataflow.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\stdole.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Text.Encodings.Web.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Numerics.Vectors.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Threading.Tasks.Extensions.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\System.Buffers.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Components.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.Data.Tools.Utilities.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\cs\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\de\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\en\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\es\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\fr\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\it\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\ja\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\ko\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\pl\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\pt-BR\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\ru\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\tr\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.AssemblyReference.cache
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.cache
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CoreCompileInputs.cache
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.vbproj.CopyComplete
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2022\HS2022\Solucion Leotest\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\fitfa.dll.config
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\fitfa.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\fitfa.pdb
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\fitfa.xml
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Capa_de_datos.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportSource.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.Shared.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.Web.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Data.Tools.Components.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.ReportViewer.Common.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Data.Tools.Utilities.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Build.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Build.Framework.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Collections.Immutable.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Text.Json.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.NET.StringTools.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Memory.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Threading.Tasks.Dataflow.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\stdole.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Text.Encodings.Web.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Numerics.Vectors.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Threading.Tasks.Extensions.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\System.Buffers.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Capa_de_datos.pdb
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\Capa_de_datos.xml
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.Data.Tools.Schema.Sql.UnitTesting.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.Data.Tools.Components.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.Data.Tools.Utilities.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\cs\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\de\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\en\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\es\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\fr\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\it\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\ja\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\ko\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\pl\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\pt-BR\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\ru\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\tr\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.vbproj.AssemblyReference.cache
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.Resources.resources
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.vbproj.GenerateResource.cache
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\RdlCompile.cache
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\RdlCompile.compiled
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.vbproj.CoreCompileInputs.cache
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.vbproj.CopyComplete
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.dll
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.xml
+C:\Repositorio HS2022\HS2022\FITFA 2022\fitfa\obj\Debug\fitfa.pdb
