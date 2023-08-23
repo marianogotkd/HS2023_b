@@ -11065,6 +11065,33 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:fitfa.Llave_disponibles._Btn_rptlucha">
+<summary>
+Control Btn_rptlucha.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Llave_disponibles._Btn_rptforma">
+<summary>
+Control Btn_rptforma.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Llave_disponibles._Btn_rptseleccion">
+<summary>
+Control Btn_rptseleccion.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:fitfa.Llave_disponibles._lbl_llf">
 <summary>
 Control lbl_llf.

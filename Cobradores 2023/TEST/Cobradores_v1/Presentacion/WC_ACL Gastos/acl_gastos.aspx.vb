@@ -1,0 +1,184 @@
+Public Class acl_gastos
+  Inherits System.Web.UI.Page
+  Dim DAgastos As New Capa_Datos.WC_gastos
+  Dim DAusuario As New Capa_Datos.WB_usuarios
+  Dim DApermisos As New Capa_Datos.WC_Permisos
+  Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    If Request.Cookies("Token_InicioSesion") Is Nothing Then
+      'si esta vacia, redirecciona a login
+      Response.Redirect("~/Index.aspx")
+    End If
+    If Not IsPostBack Then
+      Permisos()
+      txt_opcion.Focus()
+    End If
+  End Sub
+
+  Private Sub Permisos()
+    'validamos permisos del login
+    Dim Idusuario As Integer = CInt(Request.Cookies("Token_Idusuario").Value)
+    Dim ds_usu As DataSet = DAusuario.Usuarios_buscarID(Idusuario)
+    If ds_usu.Tables(0).Rows.Count <> 0 Then
+      Dim Jerarquia As String = ""
+      Try
+        Jerarquia = ds_usu.Tables(0).Rows(0).Item("Jerarquia")
+      Catch ex As Exception
+      End Try
+
+      Select Case Jerarquia
+        Case "1"
+          'se accede sin problemas.
+          Div_Op1.Visible = True
+          Div_Op2.Visible = True
+          Div_Op3.Visible = True
+
+        Case "2"
+          'se verifica que permisos estan habilitados.
+          'para este formulario deberia existir debe indicar en Permisos.Opcion = 1,2,3 or null
+
+          Dim ds_permisos As DataSet = DApermisos.Permisos_buscar(Idusuario)
+          Dim i As Integer = 0
+          Dim valido As String = "no"
+          While i < ds_permisos.Tables(0).Rows.Count
+            Dim Menu As String = ""
+            Try
+              Menu = ds_permisos.Tables(0).Rows(i).Item("Menu").ToString.ToUpper
+            Catch ex As Exception
+            End Try
+            Dim Opcion As String = ""
+            Try
+              Opcion = ds_permisos.Tables(0).Rows(i).Item("Opcion")
+            Catch ex As Exception
+            End Try
+            If Menu = "D" Then
+              If Opcion = "" Then
+                valido = "si"
+                Div_Op1.Visible = True
+                Div_Op2.Visible = True
+                Div_Op3.Visible = True
+
+              End If
+              If Opcion = "1" Then
+                valido = "si"
+                Div_Op1.Visible = True
+              End If
+              If Opcion = "2" Then
+                valido = "si"
+                Div_Op2.Visible = True
+              End If
+              If Opcion = "3" Then
+                valido = "si"
+                Div_Op3.Visible = True
+              End If
+
+            End If
+            i = i + 1
+          End While
+          If valido = "si" Then
+            'se accede sin problemas
+          Else
+            'no tiene permiso, se redirige a menu.
+            Response.Redirect("~/Inicio.aspx")
+          End If
+      End Select
+
+      If Session("op_ingreso") = "si" Then
+        Session("op_ingreso") = ""
+      Else
+        Session("op_ingreso") = ""
+        Response.Redirect("~/Inicio.aspx")
+      End If
+    End If
+  End Sub
+
+  Private Sub btn_retroceder_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_retroceder.ServerClick
+    Response.Redirect("~/Inicio.aspx")
+  End Sub
+
+  Private Sub BOTON_GRABAR_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles BOTON_GRABAR.ServerClick
+    Select Case txt_opcion.Text.ToUpper
+      Case "1"
+        If Div_Op1.Visible = True Then
+          Session("op_ingreso") = "si"
+          Response.Redirect("~/WC_ACL Gastos/acl_gastos_alta.aspx")
+        Else
+          txt_opcion.Focus()
+        End If
+
+      Case "2"
+        'primero verifico que exista al menos 1 grupo_tipo
+        Dim ds_validar As DataSet = DAgastos.GastosTipo_obtener_todos
+        If ds_validar.Tables(0).Rows.Count <> 0 Then
+          If Div_Op2.Visible = True Then
+            Session("op_ingreso") = "si"
+            Response.Redirect("~/WC_ACL Gastos/acl_gastos_carga.aspx")
+          Else
+            txt_opcion.Focus()
+          End If
+
+
+        Else
+          ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_sm_error2", "$(document).ready(function () {$('#modal_sm_error2').modal();});", True)
+        End If
+      Case "3"
+        If Div_Op3.Visible = True Then
+          Session("op_ingreso") = "si"
+          Response.Redirect("~/WC_ACL Gastos/acl_gastos_resumen.aspx")
+        Else
+          txt_opcion.Focus()
+        End If
+
+
+      Case Else
+        ''aqui va mensaje de error.
+        'no existe
+        ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal-sm_error", "$(document).ready(function () {$('#modal-sm_error').modal();});", True)
+
+    End Select
+
+  End Sub
+
+  Private Sub btn_ok_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error.ServerClick
+    txt_opcion.Focus()
+  End Sub
+
+  Private Sub btn_close_error_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_close_error.ServerClick
+    txt_opcion.Focus()
+  End Sub
+
+  Private Sub btn_close_error2_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_close_error2.ServerClick
+    txt_opcion.Focus()
+
+  End Sub
+
+  Private Sub btn_ok_error2_ServerClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles btn_ok_error2.ServerClick
+    txt_opcion.Focus()
+  End Sub
+
+  'AQUI agrego el atributo onfocus y asocio a la rutina js seleccionartexto para que cuando se ponga el foco en un textbox se seleccione todo el contenido
+  Private Sub txt_opcion_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_opcion.Init
+    txt_opcion.Attributes.Add("onfocus", "seleccionarTexto(this);")
+  End Sub
+
+  Private Sub LinkButton_alta_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_alta.Click
+    Session("op_ingreso") = "si"
+    Response.Redirect("~/WC_ACL Gastos/acl_gastos_alta.aspx")
+  End Sub
+
+  Private Sub LinkButton_carga_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_carga.Click
+    'primero verifico que exista al menos 1 grupo_tipo
+    Dim ds_validar As DataSet = DAgastos.GastosTipo_obtener_todos
+    If ds_validar.Tables(0).Rows.Count <> 0 Then
+      Session("op_ingreso") = "si"
+      Response.Redirect("~/WC_ACL Gastos/acl_gastos_carga.aspx")
+
+    Else
+      ScriptManager.RegisterStartupScript(Page, Page.[GetType](), "modal_sm_error2", "$(document).ready(function () {$('#modal_sm_error2').modal();});", True)
+    End If
+  End Sub
+
+  Private Sub LinkButton_resumen_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles LinkButton_resumen.Click
+    Session("op_ingreso") = "si"
+    Response.Redirect("~/WC_ACL Gastos/acl_gastos_resumen.aspx")
+  End Sub
+End Class

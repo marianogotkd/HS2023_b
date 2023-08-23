@@ -1,0 +1,167 @@
+ARCHIVOS CORREGIDOS CON REPORTES.
+Index.aspx.vb --es el form de inicio de session.
+Inicio.aspx. ---aqui esta el menu.
+Home.Master.vb 
+
+********CARPETA CONSULTAS***********
+CodigoMasPremiado.aspx.vb
+CodigoMasPremiado_b.aspx.vb
+CodigoMasPremiadoRecorridos.aspx.vb
+CodigoMasPremiadoRecorridos_b.aspx.vb
+ConsultarModificar_xcargas_a.aspx
+ConsultarModificar_xcargas_b.aspx
+IngresoTerminales.aspx
+MenuConsultas.aspx
+
+********CARPETA WC_AB Recorridos_Zonas***********
+ab_recorridos_zonas.aspx
+ab_recorridos_zonas_activacion.aspx
+
+********CARPETA WC_ABM_Cubiertas***********
+Cubiertas_op.aspx
+Cubiertas_op1a.aspx
+Cubiertas_op1b.aspx
+Cubiertas_op2a.aspx
+Cubiertas_op2b.aspx
+Cubiertas_op3a.aspx
+Cubiertas_op3b.aspx
+Cubiertas_op4a.aspx
+
+********CARPETA WC_ABML Prestamos_Creditos***********
+abml_creditos.aspx
+abml_prestamos.aspx
+abml_prestamoscreditos.aspx
+abml_prestamoscreditos_resumen.aspx
+
+********CARPETA WC_ACL Gastos***********
+acl_gastos.aspx
+acl_gastos_alta.aspx
+acl_gastos_carga.aspx
+acl_gastos_resumen.aspx
+
+********CARPETA WC_Backuo***********
+Respaldo.aspx
+
+********CARPETA WC_Carga de Recorridos_Zonas***********
+carga_recorridos_zonas_a.aspx
+carga_recorridos_zonas_b.aspx
+
+********CARPETA WC_Cliente***********
+Cliente_abm.aspx
+Cliente_alta_b.aspx
+
+********CARPETA WC_Cobro Prestamos Manuales***********
+Cobro_prestamos_manuales.aspx
+Cobro_prestamos_manuales_det.aspx
+
+********CARPETA WC_CobroPrestamosXRegalos***********
+Cobro_PrestamosxRegalos.aspx
+Cobro_PrestamosxRegalos_det.aspx
+
+********CARPETA WC_Grupos***********
+Grupos_abm.aspx
+Grupos_alta_b.aspx
+
+********CARPETA WC_Iniciar Dia***********
+Iniciar_dia.aspx
+
+********CARPETA WC_Liquidacion Parcial***********
+LiquidacionParcial_PremiosxClientes.aspx
+LiquidacionParcial_recorridos.aspx
+LiquidacionParcial_TotalesParciales.aspx
+
+********CARPETA WC_LiquidacionFinal***********
+LiquidacionFinal.aspx
+LiquidacionFinal_Creditos.aspx
+LiquidacionFinal_PrestamosComision.aspx
+LiquidacionFinal_PrestamosManuales.aspx
+LiquidacionFinal_TotalesFinales.aspx
+
+********CARPETA WC_LiquidacionGrupos***********
+LiquidacionGrupos.aspx
+LiquidacionGrupos_det.aspx
+
+********CARPETA WC_LiquidacionRegalos***********
+LiquidacionRegalos_op.aspx
+LiquidacionRegalosDiario.aspx
+LiquidacionRegalosDiario_det.aspx
+LiquidacionRegalosMensual.aspx
+LiquidacionRegalosMensual_det.aspx
+LiquidacionRegalosSemanal.aspx
+LiquidacionRegalosSemanal_det.aspx
+
+********CARPETA WC_Listados***********
+Listados_DeLosQueGanan.aspx
+Listados_EntradasSalidas.aspx
+Listados_op.aspx
+Listados_SaldoRegalo.aspx
+
+********CARPETA WC_Modificar Saldos***********
+Modificar_saldos.aspx
+Modificar_saldos_detalle.aspx
+
+********CARPETA WC_Pagos Cobros Reclamos***********
+Cobro.aspx
+Pago.aspx
+PagosCobrosReclamos.aspx
+PagosCobrosReclamos_resumen.aspx
+Reclamo.aspx
+
+********CARPETA WC_ReliquidacionXError***********
+WC_ReliquidacionXError.aspx
+
+********CARPETA WC_TicketsClientes***********
+TicketsClientes.aspx
+TicketsClientes_op1.aspx
+TicketsClientes_op2.aspx
+TicketsClientesPorOrden.aspx
+TicketsCliePorOrden.aspx
+TicketsCliePorOrdenImp.aspx
+TicketsCliePoRecorridos.aspx
+TicketsCliePorRecorridosImp.aspx	
+TicketsClieRegenerar.aspx
+TicketsClieRegenerar_op.aspx
+TicketsClieRegenerar_orden.aspx
+TicketsClieRegenerar_recorridos.aspx
+TicketsClieReimprimir.aspx
+TicketsClieReimprimir_op.aspx
+TicketsClieReimprimir_orden.aspx
+TicketsClieReimprimir_recorridos.aspx
+TicketsGeneral.aspx
+
+********CARPETA WC_Visualizar_RegAnteriores***********
+VisRegAnt_a.aspx
+VisRegAnt_b.aspx
+
+
+RELIQUIDACION: SE PONE EL CAMPO PARAMETROS.Terminales=falso.
+
+una vez efectuados los cambios.
+Se ejecuta el Proceso de Liquidacion...en la ultima etapa que es "COBRO DE CREDITOS"
+se verifica si PARAMETROS.TERMINALES=FALSO, de ser asi se entiende que hubo una "RELIQUIDACION".
+copia los registro de la bd copy en la bd actual para restablecer los trabajos del dia.
+y se restablece el valor de Parametros.Terminales=true para dejar activa la bd.
+
+----VER EL USO DE PARAMETROS.TERMINALES...LO ESTOY USANDO PARA VALIDAR UNA RELIQUIDACION X AHORA.
+
+NOTA: UNA VEZ TERMINADA LA LIQUIDACION FINAL...EL ESTADO DEL REGISTRO EN PARAMETROS.ESTADO= "INACTIVO" PARA LA FECHA DE TRABAJO.
+EJEMPLO: 'LIQUIDACION REGALOS DIARIOA: Verificar en BD cual es el dia de la ultima liquidacion en tabla PARAMETRO, donde el campo Estado= "Inactivo".
+SE REALIZA LA LIQUIDACION PARA ESE DIA.
+
+
+PROBLEMAS DE LA LIQUIDACION FINAL: SE PUEDE DETENER O DAR ERROR EN ALGUNA DE LAS ETAPAS, POR LO TANTO HAY QUE VALIDAR QUE NO SE INTENTE LIQUIDAR
+SI OCURRIO UNO DE ESTOS PROBLEMAS. COLOCAR UN MSJ QUE OBLIGUE AL OPERADOR A EJECUTAR UNA RELIQUIDACION PREVIAMENTE.
+
+POR OTRO LADO EL MODULO DE RELIQUIDACION LO QUE HACE ES VOLVER AL DIA ANTERIO LIQUIDADO (ASI FUNCIONA AHORA). POR LO TANTO
+TENEMOS QUE IDENTIFICAR QUE TIPO DE RELIQUIDACION SE HACE. YA SEA POR LIQ INCOMPLETA O PARA VOLVER AL DIA ANTERIOR.
+MANEJAR UN CAMPO EN LA TABLA PARAMETRO. PARA CONTROLAR EL ESTADO DEL PROC DE LIQUIDACION. LO MISMO PARA LA RELIQUIDACION. 
+EJEMPLO: PARAMETRO.LIQUIDACION("INICIADA" Y NULL CUANDO SE FINALIZÓ 
+COMPLETAMENTE) Y PARAMETRO.RELIQUIDACION (ESTA PARA RESTAURAR LOS REGISTRO DE LA BD COPY, SOLO SI RELIQUIDO PARA VOLVER AL DIA ANTERIOR).
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+VER PERMISOS Y GRUPOS...COMO MANEJAR LAS CONSULTAS FILTRADAS EN TICKETS ORDEN, RECORRIDO ETC. TICKET GENERAL.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+

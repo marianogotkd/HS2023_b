@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Cob_sector" targetNamespace="http://tempuri.org/DS_Cob_sector.xsd" xmlns:mstns="http://tempuri.org/DS_Cob_sector.xsd" xmlns="http://tempuri.org/DS_Cob_sector.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Cob_sector" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Cob_sector" msprop:Generator_UserDSName="DS_Cob_sector">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Sector" msprop:Generator_TableClassName="SectorDataTable" msprop:Generator_TableVarName="tableSector" msprop:Generator_TablePropName="Sector" msprop:Generator_RowDeletingName="SectorRowDeleting" msprop:Generator_RowChangingName="SectorRowChanging" msprop:Generator_RowEvHandlerName="SectorRowChangeEventHandler" msprop:Generator_RowDeletedName="SectorRowDeleted" msprop:Generator_UserTableName="Sector" msprop:Generator_RowChangedName="SectorRowChanged" msprop:Generator_RowEvArgName="SectorRowChangeEvent" msprop:Generator_RowClassName="SectorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SECTOR_ID" msprop:Generator_ColumnVarNameInTable="columnSECTOR_ID" msprop:Generator_ColumnPropNameInRow="SECTOR_ID" msprop:Generator_ColumnPropNameInTable="SECTOR_IDColumn" msprop:Generator_UserColumnName="SECTOR_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="SECTOR_desc" msprop:Generator_ColumnVarNameInTable="columnSECTOR_desc" msprop:Generator_ColumnPropNameInRow="SECTOR_desc" msprop:Generator_ColumnPropNameInTable="SECTOR_descColumn" msprop:Generator_UserColumnName="SECTOR_desc" type="xs:string" minOccurs="0" />
+              <xs:element name="CantPasillos" msprop:Generator_ColumnVarNameInTable="columnCantPasillos" msprop:Generator_ColumnPropNameInRow="CantPasillos" msprop:Generator_ColumnPropNameInTable="CantPasillosColumn" msprop:Generator_UserColumnName="CantPasillos" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pasillo" msprop:Generator_TableClassName="PasilloDataTable" msprop:Generator_TableVarName="tablePasillo" msprop:Generator_TablePropName="Pasillo" msprop:Generator_RowDeletingName="PasilloRowDeleting" msprop:Generator_RowChangingName="PasilloRowChanging" msprop:Generator_RowEvHandlerName="PasilloRowChangeEventHandler" msprop:Generator_RowDeletedName="PasilloRowDeleted" msprop:Generator_UserTableName="Pasillo" msprop:Generator_RowChangedName="PasilloRowChanged" msprop:Generator_RowEvArgName="PasilloRowChangeEvent" msprop:Generator_RowClassName="PasilloRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PASILLO_ID" msprop:Generator_ColumnVarNameInTable="columnPASILLO_ID" msprop:Generator_ColumnPropNameInRow="PASILLO_ID" msprop:Generator_ColumnPropNameInTable="PASILLO_IDColumn" msprop:Generator_UserColumnName="PASILLO_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="PASILLO_desc" msprop:Generator_ColumnVarNameInTable="columnPASILLO_desc" msprop:Generator_ColumnPropNameInRow="PASILLO_desc" msprop:Generator_ColumnPropNameInTable="PASILLO_descColumn" msprop:Generator_UserColumnName="PASILLO_desc" type="xs:string" minOccurs="0" />
+              <xs:element name="SECTOR_ID" msprop:Generator_ColumnVarNameInTable="columnSECTOR_ID" msprop:Generator_ColumnPropNameInRow="SECTOR_ID" msprop:Generator_ColumnPropNameInTable="SECTOR_IDColumn" msprop:Generator_UserColumnName="SECTOR_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

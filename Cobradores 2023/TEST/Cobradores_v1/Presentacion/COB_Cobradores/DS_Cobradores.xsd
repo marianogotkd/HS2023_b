@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Cobradores" targetNamespace="http://tempuri.org/DS_Cobradores.xsd" xmlns:mstns="http://tempuri.org/DS_Cobradores.xsd" xmlns="http://tempuri.org/DS_Cobradores.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Cobradores" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Cobradores" msprop:Generator_UserDSName="DS_Cobradores">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tarifas" msprop:Generator_TableClassName="TarifasDataTable" msprop:Generator_TableVarName="tableTarifas" msprop:Generator_TablePropName="Tarifas" msprop:Generator_RowDeletingName="TarifasRowDeleting" msprop:Generator_RowChangingName="TarifasRowChanging" msprop:Generator_RowEvHandlerName="TarifasRowChangeEventHandler" msprop:Generator_RowDeletedName="TarifasRowDeleted" msprop:Generator_UserTableName="Tarifas" msprop:Generator_RowChangedName="TarifasRowChanged" msprop:Generator_RowEvArgName="TarifasRowChangeEvent" msprop:Generator_RowClassName="TarifasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TARCLIE_ID" msprop:Generator_ColumnVarNameInTable="columnTARCLIE_ID" msprop:Generator_ColumnPropNameInRow="TARCLIE_ID" msprop:Generator_ColumnPropNameInTable="TARCLIE_IDColumn" msprop:Generator_UserColumnName="TARCLIE_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="TARCLIE_desc" msprop:Generator_ColumnVarNameInTable="columnTARCLIE_desc" msprop:Generator_ColumnPropNameInRow="TARCLIE_desc" msprop:Generator_ColumnPropNameInTable="TARCLIE_descColumn" msprop:Generator_UserColumnName="TARCLIE_desc" type="xs:string" minOccurs="0" />
+              <xs:element name="TARCLIE_precio" msprop:Generator_ColumnVarNameInTable="columnTARCLIE_precio" msprop:Generator_ColumnPropNameInRow="TARCLIE_precio" msprop:Generator_ColumnPropNameInTable="TARCLIE_precioColumn" msprop:Generator_UserColumnName="TARCLIE_precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LocalesClientes" msprop:Generator_TableClassName="LocalesClientesDataTable" msprop:Generator_TableVarName="tableLocalesClientes" msprop:Generator_RowChangedName="LocalesClientesRowChanged" msprop:Generator_TablePropName="LocalesClientes" msprop:Generator_RowDeletingName="LocalesClientesRowDeleting" msprop:Generator_RowChangingName="LocalesClientesRowChanging" msprop:Generator_RowEvHandlerName="LocalesClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="LocalesClientesRowDeleted" msprop:Generator_RowClassName="LocalesClientesRow" msprop:Generator_UserTableName="LocalesClientes" msprop:Generator_RowEvArgName="LocalesClientesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOCAL_ID" msprop:Generator_ColumnVarNameInTable="columnLOCAL_ID" msprop:Generator_ColumnPropNameInRow="LOCAL_ID" msprop:Generator_ColumnPropNameInTable="LOCAL_IDColumn" msprop:Generator_UserColumnName="LOCAL_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="CLIE_ID" msprop:Generator_ColumnVarNameInTable="columnCLIE_ID" msprop:Generator_ColumnPropNameInRow="CLIE_ID" msprop:Generator_ColumnPropNameInTable="CLIE_IDColumn" msprop:Generator_UserColumnName="CLIE_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCAL" msprop:Generator_ColumnVarNameInTable="columnLOCAL" msprop:Generator_ColumnPropNameInRow="LOCAL" msprop:Generator_ColumnPropNameInTable="LOCALColumn" msprop:Generator_UserColumnName="LOCAL" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM" msprop:Generator_ColumnVarNameInTable="columnITEM" msprop:Generator_ColumnPropNameInRow="ITEM" msprop:Generator_ColumnPropNameInTable="ITEMColumn" msprop:Generator_UserColumnName="ITEM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reporte_Comprobante_cobros" msprop:Generator_TableClassName="Reporte_Comprobante_cobrosDataTable" msprop:Generator_TableVarName="tableReporte_Comprobante_cobros" msprop:Generator_TablePropName="Reporte_Comprobante_cobros" msprop:Generator_RowDeletingName="Reporte_Comprobante_cobrosRowDeleting" msprop:Generator_RowChangingName="Reporte_Comprobante_cobrosRowChanging" msprop:Generator_RowEvHandlerName="Reporte_Comprobante_cobrosRowChangeEventHandler" msprop:Generator_RowDeletedName="Reporte_Comprobante_cobrosRowDeleted" msprop:Generator_UserTableName="Reporte_Comprobante_cobros" msprop:Generator_RowChangedName="Reporte_Comprobante_cobrosRowChanged" msprop:Generator_RowEvArgName="Reporte_Comprobante_cobrosRowChangeEvent" msprop:Generator_RowClassName="Reporte_Comprobante_cobrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Concepto_Tarifa" msprop:Generator_ColumnVarNameInTable="columnConcepto_Tarifa" msprop:Generator_ColumnPropNameInRow="Concepto_Tarifa" msprop:Generator_ColumnPropNameInTable="Concepto_TarifaColumn" msprop:Generator_UserColumnName="Concepto_Tarifa" type="xs:string" minOccurs="0" />
+              <xs:element name="Concepto_fecha" msprop:Generator_ColumnVarNameInTable="columnConcepto_fecha" msprop:Generator_ColumnPropNameInRow="Concepto_fecha" msprop:Generator_ColumnPropNameInTable="Concepto_fechaColumn" msprop:Generator_UserColumnName="Concepto_fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nro_comprobante" msprop:Generator_ColumnVarNameInTable="columnnro_comprobante" msprop:Generator_ColumnPropNameInRow="nro_comprobante" msprop:Generator_ColumnPropNameInTable="nro_comprobanteColumn" msprop:Generator_UserColumnName="nro_comprobante" type="xs:string" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reporte_Comprobante_encabezado" msprop:Generator_TableClassName="Reporte_Comprobante_encabezadoDataTable" msprop:Generator_TableVarName="tableReporte_Comprobante_encabezado" msprop:Generator_TablePropName="Reporte_Comprobante_encabezado" msprop:Generator_RowDeletingName="Reporte_Comprobante_encabezadoRowDeleting" msprop:Generator_RowChangingName="Reporte_Comprobante_encabezadoRowChanging" msprop:Generator_RowEvHandlerName="Reporte_Comprobante_encabezadoRowChangeEventHandler" msprop:Generator_RowDeletedName="Reporte_Comprobante_encabezadoRowDeleted" msprop:Generator_UserTableName="Reporte_Comprobante_encabezado" msprop:Generator_RowChangedName="Reporte_Comprobante_encabezadoRowChanged" msprop:Generator_RowEvArgName="Reporte_Comprobante_encabezadoRowChangeEvent" msprop:Generator_RowClassName="Reporte_Comprobante_encabezadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nro_comprobante" msprop:Generator_ColumnVarNameInTable="columnnro_comprobante" msprop:Generator_ColumnPropNameInRow="nro_comprobante" msprop:Generator_ColumnPropNameInTable="nro_comprobanteColumn" msprop:Generator_UserColumnName="nro_comprobante" type="xs:string" minOccurs="0" />
+              <xs:element name="Comprobante_fecha" msprop:Generator_ColumnVarNameInTable="columnComprobante_fecha" msprop:Generator_ColumnPropNameInRow="Comprobante_fecha" msprop:Generator_ColumnPropNameInTable="Comprobante_fechaColumn" msprop:Generator_UserColumnName="Comprobante_fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="CtaCte" msprop:Generator_ColumnVarNameInTable="columnCtaCte" msprop:Generator_ColumnPropNameInRow="CtaCte" msprop:Generator_ColumnPropNameInTable="CtaCteColumn" msprop:Generator_UserColumnName="CtaCte" type="xs:string" minOccurs="0" />
+              <xs:element name="Local" msprop:Generator_ColumnVarNameInTable="columnLocal" msprop:Generator_ColumnPropNameInRow="Local" msprop:Generator_ColumnPropNameInTable="LocalColumn" msprop:Generator_UserColumnName="Local" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

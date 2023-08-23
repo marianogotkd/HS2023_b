@@ -100,6 +100,22 @@
                                               data-target="#exampleModal" data-toggle="modal" type="button">
                                               Eliminar llave...
                                           </button>
+
+                                          <button ID="Btn_rptlucha" runat="server" class="btn btn-primary" 
+                                               type="button">
+                                              rpo_llave lucha
+                                          </button>
+
+                                          <button ID="Btn_rptforma" runat="server" class="btn btn-primary" 
+                                               type="button">
+                                              rpo_llave forma
+                                          </button>
+
+                                          <button ID="Btn_rptseleccion" runat="server" class="btn btn-primary" 
+                                               type="button">
+                                              rpo_llave seleccionada
+                                          </button>
+
               
 
               </div>

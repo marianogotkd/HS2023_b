@@ -9,10 +9,10 @@ Public Class Conexion
 
     ''local sin seguridad CHOCO RYZEN
     'NOTA: LA CADENA DE ABAJO ES LA QUE TIENE LA BD PRUEBA DONDE TIENE LOS ULTIMOS PROC ALMACENADOS
-    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=FitfaWeb_23;Data Source=DESKTOP-IPJ62B9\SQLEXPRESS_CHOK")
+    Public dbconn As New OleDb.OleDbConnection("Provider=SQLOLEDB.1;Password=123choco;Persist Security Info=True;User ID=CHOCO;Initial Catalog=FitfaWeb_23;Data Source=DESKTOP-IPJ62B9\SQLEXPRESS_CHOK")
 
     'Conexion web Donweb
-    Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
+    'Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=localhost;Database=wi181976_fitfabd;Password=si24REzuki;Trusted_Connection=yes")
 
     'Conexion DON WEB SQL 2012
     'Public dbconn As New OleDb.OleDbConnection("Provider=SQLNCLI10;Server=sql2012;User Id=wi181976_fitfabd2;Password=lish5aengeiH;Database=wi181976_fitfabd2; Trusted_Connection=yes")

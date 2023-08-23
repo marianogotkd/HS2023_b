@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_ctactehistorial" targetNamespace="http://tempuri.org/DS_ctactehistorial.xsd" xmlns:mstns="http://tempuri.org/DS_ctactehistorial.xsd" xmlns="http://tempuri.org/DS_ctactehistorial.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_ctactehistorial" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_ctactehistorial" msprop:Generator_UserDSName="DS_ctactehistorial">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LOCALES" msprop:Generator_TableClassName="LOCALESDataTable" msprop:Generator_TableVarName="tableLOCALES" msprop:Generator_TablePropName="LOCALES" msprop:Generator_RowDeletingName="LOCALESRowDeleting" msprop:Generator_RowChangingName="LOCALESRowChanging" msprop:Generator_RowEvHandlerName="LOCALESRowChangeEventHandler" msprop:Generator_RowDeletedName="LOCALESRowDeleted" msprop:Generator_UserTableName="LOCALES" msprop:Generator_RowChangedName="LOCALESRowChanged" msprop:Generator_RowEvArgName="LOCALESRowChangeEvent" msprop:Generator_RowClassName="LOCALESRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codlocal" msprop:Generator_ColumnVarNameInTable="columncodlocal" msprop:Generator_ColumnPropNameInRow="codlocal" msprop:Generator_ColumnPropNameInTable="codlocalColumn" msprop:Generator_UserColumnName="codlocal" type="xs:string" minOccurs="0" />
+              <xs:element name="local" msprop:Generator_ColumnVarNameInTable="columnlocal" msprop:Generator_ColumnPropNameInRow="local" msprop:Generator_ColumnPropNameInTable="localColumn" msprop:Generator_UserColumnName="local" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MOVIMIENTOS" msprop:Generator_TableClassName="MOVIMIENTOSDataTable" msprop:Generator_TableVarName="tableMOVIMIENTOS" msprop:Generator_TablePropName="MOVIMIENTOS" msprop:Generator_RowDeletingName="MOVIMIENTOSRowDeleting" msprop:Generator_RowChangingName="MOVIMIENTOSRowChanging" msprop:Generator_RowEvHandlerName="MOVIMIENTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="MOVIMIENTOSRowDeleted" msprop:Generator_UserTableName="MOVIMIENTOS" msprop:Generator_RowChangedName="MOVIMIENTOSRowChanged" msprop:Generator_RowEvArgName="MOVIMIENTOSRowChangeEvent" msprop:Generator_RowClassName="MOVIMIENTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TARCLIE_ID" msprop:Generator_ColumnVarNameInTable="columnTARCLIE_ID" msprop:Generator_ColumnPropNameInRow="TARCLIE_ID" msprop:Generator_ColumnPropNameInTable="TARCLIE_IDColumn" msprop:Generator_UserColumnName="TARCLIE_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="TARCLIE_desc" msprop:Generator_ColumnVarNameInTable="columnTARCLIE_desc" msprop:Generator_ColumnPropNameInRow="TARCLIE_desc" msprop:Generator_ColumnPropNameInTable="TARCLIE_descColumn" msprop:Generator_UserColumnName="TARCLIE_desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Debe" msprop:Generator_ColumnVarNameInTable="columnDebe" msprop:Generator_ColumnPropNameInRow="Debe" msprop:Generator_ColumnPropNameInTable="DebeColumn" msprop:Generator_UserColumnName="Debe" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Haber" msprop:Generator_ColumnVarNameInTable="columnHaber" msprop:Generator_ColumnPropNameInRow="Haber" msprop:Generator_ColumnPropNameInTable="HaberColumn" msprop:Generator_UserColumnName="Haber" type="xs:decimal" minOccurs="0" />
+              <xs:element name="comprobante" msprop:Generator_ColumnVarNameInTable="columncomprobante" msprop:Generator_ColumnPropNameInRow="comprobante" msprop:Generator_ColumnPropNameInTable="comprobanteColumn" msprop:Generator_UserColumnName="comprobante" type="xs:string" minOccurs="0" />
+              <xs:element name="CTACTEDET_ID" msprop:Generator_ColumnVarNameInTable="columnCTACTEDET_ID" msprop:Generator_ColumnPropNameInRow="CTACTEDET_ID" msprop:Generator_ColumnPropNameInTable="CTACTEDET_IDColumn" msprop:Generator_UserColumnName="CTACTEDET_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="LOCAL_codigo" msprop:Generator_ColumnVarNameInTable="columnLOCAL_codigo" msprop:Generator_ColumnPropNameInRow="LOCAL_codigo" msprop:Generator_ColumnPropNameInTable="LOCAL_codigoColumn" msprop:Generator_UserColumnName="LOCAL_codigo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

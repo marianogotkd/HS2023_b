@@ -149,6 +149,33 @@ Partial Public Class Llave_disponibles
     Protected WithEvents btn_Examinar As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
+    '''Control Btn_rptlucha.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_rptlucha As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Btn_rptforma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_rptforma As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''Control Btn_rptseleccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Btn_rptseleccion As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control lbl_llf.
     '''</summary>
     '''<remarks>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_VisRegAnt" targetNamespace="http://tempuri.org/DS_VisRegAnt.xsd" xmlns:mstns="http://tempuri.org/DS_VisRegAnt.xsd" xmlns="http://tempuri.org/DS_VisRegAnt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_VisRegAnt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_VisRegAnt" msprop:Generator_UserDSName="DS_VisRegAnt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XCrgHistoria" msprop:Generator_TableClassName="XCrgHistoriaDataTable" msprop:Generator_TableVarName="tableXCrgHistoria" msprop:Generator_TablePropName="XCrgHistoria" msprop:Generator_RowDeletingName="XCrgHistoriaRowDeleting" msprop:Generator_RowChangingName="XCrgHistoriaRowChanging" msprop:Generator_RowEvHandlerName="XCrgHistoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="XCrgHistoriaRowDeleted" msprop:Generator_UserTableName="XCrgHistoria" msprop:Generator_RowChangedName="XCrgHistoriaRowChanged" msprop:Generator_RowEvArgName="XCrgHistoriaRowChangeEvent" msprop:Generator_RowClassName="XCrgHistoriaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RECORRIDO" msprop:Generator_ColumnVarNameInTable="columnRECORRIDO" msprop:Generator_ColumnPropNameInRow="RECORRIDO" msprop:Generator_ColumnPropNameInTable="RECORRIDOColumn" msprop:Generator_UserColumnName="RECORRIDO" type="xs:string" minOccurs="0" />
+              <xs:element name="PID" msprop:Generator_ColumnVarNameInTable="columnPID" msprop:Generator_ColumnPropNameInRow="PID" msprop:Generator_ColumnPropNameInTable="PIDColumn" msprop:Generator_UserColumnName="PID" type="xs:string" minOccurs="0" />
+              <xs:element name="IMPORTE" msprop:Generator_ColumnVarNameInTable="columnIMPORTE" msprop:Generator_ColumnPropNameInRow="IMPORTE" msprop:Generator_ColumnPropNameInTable="IMPORTEColumn" msprop:Generator_UserColumnName="IMPORTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="S" msprop:Generator_ColumnVarNameInTable="_columnS" msprop:Generator_ColumnPropNameInRow="S" msprop:Generator_ColumnPropNameInTable="SColumn" msprop:Generator_UserColumnName="S" type="xs:int" minOccurs="0" />
+              <xs:element name="PID2" msprop:Generator_ColumnVarNameInTable="columnPID2" msprop:Generator_ColumnPropNameInRow="PID2" msprop:Generator_ColumnPropNameInTable="PID2Column" msprop:Generator_UserColumnName="PID2" type="xs:string" minOccurs="0" />
+              <xs:element name="S2" msprop:Generator_ColumnVarNameInTable="columnS2" msprop:Generator_ColumnPropNameInRow="S2" msprop:Generator_ColumnPropNameInTable="S2Column" msprop:Generator_UserColumnName="S2" type="xs:int" minOccurs="0" />
+              <xs:element name="R" msprop:Generator_ColumnVarNameInTable="columnR" msprop:Generator_ColumnPropNameInRow="R" msprop:Generator_ColumnPropNameInTable="RColumn" msprop:Generator_UserColumnName="R" type="xs:string" minOccurs="0" />
+              <xs:element name="SC" msprop:Generator_ColumnVarNameInTable="columnSC" msprop:Generator_ColumnPropNameInRow="SC" msprop:Generator_ColumnPropNameInTable="SCColumn" msprop:Generator_UserColumnName="SC" type="xs:string" minOccurs="0" />
+              <xs:element name="V" msprop:Generator_ColumnVarNameInTable="columnV" msprop:Generator_ColumnPropNameInRow="V" msprop:Generator_ColumnPropNameInTable="VColumn" msprop:Generator_UserColumnName="V" type="xs:string" minOccurs="0" />
+              <xs:element name="T" msprop:Generator_ColumnVarNameInTable="columnT" msprop:Generator_ColumnPropNameInRow="T" msprop:Generator_ColumnPropNameInTable="TColumn" msprop:Generator_UserColumnName="T" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM" msprop:Generator_ColumnVarNameInTable="columnITEM" msprop:Generator_ColumnPropNameInRow="ITEM" msprop:Generator_ColumnPropNameInTable="ITEMColumn" msprop:Generator_UserColumnName="ITEM" type="xs:int" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:string" minOccurs="0" />
+              <xs:element name="HORA" msprop:Generator_ColumnVarNameInTable="columnHORA" msprop:Generator_ColumnPropNameInRow="HORA" msprop:Generator_ColumnPropNameInTable="HORAColumn" msprop:Generator_UserColumnName="HORA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -59,6 +59,29 @@ Public Class Llave
 
 
 
+    Public Function llave_obtenerinfo(ByVal llave_id As String) As DataSet
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        llave_id = "'" + llave_id + "'"
+
+        Dim Consulta As String = "select * from Llave where Llave_id = " + llave_id
+
+        'Consulta += ""
+        'Consulta += " Select * from graduacion order by graduacion.graduacion_id asc"
+
+        'Consulta += " where Recorridos.Habilitada = '1' and Puntos.Fecha =" + Fecha + " order by Recorridos.Idrecorrido asc"
+
+        Dim DA As New OleDbDataAdapter(Consulta, dbconn)
+        Dim ds As New DataSet()
+        DA.Fill(ds, "Llave")
+        dbconn.Close()
+        Return ds
+        ''''### son las 20:16
+    End Function
+
+
 
 
 
