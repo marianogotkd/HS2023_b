@@ -199,3 +199,13 @@ C:\Repositorio HS2022\HS2022\FITFA 2022\Capa_de_datos\obj\Debug\Capa_de_datos.vb
 C:\Repositorio HS2022\HS2022\FITFA 2022\Capa_de_datos\obj\Debug\Capa_de_datos.dll
 C:\Repositorio HS2022\HS2022\FITFA 2022\Capa_de_datos\obj\Debug\Capa_de_datos.xml
 C:\Repositorio HS2022\HS2022\FITFA 2022\Capa_de_datos\obj\Debug\Capa_de_datos.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\bin\Debug\Capa_de_datos.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\bin\Debug\Capa_de_datos.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\bin\Debug\Capa_de_datos.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.vbproj.AssemblyReference.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.Resources.resources
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.vbproj.GenerateResource.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.vbproj.CoreCompileInputs.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.pdb
