@@ -28,6 +28,8 @@
                 <asp:HiddenField ID="HF_categoria_sexo" runat="server" />
                 <asp:HiddenField ID="HF_graduacion_inicial" runat="server" />
                 <asp:HiddenField ID="HF_graduacion_final" runat="server" />
+                <asp:HiddenField ID="HF_categoria_peso_inicial" runat="server" />
+                <asp:HiddenField ID="HF_categoria_edadinicial" runat="server" />
                 <asp:Label ID="Label_alumno" runat="server" Text="Alumno:"></asp:Label>
             
             </div>
@@ -45,7 +47,7 @@
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server" Text="A continuación puede modificar la información:"></asp:Label>
             </div>
-            <div class="form-group">
+            <%--<div class="form-group">
                 <div class="row justify-content-start">
                     
                     <div class="col-md-2">
@@ -58,7 +60,33 @@
                             <asp:DropDownList ID="DropDownList_peso" runat="server" class="form-control"></asp:DropDownList>
                     </div>
                 </div>
+            </div>--%>
+
+        <div id="NUEVA" runat="server" visible="true">
+            <div class="form-group">
+                <div class="row justify-content-start">
+                    
+                    <div class="col-md-2">
+                            <label for="Lb_sexo">SEXO:</label>
+                            <asp:DropDownList ID="combo_n_sexo" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+
+                    <div class="col-md-2">
+                            <label for="Lb_graduacion">RANGO GRADUACION:</label>
+                            <asp:DropDownList ID="combo_n_graduacion" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-2">
+                            <label for="Lb_edad">RANGO EDAD:</label>
+                            <asp:DropDownList ID="combo_n_edad" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-2">
+                            <label for="Lb_peso">RANGO PESO:</label>
+                            <asp:DropDownList ID="combo_n_peso" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                    </div>
+                </div>
             </div>
+
+        </div>
 
             <div class="form-group">
             <button type="button" Class="btn btn-primary" id = "BOTON_GUARDAR" runat="server">GUARDAR CAMBIOS</button>

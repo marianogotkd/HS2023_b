@@ -103,17 +103,17 @@
 
                                           <button ID="Btn_rptlucha" runat="server" class="btn btn-primary" 
                                                type="button">
-                                              rpo_llave lucha
+                                              PDF Lucha
                                           </button>
 
                                           <button ID="Btn_rptforma" runat="server" class="btn btn-primary" 
                                                type="button">
-                                              rpo_llave forma
+                                              PDF Forma
                                           </button>
 
                                           <button ID="Btn_rptseleccion" runat="server" class="btn btn-primary" 
                                                type="button">
-                                              rpo_llave seleccionada
+                                              PDF Seleccion
                                           </button>
 
               

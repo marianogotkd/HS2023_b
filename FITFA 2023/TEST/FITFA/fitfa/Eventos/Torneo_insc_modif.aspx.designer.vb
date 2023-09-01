@@ -95,6 +95,24 @@ Partial Public Class Torneo_insc_modif
     Protected WithEvents HF_graduacion_final As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''Control HF_categoria_peso_inicial.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_categoria_peso_inicial As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control HF_categoria_edadinicial.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents HF_categoria_edadinicial As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control Label_alumno.
     '''</summary>
     '''<remarks>
@@ -140,22 +158,49 @@ Partial Public Class Torneo_insc_modif
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control DropDownList_edad.
+    '''Control NUEVA.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents DropDownList_edad As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents NUEVA As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control DropDownList_peso.
+    '''Control combo_n_sexo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents DropDownList_peso As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents combo_n_sexo As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control combo_n_graduacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents combo_n_graduacion As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control combo_n_edad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents combo_n_edad As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control combo_n_peso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents combo_n_peso As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control BOTON_GUARDAR.

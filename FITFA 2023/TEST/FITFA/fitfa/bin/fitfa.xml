@@ -3747,6 +3747,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:fitfa.Torneo_ds.Combo_GraduacionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:fitfa.Torneo_ds.Torneo_resumenRow">
 <summary>
 Represents strongly named DataRow class.
@@ -3772,6 +3777,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:fitfa.Torneo_ds.Combo_GraduacionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:fitfa.Torneo_ds.Torneo_resumenRowChangeEvent">
 <summary>
 Row event argument class
@@ -3793,6 +3803,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:fitfa.Torneo_ds.Combo_PesoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:fitfa.Torneo_ds.Combo_GraduacionRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -4031,6 +4046,24 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:fitfa.Torneo_insc_modif._HF_categoria_peso_inicial">
+<summary>
+Control HF_categoria_peso_inicial.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Torneo_insc_modif._HF_categoria_edadinicial">
+<summary>
+Control HF_categoria_edadinicial.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:fitfa.Torneo_insc_modif._Label_alumno">
 <summary>
 Control Label_alumno.
@@ -4076,18 +4109,45 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:fitfa.Torneo_insc_modif._DropDownList_edad">
+<member name="F:fitfa.Torneo_insc_modif._NUEVA">
 <summary>
-Control DropDownList_edad.
+Control NUEVA.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:fitfa.Torneo_insc_modif._DropDownList_peso">
+<member name="F:fitfa.Torneo_insc_modif._combo_n_sexo">
 <summary>
-Control DropDownList_peso.
+Control combo_n_sexo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Torneo_insc_modif._combo_n_graduacion">
+<summary>
+Control combo_n_graduacion.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Torneo_insc_modif._combo_n_edad">
+<summary>
+Control combo_n_edad.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.Torneo_insc_modif._combo_n_peso">
+<summary>
+Control combo_n_peso.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -8275,6 +8335,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:fitfa.Llaves_ds.LLAVES_PDFDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:fitfa.Llaves_ds.eventos_disponiblesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -8365,6 +8430,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:fitfa.Llaves_ds.LLAVES_PDFRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:fitfa.Llaves_ds.eventos_disponiblesRowChangeEvent">
 <summary>
 Row event argument class
@@ -8451,6 +8521,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:fitfa.Llaves_ds.inscriptos_info_reporteRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:fitfa.Llaves_ds.LLAVES_PDFRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

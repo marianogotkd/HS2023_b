@@ -73,6 +73,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\..\..\..\..\..\Users\Pablo\Downloads\ionic zip\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\itextsharp.dll</HintPath>
@@ -132,6 +135,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Archivos_pdf\Descargando.aspx" />
     <Content Include="Areas\Area_asignar.aspx" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl.cab" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_cs.cab" />
@@ -2970,6 +2974,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivos_pdf\Descargando.aspx.designer.vb">
+      <DependentUpon>Descargando.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos_pdf\Descargando.aspx.vb">
+      <DependentUpon>Descargando.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Areas\Area_asignar.aspx.designer.vb">
       <DependentUpon>Area_asignar.aspx</DependentUpon>
     </Compile>
@@ -4050,7 +4061,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Archivos_pdf\" />
+    <Folder Include="Archivos_pdf\Backup\" />
     <Folder Include="RegistroInvitado\" />
   </ItemGroup>
   <ItemGroup>

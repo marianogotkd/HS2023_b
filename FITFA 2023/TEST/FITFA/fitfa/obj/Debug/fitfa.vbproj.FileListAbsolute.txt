@@ -535,3 +535,4 @@ C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\fitfa\obj\Debug\fitfa.vbp
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\fitfa\obj\Debug\fitfa.dll
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\fitfa\obj\Debug\fitfa.xml
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\fitfa\obj\Debug\fitfa.pdb
+C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\fitfa\bin\Ionic.Zip.Reduced.dll
