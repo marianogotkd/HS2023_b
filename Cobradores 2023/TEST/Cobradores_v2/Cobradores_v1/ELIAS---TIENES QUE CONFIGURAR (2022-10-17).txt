@@ -1,0 +1,3 @@
+en Master Propiedades -> autenticar, conectar,copia de seguridad, crear base de datos.
+
+ESTO ES IMPORTANTE PARA QUE FUNCIONE EL MODULO DE RELIQUIDACION...SON PERMISOS PARA CREAR Y RESTAURAR UNA BASE DE DATOS
