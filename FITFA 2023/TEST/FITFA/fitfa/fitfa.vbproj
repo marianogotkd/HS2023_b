@@ -1663,6 +1663,7 @@
     <Content Include="Mailbox\mailbox.aspx" />
     <Content Include="Mailbox\Mensaje_Datos_Personales.aspx" />
     <Content Include="MantenimientoHamer\CambioCategoriaenInscripcion.aspx" />
+    <Content Include="MantenimientoHamer\QuitarInvitados.aspx" />
     <Content Include="MasterPage\build\js\AdminLTE.js" />
     <Content Include="MasterPage\build\js\ControlSidebar.js" />
     <Content Include="MasterPage\build\js\Layout.js" />
@@ -3567,6 +3568,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MantHamer_ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoHamer\QuitarInvitados.aspx.designer.vb">
+      <DependentUpon>QuitarInvitados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoHamer\QuitarInvitados.aspx.vb">
+      <DependentUpon>QuitarInvitados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MasterPage\MasterPage.Master.designer.vb">
       <DependentUpon>MasterPage.Master</DependentUpon>

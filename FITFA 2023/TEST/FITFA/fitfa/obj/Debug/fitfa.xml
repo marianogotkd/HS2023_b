@@ -14680,6 +14680,60 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
+<member name="F:fitfa.QuitarInvitados._ScriptManager1">
+<summary>
+Control ScriptManager1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.QuitarInvitados._UpdatePanel1">
+<summary>
+Control UpdatePanel1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.QuitarInvitados._Lb_evento">
+<summary>
+Control Lb_evento.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.QuitarInvitados._Btn_QuitarInvitados">
+<summary>
+Control Btn_QuitarInvitados.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.QuitarInvitados._Lb_guardado_ok">
+<summary>
+Control Lb_guardado_ok.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:fitfa.QuitarInvitados._UpdateProgress1">
+<summary>
+Control UpdateProgress1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:fitfa.MasterPage._head">
 <summary>
 Control head.

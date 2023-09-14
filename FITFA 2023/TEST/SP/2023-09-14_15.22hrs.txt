@@ -1,0 +1,2 @@
+esto ejecutar para quitar todos los alumnos INVITADOS y que se puedan registrar nuevamente.
+update usuario set usuario_estado = 'inactivo' where usuario.usuario_obs = 'invitado' and usuario.usuario_tipo = 'alumno'
