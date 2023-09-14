@@ -216,3 +216,13 @@ C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.dll
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.xml
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\bin\Debug\Capa_Datos.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.vbproj.AssemblyReference.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.Resources.resources
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.vbproj.GenerateResource.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.vbproj.CoreCompileInputs.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Capa_Datos\obj\Debug\Capa_Datos.pdb
