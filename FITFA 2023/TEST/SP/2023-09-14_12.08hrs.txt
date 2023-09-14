@@ -1,0 +1,48 @@
+ALTER procedure [dbo].[Inscripciones_credenciales_obtener]
+@evento_id int
+as
+
+select 
+evento.evento_id,
+evento.evento_descripcion,
+evento.evento_foto,
+evento.evento_fecha,
+usuario.usuario_id ,
+usuario.usuario_doc,
+usuario.usuario_apellido,
+usuario.usuario_nombre,
+graduacion.graduacion_desc as 'graduacion',
+usuario.usuario_telefono,
+'INSTRUCTOR' as 'instructor',
+usuario.usuario_foto,
+instructor.instructor_id,
+inscripcion.inscripcion_id,
+inscripcion.inscripcion_peso  
+from evento inner join inscripcion on evento.evento_id= inscripcion.evento_id 
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id 
+inner join instructor on inscripcion.inscripcion_instructor_id= instructor.instructor_id
+inner join graduacion on usuario.graduacion_id=graduacion.graduacion_id where evento.evento_id=@evento_id
+
+select inscripcion.usuario_id as 'ID',
+usuario.usuario_doc as 'dni',
+usuario.usuario_apellido+' '+usuario_nombre as 'ApellidoyNombre',
+institucion.institucion_abreviacion as 'Institucion_abreviatura',
+institucion.institucion_descripcion as 'Institucion',
+provincia.provincia_desc as 'Provincia'
+
+---esta la uso en el modulo de generacion de credenciales
+from inscripcion inner join evento on inscripcion.evento_id=evento.evento_id
+inner join usuario on inscripcion.usuario_id= usuario.usuario_id
+inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+inner join institucion on alumnos_x_instructor.institucion_id= institucion.institucion_id
+inner join provincia on institucion.provincia_id = provincia.provincia_id
+where inscripcion.evento_id=@evento_id
+--este era el from anterior con un inner join que me repetia las inscripciones, si un usuario se anotaba en lucha y forma
+--from inscripcion inner join inscripciones_x_torneo on inscripcion.inscripcion_id = inscripciones_x_torneo.inscripcion_id
+--inner join categoria on inscripciones_x_torneo.categoria_id=categoria.categoria_id
+--inner join evento on inscripcion.evento_id=evento.evento_id
+--inner join usuario on inscripcion.usuario_id= usuario.usuario_id
+--inner join alumnos_x_instructor on usuario.usuario_id = alumnos_x_instructor.usuario_id
+--inner join institucion on alumnos_x_instructor.institucion_id= institucion.institucion_id
+--inner join provincia on institucion.provincia_id = provincia.provincia_id
+--where inscripcion.evento_id=@evento_id

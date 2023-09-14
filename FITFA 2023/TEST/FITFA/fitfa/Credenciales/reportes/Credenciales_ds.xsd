@@ -12,7 +12,7 @@
   <xs:element name="Credenciales_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Credenciales_ds" msprop:Generator_UserDSName="Credenciales_ds">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Credenciales" msprop:Generator_TableClassName="CredencialesDataTable" msprop:Generator_TableVarName="tableCredenciales" msprop:Generator_TablePropName="Credenciales" msprop:Generator_RowDeletingName="CredencialesRowDeleting" msprop:Generator_RowChangingName="CredencialesRowChanging" msprop:Generator_RowEvHandlerName="CredencialesRowChangeEventHandler" msprop:Generator_RowDeletedName="CredencialesRowDeleted" msprop:Generator_UserTableName="Credenciales" msprop:Generator_RowChangedName="CredencialesRowChanged" msprop:Generator_RowEvArgName="CredencialesRowChangeEvent" msprop:Generator_RowClassName="CredencialesRow">
+        <xs:element name="Credenciales" msprop:Generator_TableClassName="CredencialesDataTable" msprop:Generator_TableVarName="tableCredenciales" msprop:Generator_RowChangedName="CredencialesRowChanged" msprop:Generator_TablePropName="Credenciales" msprop:Generator_RowDeletingName="CredencialesRowDeleting" msprop:Generator_RowChangingName="CredencialesRowChanging" msprop:Generator_RowEvHandlerName="CredencialesRowChangeEventHandler" msprop:Generator_RowDeletedName="CredencialesRowDeleted" msprop:Generator_RowClassName="CredencialesRow" msprop:Generator_UserTableName="Credenciales" msprop:Generator_RowEvArgName="CredencialesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="evento_id" msprop:Generator_ColumnVarNameInTable="columnevento_id" msprop:Generator_ColumnPropNameInRow="evento_id" msprop:Generator_ColumnPropNameInTable="evento_idColumn" msprop:Generator_UserColumnName="evento_id" type="xs:int" minOccurs="0" />
@@ -29,7 +29,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Credenciales_2" msprop:Generator_TableClassName="Credenciales_2DataTable" msprop:Generator_TableVarName="tableCredenciales_2" msprop:Generator_TablePropName="Credenciales_2" msprop:Generator_RowDeletingName="Credenciales_2RowDeleting" msprop:Generator_RowChangingName="Credenciales_2RowChanging" msprop:Generator_RowEvHandlerName="Credenciales_2RowChangeEventHandler" msprop:Generator_RowDeletedName="Credenciales_2RowDeleted" msprop:Generator_UserTableName="Credenciales_2" msprop:Generator_RowChangedName="Credenciales_2RowChanged" msprop:Generator_RowEvArgName="Credenciales_2RowChangeEvent" msprop:Generator_RowClassName="Credenciales_2Row">
+        <xs:element name="Credenciales_2" msprop:Generator_TableClassName="Credenciales_2DataTable" msprop:Generator_TableVarName="tableCredenciales_2" msprop:Generator_RowChangedName="Credenciales_2RowChanged" msprop:Generator_TablePropName="Credenciales_2" msprop:Generator_RowDeletingName="Credenciales_2RowDeleting" msprop:Generator_RowChangingName="Credenciales_2RowChanging" msprop:Generator_RowEvHandlerName="Credenciales_2RowChangeEventHandler" msprop:Generator_RowDeletedName="Credenciales_2RowDeleted" msprop:Generator_RowClassName="Credenciales_2Row" msprop:Generator_UserTableName="Credenciales_2" msprop:Generator_RowEvArgName="Credenciales_2RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="evento_id" msprop:Generator_ColumnVarNameInTable="columnevento_id" msprop:Generator_ColumnPropNameInRow="evento_id" msprop:Generator_ColumnPropNameInTable="evento_idColumn" msprop:Generator_UserColumnName="evento_id" type="xs:int" minOccurs="0" />
@@ -55,6 +55,8 @@
               <xs:element name="usuario_foto2" msprop:Generator_ColumnVarNameInTable="columnusuario_foto2" msprop:Generator_ColumnPropNameInRow="usuario_foto2" msprop:Generator_ColumnPropNameInTable="usuario_foto2Column" msprop:Generator_UserColumnName="usuario_foto2" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="inscripcion_id" msprop:Generator_ColumnVarNameInTable="columninscripcion_id" msprop:Generator_ColumnPropNameInRow="inscripcion_id" msprop:Generator_ColumnPropNameInTable="inscripcion_idColumn" msprop:Generator_UserColumnName="inscripcion_id" type="xs:string" minOccurs="0" />
               <xs:element name="inscripcion_id2" msprop:Generator_ColumnVarNameInTable="columninscripcion_id2" msprop:Generator_ColumnPropNameInRow="inscripcion_id2" msprop:Generator_ColumnPropNameInTable="inscripcion_id2Column" msprop:Generator_UserColumnName="inscripcion_id2" type="xs:string" minOccurs="0" />
+              <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="peso_2" msprop:Generator_ColumnVarNameInTable="columnpeso_2" msprop:Generator_ColumnPropNameInRow="peso_2" msprop:Generator_ColumnPropNameInTable="peso_2Column" msprop:Generator_UserColumnName="peso_2" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

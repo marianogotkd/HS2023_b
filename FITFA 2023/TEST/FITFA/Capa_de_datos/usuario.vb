@@ -757,5 +757,48 @@ ByVal usuario_id As Integer) As DataSet
     End Function
 
 
+    Public Function Alumnos_x_instructor_obtener(ByVal instructor_id As String) As DataTable
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim Consulta As String = ""
+        instructor_id = "'" + instructor_id + "'"
+
+
+
+
+
+        Consulta += "select * from alumnos_x_instructor where instructor_id = " + instructor_id
+
+
+        Dim DA As New OleDbDataAdapter(Consulta, dbconn)
+        Dim ds As New DataSet()
+        DA.Fill(ds, "Alumnos")
+        dbconn.Close()
+        Return ds.Tables(0)
+        ''''### son las 20:16
+    End Function
+
+    Public Function usuario_pasar_inactivo(ByVal usuario_id As String) As DataTable
+        Try
+            dbconn.Open()
+        Catch ex As Exception
+        End Try
+        Dim Consulta As String = ""
+        usuario_id = "'" + usuario_id + "'"
+
+        Consulta += "update usuario set usuario_estado = 'inactivo' where usuario.usuario_id = " + usuario_id
+        Consulta += "  select * from usuario where usuario.usuario_id = " + usuario_id
+
+        Dim DA As New OleDbDataAdapter(Consulta, dbconn)
+        Dim ds As New DataSet()
+        DA.Fill(ds, "Usuario")
+        dbconn.Close()
+        Return ds.Tables(0)
+        ''''### son las 20:16
+    End Function
+
+
 
 End Class

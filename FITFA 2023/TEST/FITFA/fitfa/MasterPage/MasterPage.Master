@@ -549,6 +549,13 @@
                                     </a>
               </li>
 
+                            <li class="nav-item">
+                                    <a href="../MantenimientoHamer/QuitarInvitados.aspx" class="nav-link">
+                                      <i class="fa fa-circle-o nav-icon"></i>
+                                      <p>QuitarAlumnosInvitados</p>
+                                    </a>
+              </li>
+
                         </ul>
               </li>
             <!--FIN MANTENIMIENTO ADM-->

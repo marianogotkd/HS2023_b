@@ -244,6 +244,7 @@
                             row_insc("instructor") = ds_busqueda.Tables(0).Rows(0).Item("ApellidoyNombre")
                             row_insc("usuario_foto") = ds_inscripciones.Tables(0).Rows(i).Item("usuario_foto")
                             row_insc("inscripcion_id") = ds_inscripciones.Tables(0).Rows(i).Item("inscripcion_id")
+                            row_insc("peso") = ds_inscripciones.Tables(0).Rows(i).Item("inscripcion_peso")
 
                             '////////////////aqui va en blanco el segundo registro///////////////////////
                             'van vacios los datos
@@ -267,6 +268,8 @@
                             credenciales_ds.Tables("Credenciales_2").Rows(a).Item("instructor_2") = ds_busqueda.Tables(0).Rows(0).Item("ApellidoyNombre")
                             credenciales_ds.Tables("Credenciales_2").Rows(a).Item("usuario_foto2") = ds_inscripciones.Tables(0).Rows(i).Item("usuario_foto")
                             credenciales_ds.Tables("Credenciales_2").Rows(a).Item("inscripcion_id2") = ds_inscripciones.Tables(0).Rows(i).Item("inscripcion_id")
+                            credenciales_ds.Tables("Credenciales_2").Rows(a).Item("peso_2") = ds_inscripciones.Tables(0).Rows(i).Item("inscripcion_peso")
+
                             row_creado = "si"
                             row_crea_otro = "si"
                         End If
