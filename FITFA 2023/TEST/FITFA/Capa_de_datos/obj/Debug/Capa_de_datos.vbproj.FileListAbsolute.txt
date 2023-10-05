@@ -208,3 +208,4 @@ C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\C
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.dll
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.xml
 C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.pdb
+C:\Repositorio HS2023_b\HS2023_b\FITFA 2023\TEST\FITFA\Capa_de_datos\obj\Debug\Capa_de_datos.vbproj.AssemblyReference.cache

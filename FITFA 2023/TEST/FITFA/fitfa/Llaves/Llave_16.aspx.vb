@@ -356,7 +356,8 @@
 
             Dim instructor_id As Integer = ds_categorias.Tables(3).Rows(i).Item("instructor_id")
             Dim ds_instr As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
-            Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + " (Dni:" + CStr(ds_instr.Tables(0).Rows(0).Item("usuario_doc")) + ")"
+            'Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + " (Dni:" + CStr(ds_instr.Tables(0).Rows(0).Item("usuario_doc")) + ")"
+            Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre")
 
             'veo si ya existen en el table("Competidores")
             Dim j As Integer = 0
@@ -902,6 +903,139 @@
         End If
     End Sub
     Dim Llaves_reporte_DS As New Llaves_reporte_DS
+
+    Private Sub llave_agregar_instructores(ByRef Llaves_ds As DataSet)
+        Dim ds_categorias As DataSet = DAllave.LLave_obtener_llavegenerada_etc_2(Session("llave_id"))
+
+        Dim i As Integer = 0
+        While i < ds_categorias.Tables(2).Rows.Count
+            Dim Llave_item_numero As Integer = ds_categorias.Tables(2).Rows(i).Item("Llave_item_numero")
+            Dim Llave_item_usuario_id As Integer = ds_categorias.Tables(2).Rows(i).Item("Llave_item_usuario_id")
+            Dim j As Integer = 0
+            Dim instructor As String = ""
+            While j < ds_categorias.Tables(3).Rows.Count
+                If Llave_item_usuario_id = ds_categorias.Tables(3).Rows(j).Item("Llave_item_usuario_id") Then
+                    Dim instructor_id As Integer = ds_categorias.Tables(3).Rows(j).Item("instructor_id")
+
+                    Dim ds_instr As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                    instructor = "(" + ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + ")"
+                    Exit While
+                End If
+                j = j + 1
+            End While
+
+            Select Case Llave_item_numero
+                Case 1
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B1_instructor") = instructor
+                Case 2
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B2_instructor") = instructor
+                Case 3
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B3_instructor") = instructor
+                Case 4
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B4_instructor") = instructor
+                Case 5
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B5_instructor") = instructor
+                Case 6
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B6_instructor") = instructor
+                Case 7
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B7_instructor") = instructor
+                Case 8
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B8_instructor") = instructor
+                Case 9
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B9_instructor") = instructor
+                Case 10
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B10_instructor") = instructor
+                Case 11
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B11_instructor") = instructor
+                Case 12
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B12_instructor") = instructor
+                Case 13
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B13_instructor") = instructor
+                Case 14
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B14_instructor") = instructor
+                Case 15
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B15_instructor") = instructor
+                Case 16
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B16_instructor") = instructor
+                Case 17
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B17_instructor") = instructor
+                Case 18
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B18_instructor") = instructor
+                Case 19
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B19_instructor") = instructor
+                Case 20
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B20_instructor") = instructor
+                Case 21
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B21_instructor") = instructor
+                Case 22
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B22_instructor") = instructor
+                Case 23
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B23_instructor") = instructor
+                Case 24
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B24_instructor") = instructor
+                Case 25
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B25_instructor") = instructor
+                Case 26
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B26_instructor") = instructor
+                Case 27
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B27_instructor") = instructor
+                Case 28
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B28_instructor") = instructor
+                Case 29
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B29_instructor") = instructor
+                Case 30
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B30_instructor") = instructor
+                Case 31
+                    Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B31_instructor") = instructor
+            End Select
+            i = i + 1
+        End While
+
+    End Sub
+
+    Private Sub resultados_agregar_instructores_llave16(ByRef Llaves_ds As DataSet)
+
+        Dim B31 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B31")
+        Dim B30 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B30")
+        Dim B29 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B29")
+        Dim B28 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B28")
+        Dim B27 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B27")
+        Dim B26 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B26")
+        Dim B25 As String = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B27")
+
+
+
+
+        If B31 <> "" Then
+            Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("1st_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B31_instructor")
+            If B31 = B29 Then
+                Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("2nd_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B30_instructor")
+            Else
+                Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("2nd_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B29_instructor")
+            End If
+            'aqui veo quien es el tercero
+            If B25 <> "" And B26 <> "" Then
+                If B25 = B29 Then
+                    Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("3rd_a_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B26_instructor")
+                End If
+                If B26 = B29 Then
+                    Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("3rd_a_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B25_instructor")
+                End If
+            End If
+            If B27 <> "" And B28 <> "" Then
+                If B27 = B30 Then
+                    Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("3rd_b_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B28_instructor")
+                End If
+                If B28 = B30 Then
+                    Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("3rd_b_instructor") = Llaves_ds.Tables("LLAVE_16").Rows(0).Item("B27_instructor")
+                End If
+            End If
+        End If
+
+    End Sub
+
+
+
     Private Sub Btn_reporte_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_reporte.Click
         Llaves_ds.Tables("LLAVE_DATOS").Rows.Clear()
         Dim fila1 As DataRow = Llaves_ds.Tables("LLAVE_DATOS").NewRow
@@ -920,6 +1054,7 @@
         fila2("3rd_b") = GridView_RESULTADOS.Rows(3).Cells(1).Text
         fila2("ID") = 1
         Llaves_ds.Tables("LLAVE_RESULTADOS").Rows.Add(fila2)
+
 
 
         Llaves_ds.Tables("LLAVE_16").Rows.Clear()
@@ -959,6 +1094,8 @@
         fila3("ID") = 1
         Llaves_ds.Tables("LLAVE_16").Rows.Add(fila3)
 
+        llave_agregar_instructores(Llaves_ds)
+
         Llaves_ds.Tables("Competidores").Rows.Clear()
         Dim i As Integer = 0
         While i < GridView_COMPETIDORES.Rows.Count
@@ -968,6 +1105,8 @@
             Llaves_ds.Tables("Competidores").Rows.Add(fila4)
             i = i + 1
         End While
+
+        resultados_agregar_instructores_llave16(Llaves_ds)
 
 
         Session("op_llave") = "llave 16"

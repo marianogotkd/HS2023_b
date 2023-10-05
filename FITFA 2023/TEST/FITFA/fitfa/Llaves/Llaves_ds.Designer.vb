@@ -3313,6 +3313,12 @@ Partial Public Class Llaves_ds
         
         Private columnID As Global.System.Data.DataColumn
         
+        Private columnB1_instructor As Global.System.Data.DataColumn
+        
+        Private columnB2_instructor As Global.System.Data.DataColumn
+        
+        Private columnB3_instructor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3381,6 +3387,30 @@ Partial Public Class Llaves_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B1_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB1_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B2_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB2_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B3_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB3_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3417,9 +3447,9 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddLLAVE_2Row(ByVal B1 As String, ByVal B2 As String, ByVal B3 As String, ByVal ID As Integer) As LLAVE_2Row
+        Public Overloads Function AddLLAVE_2Row(ByVal B1 As String, ByVal B2 As String, ByVal B3 As String, ByVal ID As Integer, ByVal B1_instructor As String, ByVal B2_instructor As String, ByVal B3_instructor As String) As LLAVE_2Row
             Dim rowLLAVE_2Row As LLAVE_2Row = CType(Me.NewRow,LLAVE_2Row)
-            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, ID}
+            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, ID, B1_instructor, B2_instructor, B3_instructor}
             rowLLAVE_2Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowLLAVE_2Row)
             Return rowLLAVE_2Row
@@ -3446,6 +3476,9 @@ Partial Public Class Llaves_ds
             Me.columnB2 = MyBase.Columns("B2")
             Me.columnB3 = MyBase.Columns("B3")
             Me.columnID = MyBase.Columns("ID")
+            Me.columnB1_instructor = MyBase.Columns("B1_instructor")
+            Me.columnB2_instructor = MyBase.Columns("B2_instructor")
+            Me.columnB3_instructor = MyBase.Columns("B3_instructor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3459,6 +3492,12 @@ Partial Public Class Llaves_ds
             MyBase.Columns.Add(Me.columnB3)
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.columnB1_instructor = New Global.System.Data.DataColumn("B1_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB1_instructor)
+            Me.columnB2_instructor = New Global.System.Data.DataColumn("B2_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB2_instructor)
+            Me.columnB3_instructor = New Global.System.Data.DataColumn("B3_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB3_instructor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3606,6 +3645,14 @@ Partial Public Class Llaves_ds
         
         Private columnID As Global.System.Data.DataColumn
         
+        Private column1st_instructor As Global.System.Data.DataColumn
+        
+        Private column2nd_instructor As Global.System.Data.DataColumn
+        
+        Private column3rd_a_instructor As Global.System.Data.DataColumn
+        
+        Private column3rd_b_instructor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -3682,6 +3729,38 @@ Partial Public Class Llaves_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property _1st_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column1st_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property _2nd_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column2nd_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property _3rd_a_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column3rd_a_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property _3rd_b_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column3rd_b_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3718,9 +3797,9 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddLLAVE_RESULTADOSRow(ByVal _1st As String, ByVal _2nd As String, ByVal _3rd_a As String, ByVal _3rd_b As String, ByVal ID As Integer) As LLAVE_RESULTADOSRow
+        Public Overloads Function AddLLAVE_RESULTADOSRow(ByVal _1st As String, ByVal _2nd As String, ByVal _3rd_a As String, ByVal _3rd_b As String, ByVal ID As Integer, ByVal _1st_instructor As String, ByVal _2nd_instructor As String, ByVal _3rd_a_instructor As String, ByVal _3rd_b_instructor As String) As LLAVE_RESULTADOSRow
             Dim rowLLAVE_RESULTADOSRow As LLAVE_RESULTADOSRow = CType(Me.NewRow,LLAVE_RESULTADOSRow)
-            Dim columnValuesArray() As Object = New Object() {_1st, _2nd, _3rd_a, _3rd_b, ID}
+            Dim columnValuesArray() As Object = New Object() {_1st, _2nd, _3rd_a, _3rd_b, ID, _1st_instructor, _2nd_instructor, _3rd_a_instructor, _3rd_b_instructor}
             rowLLAVE_RESULTADOSRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowLLAVE_RESULTADOSRow)
             Return rowLLAVE_RESULTADOSRow
@@ -3748,6 +3827,10 @@ Partial Public Class Llaves_ds
             Me.column3rd_a = MyBase.Columns("3rd_a")
             Me.column3rd_b = MyBase.Columns("3rd_b")
             Me.columnID = MyBase.Columns("ID")
+            Me.column1st_instructor = MyBase.Columns("1st_instructor")
+            Me.column2nd_instructor = MyBase.Columns("2nd_instructor")
+            Me.column3rd_a_instructor = MyBase.Columns("3rd_a_instructor")
+            Me.column3rd_b_instructor = MyBase.Columns("3rd_b_instructor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3771,6 +3854,22 @@ Partial Public Class Llaves_ds
             MyBase.Columns.Add(Me.column3rd_b)
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.column1st_instructor = New Global.System.Data.DataColumn("1st_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column1st_instructor.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column1st_instructor")
+            Me.column1st_instructor.ExtendedProperties.Add("Generator_UserColumnName", "1st_instructor")
+            MyBase.Columns.Add(Me.column1st_instructor)
+            Me.column2nd_instructor = New Global.System.Data.DataColumn("2nd_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column2nd_instructor.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column2nd_instructor")
+            Me.column2nd_instructor.ExtendedProperties.Add("Generator_UserColumnName", "2nd_instructor")
+            MyBase.Columns.Add(Me.column2nd_instructor)
+            Me.column3rd_a_instructor = New Global.System.Data.DataColumn("3rd_a_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column3rd_a_instructor.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column3rd_a_instructor")
+            Me.column3rd_a_instructor.ExtendedProperties.Add("Generator_UserColumnName", "3rd_a_instructor")
+            MyBase.Columns.Add(Me.column3rd_a_instructor)
+            Me.column3rd_b_instructor = New Global.System.Data.DataColumn("3rd_b_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.column3rd_b_instructor.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column3rd_b_instructor")
+            Me.column3rd_b_instructor.ExtendedProperties.Add("Generator_UserColumnName", "3rd_b_instructor")
+            MyBase.Columns.Add(Me.column3rd_b_instructor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3924,6 +4023,20 @@ Partial Public Class Llaves_ds
         
         Private columnID As Global.System.Data.DataColumn
         
+        Private columnB1_instructor As Global.System.Data.DataColumn
+        
+        Private columnB2_instructor As Global.System.Data.DataColumn
+        
+        Private columnB3_instructor As Global.System.Data.DataColumn
+        
+        Private columnB4_instructor As Global.System.Data.DataColumn
+        
+        Private columnB5_instructor As Global.System.Data.DataColumn
+        
+        Private columnB6_instructor As Global.System.Data.DataColumn
+        
+        Private columnB7_instructor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -4024,6 +4137,62 @@ Partial Public Class Llaves_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B1_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB1_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B2_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB2_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B3_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB3_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B4_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB4_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B5_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB5_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B6_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB6_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B7_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB7_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4060,9 +4229,9 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddLLAVE_4Row(ByVal B1 As String, ByVal B2 As String, ByVal B3 As String, ByVal B4 As String, ByVal B5 As String, ByVal B6 As String, ByVal B7 As String, ByVal ID As Integer) As LLAVE_4Row
+        Public Overloads Function AddLLAVE_4Row(ByVal B1 As String, ByVal B2 As String, ByVal B3 As String, ByVal B4 As String, ByVal B5 As String, ByVal B6 As String, ByVal B7 As String, ByVal ID As Integer, ByVal B1_instructor As String, ByVal B2_instructor As String, ByVal B3_instructor As String, ByVal B4_instructor As String, ByVal B5_instructor As String, ByVal B6_instructor As String, ByVal B7_instructor As String) As LLAVE_4Row
             Dim rowLLAVE_4Row As LLAVE_4Row = CType(Me.NewRow,LLAVE_4Row)
-            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, ID}
+            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, ID, B1_instructor, B2_instructor, B3_instructor, B4_instructor, B5_instructor, B6_instructor, B7_instructor}
             rowLLAVE_4Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowLLAVE_4Row)
             Return rowLLAVE_4Row
@@ -4093,6 +4262,13 @@ Partial Public Class Llaves_ds
             Me.columnB6 = MyBase.Columns("B6")
             Me.columnB7 = MyBase.Columns("B7")
             Me.columnID = MyBase.Columns("ID")
+            Me.columnB1_instructor = MyBase.Columns("B1_instructor")
+            Me.columnB2_instructor = MyBase.Columns("B2_instructor")
+            Me.columnB3_instructor = MyBase.Columns("B3_instructor")
+            Me.columnB4_instructor = MyBase.Columns("B4_instructor")
+            Me.columnB5_instructor = MyBase.Columns("B5_instructor")
+            Me.columnB6_instructor = MyBase.Columns("B6_instructor")
+            Me.columnB7_instructor = MyBase.Columns("B7_instructor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4114,6 +4290,20 @@ Partial Public Class Llaves_ds
             MyBase.Columns.Add(Me.columnB7)
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.columnB1_instructor = New Global.System.Data.DataColumn("B1_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB1_instructor)
+            Me.columnB2_instructor = New Global.System.Data.DataColumn("B2_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB2_instructor)
+            Me.columnB3_instructor = New Global.System.Data.DataColumn("B3_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB3_instructor)
+            Me.columnB4_instructor = New Global.System.Data.DataColumn("B4_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB4_instructor)
+            Me.columnB5_instructor = New Global.System.Data.DataColumn("B5_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB5_instructor)
+            Me.columnB6_instructor = New Global.System.Data.DataColumn("B6_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB6_instructor)
+            Me.columnB7_instructor = New Global.System.Data.DataColumn("B7_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB7_instructor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4283,6 +4473,36 @@ Partial Public Class Llaves_ds
         
         Private columnID As Global.System.Data.DataColumn
         
+        Private columnB1_instructor As Global.System.Data.DataColumn
+        
+        Private columnB2_instructor As Global.System.Data.DataColumn
+        
+        Private columnB3_instructor As Global.System.Data.DataColumn
+        
+        Private columnB4_instructor As Global.System.Data.DataColumn
+        
+        Private columnB5_instructor As Global.System.Data.DataColumn
+        
+        Private columnB6_instructor As Global.System.Data.DataColumn
+        
+        Private columnB7_instructor As Global.System.Data.DataColumn
+        
+        Private columnB8_instructor As Global.System.Data.DataColumn
+        
+        Private columnB9_instructor As Global.System.Data.DataColumn
+        
+        Private columnB10_instructor As Global.System.Data.DataColumn
+        
+        Private columnB11_instructor As Global.System.Data.DataColumn
+        
+        Private columnB12_instructor As Global.System.Data.DataColumn
+        
+        Private columnB13_instructor As Global.System.Data.DataColumn
+        
+        Private columnB14_instructor As Global.System.Data.DataColumn
+        
+        Private columnB15_instructor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -4447,6 +4667,126 @@ Partial Public Class Llaves_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B1_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB1_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B2_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB2_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B3_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB3_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B4_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB4_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B5_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB5_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B6_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB6_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B7_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB7_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B8_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB8_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B9_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB9_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B10_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB10_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B11_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB11_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B12_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB12_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B13_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB13_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B14_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB14_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B15_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB15_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4499,9 +4839,24 @@ Partial Public Class Llaves_ds
                     ByVal B13 As String,  _
                     ByVal B14 As String,  _
                     ByVal B15 As String,  _
-                    ByVal ID As Integer) As LLAVE_8Row
+                    ByVal ID As Integer,  _
+                    ByVal B1_instructor As String,  _
+                    ByVal B2_instructor As String,  _
+                    ByVal B3_instructor As String,  _
+                    ByVal B4_instructor As String,  _
+                    ByVal B5_instructor As String,  _
+                    ByVal B6_instructor As String,  _
+                    ByVal B7_instructor As String,  _
+                    ByVal B8_instructor As String,  _
+                    ByVal B9_instructor As String,  _
+                    ByVal B10_instructor As String,  _
+                    ByVal B11_instructor As String,  _
+                    ByVal B12_instructor As String,  _
+                    ByVal B13_instructor As String,  _
+                    ByVal B14_instructor As String,  _
+                    ByVal B15_instructor As String) As LLAVE_8Row
             Dim rowLLAVE_8Row As LLAVE_8Row = CType(Me.NewRow,LLAVE_8Row)
-            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, ID}
+            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, ID, B1_instructor, B2_instructor, B3_instructor, B4_instructor, B5_instructor, B6_instructor, B7_instructor, B8_instructor, B9_instructor, B10_instructor, B11_instructor, B12_instructor, B13_instructor, B14_instructor, B15_instructor}
             rowLLAVE_8Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowLLAVE_8Row)
             Return rowLLAVE_8Row
@@ -4540,6 +4895,21 @@ Partial Public Class Llaves_ds
             Me.columnB14 = MyBase.Columns("B14")
             Me.columnB15 = MyBase.Columns("B15")
             Me.columnID = MyBase.Columns("ID")
+            Me.columnB1_instructor = MyBase.Columns("B1_instructor")
+            Me.columnB2_instructor = MyBase.Columns("B2_instructor")
+            Me.columnB3_instructor = MyBase.Columns("B3_instructor")
+            Me.columnB4_instructor = MyBase.Columns("B4_instructor")
+            Me.columnB5_instructor = MyBase.Columns("B5_instructor")
+            Me.columnB6_instructor = MyBase.Columns("B6_instructor")
+            Me.columnB7_instructor = MyBase.Columns("B7_instructor")
+            Me.columnB8_instructor = MyBase.Columns("B8_instructor")
+            Me.columnB9_instructor = MyBase.Columns("B9_instructor")
+            Me.columnB10_instructor = MyBase.Columns("B10_instructor")
+            Me.columnB11_instructor = MyBase.Columns("B11_instructor")
+            Me.columnB12_instructor = MyBase.Columns("B12_instructor")
+            Me.columnB13_instructor = MyBase.Columns("B13_instructor")
+            Me.columnB14_instructor = MyBase.Columns("B14_instructor")
+            Me.columnB15_instructor = MyBase.Columns("B15_instructor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4577,6 +4947,36 @@ Partial Public Class Llaves_ds
             MyBase.Columns.Add(Me.columnB15)
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.columnB1_instructor = New Global.System.Data.DataColumn("B1_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB1_instructor)
+            Me.columnB2_instructor = New Global.System.Data.DataColumn("B2_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB2_instructor)
+            Me.columnB3_instructor = New Global.System.Data.DataColumn("B3_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB3_instructor)
+            Me.columnB4_instructor = New Global.System.Data.DataColumn("B4_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB4_instructor)
+            Me.columnB5_instructor = New Global.System.Data.DataColumn("B5_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB5_instructor)
+            Me.columnB6_instructor = New Global.System.Data.DataColumn("B6_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB6_instructor)
+            Me.columnB7_instructor = New Global.System.Data.DataColumn("B7_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB7_instructor)
+            Me.columnB8_instructor = New Global.System.Data.DataColumn("B8_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB8_instructor)
+            Me.columnB9_instructor = New Global.System.Data.DataColumn("B9_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB9_instructor)
+            Me.columnB10_instructor = New Global.System.Data.DataColumn("B10_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB10_instructor)
+            Me.columnB11_instructor = New Global.System.Data.DataColumn("B11_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB11_instructor)
+            Me.columnB12_instructor = New Global.System.Data.DataColumn("B12_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB12_instructor)
+            Me.columnB13_instructor = New Global.System.Data.DataColumn("B13_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB13_instructor)
+            Me.columnB14_instructor = New Global.System.Data.DataColumn("B14_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB14_instructor)
+            Me.columnB15_instructor = New Global.System.Data.DataColumn("B15_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB15_instructor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4777,6 +5177,68 @@ Partial Public Class Llaves_ds
         Private columnB31 As Global.System.Data.DataColumn
         
         Private columnID As Global.System.Data.DataColumn
+        
+        Private columnB1_instructor As Global.System.Data.DataColumn
+        
+        Private columnB2_instructor As Global.System.Data.DataColumn
+        
+        Private columnB3_instructor As Global.System.Data.DataColumn
+        
+        Private columnB4_instructor As Global.System.Data.DataColumn
+        
+        Private columnB5_instructor As Global.System.Data.DataColumn
+        
+        Private columnB6_instructor As Global.System.Data.DataColumn
+        
+        Private columnB7_instructor As Global.System.Data.DataColumn
+        
+        Private columnB8_instructor As Global.System.Data.DataColumn
+        
+        Private columnB9_instructor As Global.System.Data.DataColumn
+        
+        Private columnB10_instructor As Global.System.Data.DataColumn
+        
+        Private columnB11_instructor As Global.System.Data.DataColumn
+        
+        Private columnB12_instructor As Global.System.Data.DataColumn
+        
+        Private columnB13_instructor As Global.System.Data.DataColumn
+        
+        Private columnB14_instructor As Global.System.Data.DataColumn
+        
+        Private columnB15_instructor As Global.System.Data.DataColumn
+        
+        Private columnB16_instructor As Global.System.Data.DataColumn
+        
+        Private columnB17_instructor As Global.System.Data.DataColumn
+        
+        Private columnB18_instructor As Global.System.Data.DataColumn
+        
+        Private columnB19_instructor As Global.System.Data.DataColumn
+        
+        Private columnB20_instructor As Global.System.Data.DataColumn
+        
+        Private columnB21_instructor As Global.System.Data.DataColumn
+        
+        Private columnB22_instructor As Global.System.Data.DataColumn
+        
+        Private columnB23_instructor As Global.System.Data.DataColumn
+        
+        Private columnB24_instructor As Global.System.Data.DataColumn
+        
+        Private columnB25_instructor As Global.System.Data.DataColumn
+        
+        Private columnB26_instructor As Global.System.Data.DataColumn
+        
+        Private columnB27_instructor As Global.System.Data.DataColumn
+        
+        Private columnB28_instructor As Global.System.Data.DataColumn
+        
+        Private columnB29_instructor As Global.System.Data.DataColumn
+        
+        Private columnB30_instructor As Global.System.Data.DataColumn
+        
+        Private columnB31_instructor As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -5070,6 +5532,254 @@ Partial Public Class Llaves_ds
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B1_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB1_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B2_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB2_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B3_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB3_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B4_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB4_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B5_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB5_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B6_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB6_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B7_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB7_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B8_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB8_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B9_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB9_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B10_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB10_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B11_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB11_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B12_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB12_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B13_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB13_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B14_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB14_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B15_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB15_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B16_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB16_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B17_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB17_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B18_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB18_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B19_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB19_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B20_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB20_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B21_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB21_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B22_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB22_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B23_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB23_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B24_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB24_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B25_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB25_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B26_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB26_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B27_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB27_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B28_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB28_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B29_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB29_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B30_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB30_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property B31_instructorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnB31_instructor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5138,9 +5848,40 @@ Partial Public Class Llaves_ds
                     ByVal B29 As String,  _
                     ByVal B30 As String,  _
                     ByVal B31 As String,  _
-                    ByVal ID As Integer) As LLAVE_16Row
+                    ByVal ID As Integer,  _
+                    ByVal B1_instructor As String,  _
+                    ByVal B2_instructor As String,  _
+                    ByVal B3_instructor As String,  _
+                    ByVal B4_instructor As String,  _
+                    ByVal B5_instructor As String,  _
+                    ByVal B6_instructor As String,  _
+                    ByVal B7_instructor As String,  _
+                    ByVal B8_instructor As String,  _
+                    ByVal B9_instructor As String,  _
+                    ByVal B10_instructor As String,  _
+                    ByVal B11_instructor As String,  _
+                    ByVal B12_instructor As String,  _
+                    ByVal B13_instructor As String,  _
+                    ByVal B14_instructor As String,  _
+                    ByVal B15_instructor As String,  _
+                    ByVal B16_instructor As String,  _
+                    ByVal B17_instructor As String,  _
+                    ByVal B18_instructor As String,  _
+                    ByVal B19_instructor As String,  _
+                    ByVal B20_instructor As String,  _
+                    ByVal B21_instructor As String,  _
+                    ByVal B22_instructor As String,  _
+                    ByVal B23_instructor As String,  _
+                    ByVal B24_instructor As String,  _
+                    ByVal B25_instructor As String,  _
+                    ByVal B26_instructor As String,  _
+                    ByVal B27_instructor As String,  _
+                    ByVal B28_instructor As String,  _
+                    ByVal B29_instructor As String,  _
+                    ByVal B30_instructor As String,  _
+                    ByVal B31_instructor As String) As LLAVE_16Row
             Dim rowLLAVE_16Row As LLAVE_16Row = CType(Me.NewRow,LLAVE_16Row)
-            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, B16, B17, B18, B19, B20, B21, B22, B23, B24, B25, B26, B27, B28, B29, B30, B31, ID}
+            Dim columnValuesArray() As Object = New Object() {B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, B16, B17, B18, B19, B20, B21, B22, B23, B24, B25, B26, B27, B28, B29, B30, B31, ID, B1_instructor, B2_instructor, B3_instructor, B4_instructor, B5_instructor, B6_instructor, B7_instructor, B8_instructor, B9_instructor, B10_instructor, B11_instructor, B12_instructor, B13_instructor, B14_instructor, B15_instructor, B16_instructor, B17_instructor, B18_instructor, B19_instructor, B20_instructor, B21_instructor, B22_instructor, B23_instructor, B24_instructor, B25_instructor, B26_instructor, B27_instructor, B28_instructor, B29_instructor, B30_instructor, B31_instructor}
             rowLLAVE_16Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowLLAVE_16Row)
             Return rowLLAVE_16Row
@@ -5195,6 +5936,37 @@ Partial Public Class Llaves_ds
             Me.columnB30 = MyBase.Columns("B30")
             Me.columnB31 = MyBase.Columns("B31")
             Me.columnID = MyBase.Columns("ID")
+            Me.columnB1_instructor = MyBase.Columns("B1_instructor")
+            Me.columnB2_instructor = MyBase.Columns("B2_instructor")
+            Me.columnB3_instructor = MyBase.Columns("B3_instructor")
+            Me.columnB4_instructor = MyBase.Columns("B4_instructor")
+            Me.columnB5_instructor = MyBase.Columns("B5_instructor")
+            Me.columnB6_instructor = MyBase.Columns("B6_instructor")
+            Me.columnB7_instructor = MyBase.Columns("B7_instructor")
+            Me.columnB8_instructor = MyBase.Columns("B8_instructor")
+            Me.columnB9_instructor = MyBase.Columns("B9_instructor")
+            Me.columnB10_instructor = MyBase.Columns("B10_instructor")
+            Me.columnB11_instructor = MyBase.Columns("B11_instructor")
+            Me.columnB12_instructor = MyBase.Columns("B12_instructor")
+            Me.columnB13_instructor = MyBase.Columns("B13_instructor")
+            Me.columnB14_instructor = MyBase.Columns("B14_instructor")
+            Me.columnB15_instructor = MyBase.Columns("B15_instructor")
+            Me.columnB16_instructor = MyBase.Columns("B16_instructor")
+            Me.columnB17_instructor = MyBase.Columns("B17_instructor")
+            Me.columnB18_instructor = MyBase.Columns("B18_instructor")
+            Me.columnB19_instructor = MyBase.Columns("B19_instructor")
+            Me.columnB20_instructor = MyBase.Columns("B20_instructor")
+            Me.columnB21_instructor = MyBase.Columns("B21_instructor")
+            Me.columnB22_instructor = MyBase.Columns("B22_instructor")
+            Me.columnB23_instructor = MyBase.Columns("B23_instructor")
+            Me.columnB24_instructor = MyBase.Columns("B24_instructor")
+            Me.columnB25_instructor = MyBase.Columns("B25_instructor")
+            Me.columnB26_instructor = MyBase.Columns("B26_instructor")
+            Me.columnB27_instructor = MyBase.Columns("B27_instructor")
+            Me.columnB28_instructor = MyBase.Columns("B28_instructor")
+            Me.columnB29_instructor = MyBase.Columns("B29_instructor")
+            Me.columnB30_instructor = MyBase.Columns("B30_instructor")
+            Me.columnB31_instructor = MyBase.Columns("B31_instructor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5264,6 +6036,68 @@ Partial Public Class Llaves_ds
             MyBase.Columns.Add(Me.columnB31)
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
+            Me.columnB1_instructor = New Global.System.Data.DataColumn("B1_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB1_instructor)
+            Me.columnB2_instructor = New Global.System.Data.DataColumn("B2_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB2_instructor)
+            Me.columnB3_instructor = New Global.System.Data.DataColumn("B3_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB3_instructor)
+            Me.columnB4_instructor = New Global.System.Data.DataColumn("B4_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB4_instructor)
+            Me.columnB5_instructor = New Global.System.Data.DataColumn("B5_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB5_instructor)
+            Me.columnB6_instructor = New Global.System.Data.DataColumn("B6_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB6_instructor)
+            Me.columnB7_instructor = New Global.System.Data.DataColumn("B7_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB7_instructor)
+            Me.columnB8_instructor = New Global.System.Data.DataColumn("B8_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB8_instructor)
+            Me.columnB9_instructor = New Global.System.Data.DataColumn("B9_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB9_instructor)
+            Me.columnB10_instructor = New Global.System.Data.DataColumn("B10_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB10_instructor)
+            Me.columnB11_instructor = New Global.System.Data.DataColumn("B11_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB11_instructor)
+            Me.columnB12_instructor = New Global.System.Data.DataColumn("B12_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB12_instructor)
+            Me.columnB13_instructor = New Global.System.Data.DataColumn("B13_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB13_instructor)
+            Me.columnB14_instructor = New Global.System.Data.DataColumn("B14_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB14_instructor)
+            Me.columnB15_instructor = New Global.System.Data.DataColumn("B15_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB15_instructor)
+            Me.columnB16_instructor = New Global.System.Data.DataColumn("B16_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB16_instructor)
+            Me.columnB17_instructor = New Global.System.Data.DataColumn("B17_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB17_instructor)
+            Me.columnB18_instructor = New Global.System.Data.DataColumn("B18_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB18_instructor)
+            Me.columnB19_instructor = New Global.System.Data.DataColumn("B19_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB19_instructor)
+            Me.columnB20_instructor = New Global.System.Data.DataColumn("B20_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB20_instructor)
+            Me.columnB21_instructor = New Global.System.Data.DataColumn("B21_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB21_instructor)
+            Me.columnB22_instructor = New Global.System.Data.DataColumn("B22_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB22_instructor)
+            Me.columnB23_instructor = New Global.System.Data.DataColumn("B23_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB23_instructor)
+            Me.columnB24_instructor = New Global.System.Data.DataColumn("B24_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB24_instructor)
+            Me.columnB25_instructor = New Global.System.Data.DataColumn("B25_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB25_instructor)
+            Me.columnB26_instructor = New Global.System.Data.DataColumn("B26_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB26_instructor)
+            Me.columnB27_instructor = New Global.System.Data.DataColumn("B27_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB27_instructor)
+            Me.columnB28_instructor = New Global.System.Data.DataColumn("B28_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB28_instructor)
+            Me.columnB29_instructor = New Global.System.Data.DataColumn("B29_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB29_instructor)
+            Me.columnB30_instructor = New Global.System.Data.DataColumn("B30_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB30_instructor)
+            Me.columnB31_instructor = New Global.System.Data.DataColumn("B31_instructor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnB31_instructor)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8391,6 +9225,51 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B1_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_2.B1_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B1_instructor' de la tabla 'LLAVE_2' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_2.B1_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B2_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_2.B2_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B2_instructor' de la tabla 'LLAVE_2' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_2.B2_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B3_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_2.B3_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B3_instructor' de la tabla 'LLAVE_2' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_2.B3_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsB1Null() As Boolean
             Return Me.IsNull(Me.tableLLAVE_2.B1Column)
         End Function
@@ -8435,6 +9314,42 @@ Partial Public Class Llaves_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetIDNull()
             Me(Me.tableLLAVE_2.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB1_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_2.B1_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB1_instructorNull()
+            Me(Me.tableLLAVE_2.B1_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB2_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_2.B2_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB2_instructorNull()
+            Me(Me.tableLLAVE_2.B2_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB3_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_2.B3_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB3_instructorNull()
+            Me(Me.tableLLAVE_2.B3_instructorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8530,6 +9445,70 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property _1st_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_RESULTADOS._1st_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '1st_instructor' de la tabla 'LLAVE_RESULTADOS' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_RESULTADOS._1st_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property _2nd_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_RESULTADOS._2nd_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '2nd_instructor' de la tabla 'LLAVE_RESULTADOS' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_RESULTADOS._2nd_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property _3rd_a_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_RESULTADOS._3rd_a_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '3rd_a_instructor' de la tabla 'LLAVE_RESULTADOS' es DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_RESULTADOS._3rd_a_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property _3rd_b_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_RESULTADOS._3rd_b_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna '3rd_b_instructor' de la tabla 'LLAVE_RESULTADOS' es DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_RESULTADOS._3rd_b_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function Is_1stNull() As Boolean
             Return Me.IsNull(Me.tableLLAVE_RESULTADOS._1stColumn)
         End Function
@@ -8586,6 +9565,54 @@ Partial Public Class Llaves_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetIDNull()
             Me(Me.tableLLAVE_RESULTADOS.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Is_1st_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_RESULTADOS._1st_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Set_1st_instructorNull()
+            Me(Me.tableLLAVE_RESULTADOS._1st_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Is_2nd_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_RESULTADOS._2nd_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Set_2nd_instructorNull()
+            Me(Me.tableLLAVE_RESULTADOS._2nd_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Is_3rd_a_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_RESULTADOS._3rd_a_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Set_3rd_a_instructorNull()
+            Me(Me.tableLLAVE_RESULTADOS._3rd_a_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Is_3rd_b_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_RESULTADOS._3rd_b_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Set_3rd_b_instructorNull()
+            Me(Me.tableLLAVE_RESULTADOS._3rd_b_instructorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8726,6 +9753,111 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B1_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B1_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B1_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B1_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B2_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B2_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B2_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B2_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B3_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B3_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B3_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B3_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B4_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B4_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B4_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B4_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B5_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B5_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B5_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B5_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B6_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B6_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B6_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B6_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B7_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_4.B7_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B7_instructor' de la tabla 'LLAVE_4' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_4.B7_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsB1Null() As Boolean
             Return Me.IsNull(Me.tableLLAVE_4.B1Column)
         End Function
@@ -8818,6 +9950,90 @@ Partial Public Class Llaves_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetIDNull()
             Me(Me.tableLLAVE_4.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB1_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B1_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB1_instructorNull()
+            Me(Me.tableLLAVE_4.B1_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB2_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B2_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB2_instructorNull()
+            Me(Me.tableLLAVE_4.B2_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB3_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B3_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB3_instructorNull()
+            Me(Me.tableLLAVE_4.B3_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB4_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B4_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB4_instructorNull()
+            Me(Me.tableLLAVE_4.B4_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB5_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B5_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB5_instructorNull()
+            Me(Me.tableLLAVE_4.B5_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB6_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B6_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB6_instructorNull()
+            Me(Me.tableLLAVE_4.B6_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB7_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_4.B7_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB7_instructorNull()
+            Me(Me.tableLLAVE_4.B7_instructorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9078,6 +10294,231 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B1_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B1_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B1_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B1_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B2_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B2_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B2_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B2_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B3_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B3_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B3_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B3_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B4_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B4_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B4_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B4_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B5_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B5_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B5_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B5_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B6_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B6_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B6_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B6_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B7_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B7_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B7_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B7_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B8_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B8_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B8_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B8_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B9_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B9_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B9_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B9_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B10_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B10_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B10_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B10_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B11_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B11_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B11_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B11_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B12_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B12_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B12_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B12_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B13_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B13_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B13_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B13_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B14_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B14_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B14_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B14_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B15_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_8.B15_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B15_instructor' de la tabla 'LLAVE_8' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_8.B15_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsB1Null() As Boolean
             Return Me.IsNull(Me.tableLLAVE_8.B1Column)
         End Function
@@ -9266,6 +10707,186 @@ Partial Public Class Llaves_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetIDNull()
             Me(Me.tableLLAVE_8.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB1_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B1_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB1_instructorNull()
+            Me(Me.tableLLAVE_8.B1_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB2_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B2_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB2_instructorNull()
+            Me(Me.tableLLAVE_8.B2_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB3_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B3_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB3_instructorNull()
+            Me(Me.tableLLAVE_8.B3_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB4_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B4_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB4_instructorNull()
+            Me(Me.tableLLAVE_8.B4_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB5_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B5_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB5_instructorNull()
+            Me(Me.tableLLAVE_8.B5_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB6_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B6_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB6_instructorNull()
+            Me(Me.tableLLAVE_8.B6_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB7_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B7_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB7_instructorNull()
+            Me(Me.tableLLAVE_8.B7_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB8_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B8_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB8_instructorNull()
+            Me(Me.tableLLAVE_8.B8_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB9_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B9_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB9_instructorNull()
+            Me(Me.tableLLAVE_8.B9_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB10_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B10_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB10_instructorNull()
+            Me(Me.tableLLAVE_8.B10_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB11_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B11_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB11_instructorNull()
+            Me(Me.tableLLAVE_8.B11_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB12_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B12_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB12_instructorNull()
+            Me(Me.tableLLAVE_8.B12_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB13_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B13_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB13_instructorNull()
+            Me(Me.tableLLAVE_8.B13_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB14_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B14_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB14_instructorNull()
+            Me(Me.tableLLAVE_8.B14_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB15_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_8.B15_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB15_instructorNull()
+            Me(Me.tableLLAVE_8.B15_instructorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9766,6 +11387,471 @@ Partial Public Class Llaves_ds
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B1_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B1_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B1_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B1_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B2_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B2_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B2_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B2_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B3_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B3_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B3_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B3_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B4_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B4_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B4_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B4_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B5_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B5_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B5_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B5_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B6_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B6_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B6_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B6_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B7_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B7_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B7_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B7_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B8_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B8_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B8_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B8_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B9_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B9_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B9_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B9_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B10_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B10_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B10_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B10_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B11_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B11_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B11_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B11_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B12_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B12_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B12_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B12_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B13_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B13_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B13_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B13_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B14_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B14_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B14_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B14_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B15_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B15_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B15_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B15_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B16_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B16_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B16_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B16_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B17_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B17_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B17_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B17_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B18_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B18_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B18_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B18_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B19_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B19_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B19_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B19_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B20_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B20_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B20_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B20_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B21_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B21_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B21_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B21_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B22_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B22_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B22_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B22_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B23_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B23_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B23_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B23_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B24_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B24_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B24_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B24_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B25_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B25_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B25_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B25_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B26_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B26_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B26_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B26_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B27_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B27_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B27_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B27_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B28_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B28_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B28_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B28_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B29_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B29_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B29_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B29_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B30_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B30_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B30_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B30_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property B31_instructor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableLLAVE_16.B31_instructorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'B31_instructor' de la tabla 'LLAVE_16' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableLLAVE_16.B31_instructorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsB1Null() As Boolean
             Return Me.IsNull(Me.tableLLAVE_16.B1Column)
         End Function
@@ -10146,6 +12232,378 @@ Partial Public Class Llaves_ds
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetIDNull()
             Me(Me.tableLLAVE_16.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB1_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B1_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB1_instructorNull()
+            Me(Me.tableLLAVE_16.B1_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB2_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B2_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB2_instructorNull()
+            Me(Me.tableLLAVE_16.B2_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB3_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B3_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB3_instructorNull()
+            Me(Me.tableLLAVE_16.B3_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB4_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B4_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB4_instructorNull()
+            Me(Me.tableLLAVE_16.B4_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB5_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B5_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB5_instructorNull()
+            Me(Me.tableLLAVE_16.B5_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB6_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B6_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB6_instructorNull()
+            Me(Me.tableLLAVE_16.B6_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB7_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B7_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB7_instructorNull()
+            Me(Me.tableLLAVE_16.B7_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB8_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B8_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB8_instructorNull()
+            Me(Me.tableLLAVE_16.B8_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB9_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B9_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB9_instructorNull()
+            Me(Me.tableLLAVE_16.B9_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB10_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B10_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB10_instructorNull()
+            Me(Me.tableLLAVE_16.B10_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB11_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B11_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB11_instructorNull()
+            Me(Me.tableLLAVE_16.B11_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB12_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B12_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB12_instructorNull()
+            Me(Me.tableLLAVE_16.B12_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB13_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B13_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB13_instructorNull()
+            Me(Me.tableLLAVE_16.B13_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB14_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B14_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB14_instructorNull()
+            Me(Me.tableLLAVE_16.B14_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB15_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B15_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB15_instructorNull()
+            Me(Me.tableLLAVE_16.B15_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB16_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B16_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB16_instructorNull()
+            Me(Me.tableLLAVE_16.B16_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB17_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B17_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB17_instructorNull()
+            Me(Me.tableLLAVE_16.B17_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB18_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B18_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB18_instructorNull()
+            Me(Me.tableLLAVE_16.B18_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB19_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B19_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB19_instructorNull()
+            Me(Me.tableLLAVE_16.B19_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB20_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B20_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB20_instructorNull()
+            Me(Me.tableLLAVE_16.B20_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB21_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B21_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB21_instructorNull()
+            Me(Me.tableLLAVE_16.B21_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB22_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B22_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB22_instructorNull()
+            Me(Me.tableLLAVE_16.B22_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB23_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B23_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB23_instructorNull()
+            Me(Me.tableLLAVE_16.B23_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB24_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B24_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB24_instructorNull()
+            Me(Me.tableLLAVE_16.B24_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB25_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B25_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB25_instructorNull()
+            Me(Me.tableLLAVE_16.B25_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB26_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B26_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB26_instructorNull()
+            Me(Me.tableLLAVE_16.B26_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB27_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B27_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB27_instructorNull()
+            Me(Me.tableLLAVE_16.B27_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB28_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B28_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB28_instructorNull()
+            Me(Me.tableLLAVE_16.B28_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB29_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B29_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB29_instructorNull()
+            Me(Me.tableLLAVE_16.B29_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB30_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B30_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB30_instructorNull()
+            Me(Me.tableLLAVE_16.B30_instructorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsB31_instructorNull() As Boolean
+            Return Me.IsNull(Me.tableLLAVE_16.B31_instructorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetB31_instructorNull()
+            Me(Me.tableLLAVE_16.B31_instructorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

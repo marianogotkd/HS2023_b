@@ -114,6 +114,10 @@
                         colocar_tooltrip(B1, ds_categorias, item_nro, tooltext, idtext, usuario_id)
                         B1.ToolTip = usuario_id 'ojo este lo uso para actualizar en la bd.
                         B1.Text = tooltext + idtext
+
+
+
+
                     Case 2
                         If Llave_item_usuario_id <> 0 Then
                             B2.Visible = True
@@ -152,7 +156,8 @@
 
             Dim instructor_id As Integer = ds_categorias.Tables(3).Rows(i).Item("instructor_id")
             Dim ds_instr As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
-            Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + " (Dni:" + CStr(ds_instr.Tables(0).Rows(0).Item("usuario_doc")) + ")"
+            'Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + " (Dni:" + CStr(ds_instr.Tables(0).Rows(0).Item("usuario_doc")) + ")"
+            Dim Datos_Instructor As String = ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre")
 
             'veo si ya existen en el table("Competidores")
             Dim j As Integer = 0
@@ -277,6 +282,73 @@
         End If
     End Sub
     Dim Llaves_reporte_DS As New Llaves_reporte_DS
+
+    Private Sub obtener_instructor(ByRef B As String, ByRef instructor As String)
+        instructor = ""
+        Dim i As Integer = 0
+        While i < GridView_COMPETIDORES.Rows.Count
+            If B = GridView_COMPETIDORES.Rows(i).Cells(0).Text Then
+                instructor = GridView_COMPETIDORES.Rows(i).Cells(1).Text
+                Exit While
+            End If
+            i = i + 1
+        End While
+    End Sub
+
+    Private Sub llave_agregar_instructores(ByRef Llaves_ds As DataSet)
+        Dim ds_categorias As DataSet = DAllave.LLave_obtener_llavegenerada_etc_2(Session("llave_id"))
+
+        Dim i As Integer = 0
+        While i < ds_categorias.Tables(2).Rows.Count
+            Dim Llave_item_numero As Integer = ds_categorias.Tables(2).Rows(i).Item("Llave_item_numero")
+            Dim Llave_item_usuario_id As Integer = ds_categorias.Tables(2).Rows(i).Item("Llave_item_usuario_id")
+            Dim j As Integer = 0
+            Dim instructor As String = ""
+            While j < ds_categorias.Tables(3).Rows.Count
+                If Llave_item_usuario_id = ds_categorias.Tables(3).Rows(j).Item("Llave_item_usuario_id") Then
+                    Dim instructor_id As Integer = ds_categorias.Tables(3).Rows(j).Item("instructor_id")
+
+                    Dim ds_instr As DataSet = DAinstructor.Instructor_obtener_INFO(instructor_id)
+                    instructor = "(" + ds_instr.Tables(0).Rows(0).Item("ApellidoyNombre") + ")"
+                    Exit While
+                End If
+                j = j + 1
+            End While
+
+            Select Case Llave_item_numero
+                Case 1
+                    Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B1_instructor") = instructor
+                Case 2
+                    Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B2_instructor") = instructor
+                Case 3
+                    Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B3_instructor") = instructor
+            End Select
+            i = i + 1
+        End While
+
+    End Sub
+
+    Private Sub resultados_agregar_instructores_llave2(ByRef Llaves_ds As DataSet)
+
+        Dim B1 As String = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B1")
+        Dim B2 As String = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B2")
+        Dim B3 As String = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B3")
+
+
+        If B3 <> "" Then
+
+            Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("1st_instructor") = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B3_instructor")
+            'veo cual es el segundo
+            If B3 = B1 Then
+                Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("2nd_instructor") = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B2_instructor")
+            Else
+                Llaves_ds.Tables("LLAVE_RESULTADOS").Rows(0).Item("2nd_instructor") = Llaves_ds.Tables("LLAVE_2").Rows(0).Item("B1_instructor")
+            End If
+
+        End If
+    End Sub
+
+
     Private Sub Btn_reporte_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Btn_reporte.Click
         Llaves_ds.Tables("LLAVE_DATOS").Rows.Clear()
         Dim fila1 As DataRow = Llaves_ds.Tables("LLAVE_DATOS").NewRow
@@ -300,11 +372,14 @@
         Llaves_ds.Tables("LLAVE_2").Rows.Clear()
 
         Dim fila3 As DataRow = Llaves_ds.Tables("LLAVE_2").NewRow
+        Dim instructor As String = ""
         fila3("B1") = B1.Text
         fila3("B2") = B2.Text
         fila3("B3") = B3.Text
         fila3("ID") = 1
         Llaves_ds.Tables("LLAVE_2").Rows.Add(fila3)
+
+        llave_agregar_instructores(Llaves_ds)
 
         Llaves_ds.Tables("Competidores").Rows.Clear()
         Dim i As Integer = 0
@@ -315,7 +390,7 @@
             Llaves_ds.Tables("Competidores").Rows.Add(fila4)
             i = i + 1
         End While
-
+        resultados_agregar_instructores_llave2(Llaves_ds)
 
         Session("op_llave") = "llave 2"
         Session("datatable_LLAVE_DATOS") = Llaves_ds.Tables("LLAVE_DATOS")
