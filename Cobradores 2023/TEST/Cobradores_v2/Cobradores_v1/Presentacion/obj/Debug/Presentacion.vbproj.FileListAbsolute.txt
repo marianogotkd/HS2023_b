@@ -652,3 +652,34 @@ C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.dll
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.xml
 C:\Repositorio HS2023_b\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Presentacion.dll.config
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Presentacion.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Presentacion.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Presentacion.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Capa_Datos.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Ionic.Zip.Reduced.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\log4net.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\stdole.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Capa_Datos.pdb
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\Capa_Datos.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\bin\log4net.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.vbproj.AssemblyReference.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.Resources.resources
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.vbproj.CoreCompileInputs.cache
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.vbproj.CopyComplete
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.dll
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.xml
+C:\HamerSoft\ReposGitHamer\HS2023_b\Cobradores 2023\TEST\Cobradores_v2\Cobradores_v1\Presentacion\obj\Debug\Presentacion.pdb
